@@ -1,0 +1,40 @@
+event,time,magnitude,e_magnitude,upperlimit,band,instrument,telescope,source
+SN2002bj,52333.06,14.8,,,C,,,"VSNET Oct2003,Sternberg Astronomical Institute Supernova Light Curve Catalogue"
+SN2002bj,52333.2,14.7,,,C,,,"VSNET Oct2003,Sternberg Astronomical Institute Supernova Light Curve Catalogue"
+SN2002bj,52334.2,14.79,.01,,B,,KAIT,2010Sci...327...58P
+SN2002bj,52334.2,14.7,,,C,,,"VSNET Oct2003,Sternberg Astronomical Institute Supernova Light Curve Catalogue"
+SN2002bj,52334.2,15.03,.02,,I,,KAIT,2010Sci...327...58P
+SN2002bj,52334.2,14.97,.02,,R,,KAIT,2010Sci...327...58P
+SN2002bj,52334.2,14.91,.01,,V,,KAIT,2010Sci...327...58P
+SN2002bj,52335.79,14.8,,,R,,,"VSNET Oct2003,Sternberg Astronomical Institute Supernova Light Curve Catalogue"
+SN2002bj,52336.2,14.97,.01,,B,,KAIT,2010Sci...327...58P
+SN2002bj,52336.2,15.14,.01,,I,,KAIT,2010Sci...327...58P
+SN2002bj,52336.2,15.06,.02,,R,,KAIT,2010Sci...327...58P
+SN2002bj,52336.2,15.03,.01,,V,,KAIT,2010Sci...327...58P
+SN2002bj,52336.82,14.6,,,R,,,"VSNET Oct2003,Sternberg Astronomical Institute Supernova Light Curve Catalogue"
+SN2002bj,52336.86,14.6,,,R,,,"VSNET Oct2003,Sternberg Astronomical Institute Supernova Light Curve Catalogue"
+SN2002bj,52337.2,15.03,.01,,B,,KAIT,2010Sci...327...58P
+SN2002bj,52337.2,15.18,.03,,I,,KAIT,2010Sci...327...58P
+SN2002bj,52337.2,15.08,.02,,R,,KAIT,2010Sci...327...58P
+SN2002bj,52337.2,15.10,.02,,V,,KAIT,2010Sci...327...58P
+SN2002bj,52337.79,14.8,,,R,,,"VSNET Oct2003,Sternberg Astronomical Institute Supernova Light Curve Catalogue"
+SN2002bj,52337.81,15,,,R,,,"VSNET Oct2003,Sternberg Astronomical Institute Supernova Light Curve Catalogue"
+SN2002bj,52337.83,14.8,,,R,,,"VSNET Oct2003,Sternberg Astronomical Institute Supernova Light Curve Catalogue"
+SN2002bj,52338.2,15.15,.01,,B,,KAIT,2010Sci...327...58P
+SN2002bj,52338.2,15.26,.03,,I,,KAIT,2010Sci...327...58P
+SN2002bj,52338.2,15.21,.02,,R,,KAIT,2010Sci...327...58P
+SN2002bj,52338.2,15.20,.01,,V,,KAIT,2010Sci...327...58P
+SN2002bj,52340.0,14.6,,,C,,,"VSNET Oct2003,Sternberg Astronomical Institute Supernova Light Curve Catalogue"
+SN2002bj,52342.1,15.75,.01,,B,,KAIT,2010Sci...327...58P
+SN2002bj,52342.1,15.64,.02,,I,,KAIT,2010Sci...327...58P
+SN2002bj,52342.1,15.65,.01,,R,,KAIT,2010Sci...327...58P
+SN2002bj,52342.1,15.71,.02,,V,,KAIT,2010Sci...327...58P
+SN2002bj,52344.1,16.27,.04,,B,,KAIT,2010Sci...327...58P
+SN2002bj,52344.1,16.01,.06,,I,,KAIT,2010Sci...327...58P
+SN2002bj,52344.1,16.06,.06,,R,,KAIT,2010Sci...327...58P
+SN2002bj,52344.1,16.04,.06,,V,,KAIT,2010Sci...327...58P
+SN2002bj,52348.2,17.92,.08,,B,,KAIT,2010Sci...327...58P
+SN2002bj,52348.2,17.22,.06,,I,,KAIT,2010Sci...327...58P
+SN2002bj,52348.2,17.32,.08,,R,,KAIT,2010Sci...327...58P
+SN2002bj,52348.2,17.93,.10,,V,,KAIT,2010Sci...327...58P
+SN2002bj,52350.05,15.7,,,C,,,"VSNET Oct2003,Sternberg Astronomical Institute Supernova Light Curve Catalogue"

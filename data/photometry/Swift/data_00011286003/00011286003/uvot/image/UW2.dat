@@ -1,0 +1,42 @@
+uvotsource: running uvotinteg
+uvotsource: warning: applyLargeScaleSensitivity: unknown detector position
+uvotsource: Source
+            Position: RA = 17h 36m 46.75s, Dec = +50d 32m 52.2s (J2000)
+            Position: RA = 264.19479, Dec = 50.54783 (J2000)
+            Exposure: 784.97 s
+              Filter: UVW2
+        Significance: 9.1 sigma (stat)
+    Background-limit: 3.0 sigma (stat)
+uvotsource: UVOT uvw2 magnitude (Vega system)
+              Source: 19.33 +/- 0.13 (stat) +/- 0.03 (sys)
+          Background: 25.17 arcsec^-2
+    Background-limit: 21.18
+   Coincidence-limit: 10.95
+uvotsource: UVOT uvw2 magnitude (AB system)
+              Source: 21.02 +/- 0.13 (stat) +/- 0.03 (sys)
+          Background: 26.86 arcsec^-2
+    Background-limit: 22.87
+   Coincidence-limit: 12.64
+uvotsource: Flux density [erg/s/cm^2/A]
+              Source: 9.96 +/- 1.23 (stat) +/- 0.22 (sys) x 10^-17
+          Background: 4.59 +/- 0.22 (stat) +/- 0.10 (sys) x 10^-19 arcsec^-2
+    Background-limit: 1.81 x 10^-17
+   Coincidence-limit: 2.22 x 10^-13
+uvotsource: Corrected rate [count/s]
+              Source: 0.167 +/- 0.021 (stat)
+          Background: 0.00077 arcsec^-2
+    Background-limit: 0.030
+   Coincidence-limit: 372.234
+uvotsource: Raw rate [count/s]
+              Source: 0.126 +/- 0.014 (stat)
+          Background: 0.00077 arcsec^-2
+    Background-limit: 0.023
+   Coincidence-limit: 90.644
+uvotsource: Flux density [mJy at 1.475 x 10^15 Hz]
+              Source: 1.37 +/- 0.17 (stat) +/- 0.03 (sys) x 10^-2
+          Background: 6.33 +/- 0.31 (stat) +/- 0.14 (sys) x 10^-5 arcsec^-2
+    Background-limit: 2.49 x 10^-3
+   Coincidence-limit: 3.07 x 10^1
+uvotsource: running ftcreate
+uvotsource: running fthedit
+uvotsource: running fthedit

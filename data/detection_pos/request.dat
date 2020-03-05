@@ -1,0 +1,12 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>PTF Query Tool: requestForcedPhotometry.cgi</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body bgcolor="#99ccff">
+<center><table border><caption><b></b></caption> <tr><th>       priority </th> <th>ra </th> <th>dec </th> <th>   ptffield </th> <th>      fid </th> <th>     ccdid </th> <th>jdstartoflightcurve </th> <th>jdendoflightcurve </th> <th>email </th> <th>name </th></tr> <tr><td>              3 </td> <td>264.1947887 </td> <td>50.547826 </td> <td>       4790 </td> <td>        2 </td> <td>         7 </td> <td> 2454495.500 </td> <td>2458394.500 </td> <td>yyao@astro.caltech.edu </td> <td>ptfs2017a </td></tr></table><br /><br />
+</body>
+</html>

@@ -15,6 +15,7 @@ h = const.h.cgs.value
 k = const.k_B.cgs.value
 c = const.c.cgs.value
 sigma = const.sigma_sb.cgs.value
+sigma_T = const.sigma_T.cgs.value
 eV = 1.60218e-12 # erg
 Mpc = 1e+6 * const.pc.cgs.value
 pc = const.pc.cgs.value

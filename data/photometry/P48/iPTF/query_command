@@ -1,0 +1,1 @@
+wget --user="PTF" --password="palomar" -O request.dat -o request.log "http://ptfdepot.ipac.caltech.edu/cgi-bin/requestForcedPhotometry.cgi?ra=264.1947887&dec=50.547826&ptffield=4790&fid=2&ccdid=7&jdstartoflightcurve=2454495.5&jdendoflightcurve=2458394.5&name=ptfs2017a&email=yyao@astro.caltech.edu&priority=3"

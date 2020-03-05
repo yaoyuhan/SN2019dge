@@ -10,6 +10,7 @@ import extinction
 import astropy.io.ascii as asci
 from astropy.time import Time
 from scipy.optimize import curve_fit
+from scipy.interpolate import splrep, splev, interp1d
 from collections import OrderedDict as odict
 from helper.specconvolve import convolve_with_constant_velocity_kernel
 
@@ -133,7 +134,7 @@ def measure_flux(wave, flux_line, line_center = 4861.35,  sigma_guess = 4.11,
         ax1.legend(loc = "upper left", fontsize=fs-2, frameon=False,
                    fancybox = False)
         plt.tight_layout()
-        plt.savefig(linename+".pdf")
+        #plt.savefig(linename+".pdf")
     
     print ("line flux of %s is: %.2f +- %.2f 1e-16"%(linename, flux_Hbeta*multi, flux_unc*multi))
     dt = {}
@@ -146,8 +147,8 @@ def measure_flux(wave, flux_line, line_center = 4861.35,  sigma_guess = 4.11,
 
 def gaplinelist(z=0.0213):
     H_list = np.array([#3734.369, 
-              #3750.151, 3770.633, 3797.909, 3835.397, 3889.064, 3970.075, 
-              4101.734, 4340.472, 4861.35, 6562.79]) * (1+z)
+              #3750.151, 3770.633, 3797.909, 3835.397, 3889.064, 
+              3970.075, 4101.734, 4340.472, 4861.35, 6562.79]) * (1+z)
     
     OIII_list = np.array([ 4363.21,  #this is not detected
                           4958.91, 5006.84]) * (1+z)
@@ -155,11 +156,13 @@ def gaplinelist(z=0.0213):
     OII_list = np.array([3726.04, 3728.80 # oii line in the 2p3 configuration
                          ]) * (1+z)
     
-    OI_list = np.array([6300,
-                        6363
+    OI_list = np.array([5577, 
+                        6300, 6363, 
+                        7774.17
                         ]) * (1+z)
     
-    SIII_list = np.array([9068.6, 9530.6 # nebula lines in the 2p2/2p4 configuration
+    SIII_list = np.array([6312.06,
+                          9068.6, 9530.6 # nebula lines in the 2p2/2p4 configuration
                           ]) * (1+z)
     
     SII_list = np.array([6716.44, 6730.815 # nebula lines in the 2p3 configuration
@@ -170,33 +173,51 @@ def gaplinelist(z=0.0213):
     
     # He I: Fig 1 of http://articles.adsabs.harvard.edu/cgi-bin/nph-iarticle_query?1991ApJ...383..308L&defaultprint=YES&filetype=.pdf
     # Also Filippenko Section 4.2
+    # 5016, line from Fremling  PTF12os and iPTF13bvn:
     HeI_list = np.array([4472, 
+                         5016,
                          5875, 
                          6678, 
                          7065 # what is this line? 
                          ]) * (1+z)
     
+    FeII_list = np.array([4924, 5018, 5169])* (1+z)
+    
+    CIII_list = np.array([4647.42, 4650.25, 4651.47])
+    
+    NIII_list = np.array([4634.14, 4640.64])
+    
     HeII_list = np.array([4685.682 # this is n1=3, n2=4, recombination line?
-                          ]) * (1+z)
+                         ]) * (1+z)
     
     CaII_list = np.array([3933.66, 3968.47,
                           7291.47, 7323.89, # 3p6 4s to 3p6 3d 
-                          8498.02, 8542.09, 8662.14])
+                          8498.02, 8542.09, 8662.14])* (1+z)
     
-    NeIII_list = np.array([3868.71 ]) # Thnaks Rahcel!
-    ArIII_list = np.array([7135.8 ]) # Thnaks Rahcel!
+    MgII_list = np.array([2795.528, 
+                          2802.704])* (1+z)
+    
+    MgI_list = np.array([2852.127])* (1+z)
+    
+    NeIII_list = np.array([3868.71 ])* (1+z) # Thnaks Rahcel!
+    ArIII_list = np.array([7135.8, 7751.06 ]) * (1+z)# Thnaks Rahcel!
     yaolinelist = odict([('H_list', H_list),
                          ('HeI_list', HeI_list),
                          ('HeII_list', HeII_list),
                          ('OIII_list', OIII_list),
                          ('OII_list', OII_list),
                          ('OI_list', OI_list),
+                         ('CIII_list', CIII_list),
+                         ('NIII_list', NIII_list),
                          ('SIII_list', SIII_list),
                          ('SII_list', SII_list),
                          ('NII_list', NII_list),
                          ('CaII_list', CaII_list),
                          ('NeIII_list', NeIII_list),
-                         ("ArIII_list", ArIII_list)])
+                         ("ArIII_list", ArIII_list),
+                         ("FeII_list", FeII_list),
+                         ("MgI_list", MgI_list),
+                         ("MgII_list", MgII_list)])
     return yaolinelist
 
 
@@ -231,15 +252,15 @@ def add_telluric_circle(ax, x, y, rx=10, ry = 0.1, ls=0.5):
 
 
 def pblines(ax, H_list, color='m', label="H", ls = ':',
-            tb = -42, tu = -32):
+            tb = -42, tu = -32, linewidth = 1, alpha = 1):
     for i in range(len(H_list)):
         wv = H_list[i]
         if i==0:
             ax.plot([wv, wv], [tb, tu], linestyle = ls, 
-                    color=color, zorder = 1, label=label)
+                    color=color, zorder = 1, label=label, linewidth=linewidth, alpha=alpha)
         else:
             ax.plot([wv, wv], [tb, tu], linestyle = ls, 
-                    color=color, zorder = 1)
+                    color=color, zorder = 1, linewidth=linewidth, alpha=alpha)
 
 
 def get_keck(z=0.0213, date = "20190412_Keck1_v2", 
@@ -331,3 +352,60 @@ def get_ltspec(z=0.0213, date = '0409', vkernel = 800, t0jd = 58583.2, ebv = 0.0
     dt['spec_con'] = ff
     dt["ln_spec_con"] = np.log(ff)
     return dt
+
+
+def psudo_cont_norm(wave, flux, scale=True, spline = False):
+    # sp5 = pd.read_csv("../../data/otherSN/SN2011fe/phase13")
+    # wave = sp5["wavelength"].values
+    # flux = sp5["flux"].values
+    
+    if spline == True:
+        # fit a psudo continuum
+        w0 = min(wave)+1000
+        w1 = max(wave)-1000
+        n = int((w1-w0)//500) + 1
+        n = max(n, 2)
+        knots = np.linspace(w0, w1, n)
+        t,c,k = splrep(wave, flux, k=3, task=-1, t = knots)
+        flux_cont = splev(wave, (t,c,k)) 
+        ix0 = wave<w0
+        flux_cont[ix0] = flux_cont[~ix0][0]
+        ix1 = wave>w1
+        flux_cont[ix1] = flux_cont[~ix1][-1]
+        flux_norm = flux / flux_cont
+        if scale==True:
+            flux_norm = flux_norm-1
+            flux_norm = flux_norm / (np.percentile(abs(flux_norm), 90)*3)
+            flux_norm = flux_norm+1
+    else:
+        # normalize between 5300 -- 5600
+        ix = (wave > 5300)&(wave < 5600)
+        norm_factor = np.median(flux[ix])
+        flux_norm = flux / norm_factor 
+    """
+    plt.plot(wave, flux)
+    plt.plot(wave, flux_cont)
+    
+    plt.plot(wave, flux_norm)
+    """
+    return flux_norm
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

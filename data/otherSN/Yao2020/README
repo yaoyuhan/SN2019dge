@@ -1,0 +1,25 @@
+This is explanation of columns in bbdata.csv and lc_at2019dge.csv
+
+###########
+bbdata.csv:
+
+phase: observer frame time relative to maximum light (MJD=58583.2), note that this is taking the mean of detection epoch in different filters (at the same night)
+t: phase+3.3, (I use this as time since explosion, assuming the explosion epoch is 3.3 days before maximum light MJD=58583.2). 
+Lbb, Rbb, Tbb: blackbody fit parameters
+Lbb_unc, Rbb_unc, Tbb_unc: uncertainties of the blackbody fit parameters (estimated using half of the difference between 84 and 16 percentile of MCMC posterior distribution, all models run to converge)
+*_uncr: difference between 84 and 50 percentile of MCMC posterior distribution
+*_uncl: difference between 50 and 16 percentile of MCMC posterior distribution
+	Note that uncertainties are not provided if we only have detections in two filters at a certain epoch
+
+#################
+lc_at2019dge.csv:
+
+mag, emag: observed apparent magnitude
+wavelength: effective wavelength of the filter in \AA
+freq: speed of light / wavelength, in the unit of Hz
+tmax_of: observer frame time relative to maximum light (MJD=58583.2)
+tmas_rf: rest frame time relative to maximum light. Note that this is just tmax_of/(1+0.0213), where 0.0213 is redshift of the transient
+mag0: apparent magnitude corrected for Galactic extinction
+mag0_abs: absolute magnitude corrected for Galactic extinction (assume cosmology H0=70, Omega_m=0.27, Omega_lambda = 0.73)
+fnu, flamba, Llambda: absolute flux in different units, all calculated using mag0_abs
+

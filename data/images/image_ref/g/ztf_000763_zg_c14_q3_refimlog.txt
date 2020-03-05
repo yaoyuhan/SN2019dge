@@ -1,0 +1,1912 @@
+=== PARAMS: Leftover arguments: if 0.
+
+Executing refimage.pl, version 2.4 on 2018-04-20 at 07:13:57 (last modified: 02.05.18 by F. Masci)...
+
+Input parameters from /ztf/ops/sw/stable/ztf/cdf/refimage.txt:
+  zpg = 26.325
+  zpr = 26.275
+  zpi = 25.660
+  maxt = 1
+  xy = 3200,3200
+  fat = 0,2,3,6,7,8,9,10
+  pscl = 1.0
+  ker = LANCZOS3
+  nmed = 200
+  lt = 5.0
+  ut = 5.0
+  fmsk = 0.7
+  egain = 6.2
+  lo_dao_psf = 50.0
+  hi_dao_psf = 2000.0
+  wa_als_psf = 0
+  ma_als_psf = 100
+  picknum_psf = 1000
+  pickmag_psf = 22
+  nminthres_psf = 10
+  neimax = 10000
+  is_als_psf = 2.5
+  os_als_psf = 20.0
+  lr_dao_psf = -0.6
+  hr_dao_psf = 0.6
+  fi_als_psf = 1.6
+  ps_als_psf = 9
+  th_dao_psf = 15.0
+  fwhmpdifftol = 50.0
+  offcor = 0.0
+  is_als = 0
+  os_als = 0
+  th_dao = 2.0
+  tchi = 1000.0
+  tshp = 100.0
+  tsnr = 3.0
+  nkeepdaodet = 200000
+  minmagforapcor = 14.5
+  maxmagforapcor = 18.0
+  sexsnrforapcor = 15.0
+  maxnumforapcor = 2000
+  radmatchapcor = 1.0
+  t00 = 4000.0
+  t01 = 100.0
+  t02 = 50.0
+  t03 = 5.0
+  t04 = 4.0
+  t05 = 18.0
+  t06 = 18.0
+  t07 = 10
+  t08 = 10
+  t09 = 15
+  t10 = 3.5
+  fatalinfobits = 2,5,7,8,16
+Other inputs:
+scilst = refimscilist.txt
+msklst = refimmsklist.txt
+inpcfgfile = /ztf/ops/sw/stable/ztf/cdf/refimage.txt
+swpcfg = /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt
+
+refimage.pl: retrieved/constructed following product identifiers:
+  FIELDID = 763
+  CCDID = 14
+  QID = 3
+  FILTERID = 1
+  RCID = 54
+  RFID = 763120154
+
+refimage.pl: elapsed time for storing and checking inputs [sec] = 0.577818
+refimage.pl: opened ztf_000763_zg_c14_q3_refimgqa.txt for writing.
+refimage.pl: generating co-add image products...
+ZtfPdlUtils.pl: ExecuteProcess: /ztf/ops/sw/180116/ztf/src/pl/perl/mkcoadd.pl -scilst refimscilist.txt -msklst refimmsklist.txt -o1 ztf_000763_zg_c14_q3_refimg.fits -o2 ztf_000763_zg_c14_q3_refunc.fits -o3 ztf_000763_zg_c14_q3_refcov.fits -o7 ztf_000763_zg_c14_q3_refmsk.fits -os ztf_000763_zg_c14_q3_refskipimg.txt -fat 0,2,3,6,7,8,9,10 -zp 26.325 -swpcfg /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -xy 3200,3200 -pscl 1.0 -ker LANCZOS3 -nmed 200 -lt 5.0 -ut 5.0 -fmsk 0.7 -maxt 1 -c -v 
+=== PARAMS: Leftover arguments: if 0.
+
+Executing version 5.1 of mkcoadd.pl on 2018-04-20 at 07:13:58...
+
+mkcoadd.pl: Input science and mask frames will be read from refimscilist.txt and refimmsklist.txt respectively
+mkcoadd.pl: Right Ascension of co-add center not specified; will compute internally from input frames...
+mkcoadd.pl: Declination of co-add center not specified; will compute internally from input frames...
+mkcoadd.pl: Rotation of co-add footprint (CROTA2) not specified; will compute internally from input frames...
+
+mkcoadd.pl: Executable for resampling found: /ztf/ops/sw/180116/ext/bin/swarp
+
+mkcoadd.pl: Bad value support in PDL is turned on
+mkcoadd.pl: Good! 'threads' & 'ithreads' modules are enabled; continuing...
+mkcoadd.pl: Fatal bitstring for masking = 1997
+mkcoadd.pl: Deriving optimum co-add WCS from image inputs...
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0328/521725/ztf_20180328521725_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 0: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.168040871774, 50.1944178747745 deg.
+mkcoadd.pl: Frame 0: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.168034184195, 50.1941366229081 deg.
+mkcoadd.pl: Frame 0: twist (+Y W. of N.) = 179.127891888348 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0328/463970/ztf_20180328463970_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 1: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.165466982744, 50.1912450243879 deg.
+mkcoadd.pl: Frame 1: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.165460272555, 50.1909637713657 deg.
+mkcoadd.pl: Frame 1: twist (+Y W. of N.) = 179.124889234296 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0328/520347/ztf_20180328520347_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 2: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.16771803911, 50.1944907831544 deg.
+mkcoadd.pl: Frame 2: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.167711336406, 50.1942095342641 deg.
+mkcoadd.pl: Frame 2: twist (+Y W. of N.) = 179.125911894495 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0328/498414/ztf_20180328498414_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 3: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.166512709225, 50.1936617652229 deg.
+mkcoadd.pl: Frame 3: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.166505991331, 50.1933805128137 deg.
+mkcoadd.pl: Frame 3: twist (+Y W. of N.) = 179.123926889265 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0328/449768/ztf_20180328449768_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 4: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.164773831728, 50.1909897617085 deg.
+mkcoadd.pl: Frame 4: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.164767047753, 50.1907085131301 deg.
+mkcoadd.pl: Frame 4: twist (+Y W. of N.) = 179.115249323728 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0419/338727/ztf_20180419338727_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 5: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.146075272686, 50.1864517200304 deg.
+mkcoadd.pl: Frame 5: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.146068540846, 50.1861704943319 deg.
+mkcoadd.pl: Frame 5: twist (+Y W. of N.) = 179.121892549817 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0327/521493/ztf_20180327521493_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 6: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.150242250751, 50.1963185516863 deg.
+mkcoadd.pl: Frame 6: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.150235566436, 50.1960373021527 deg.
+mkcoadd.pl: Frame 6: twist (+Y W. of N.) = 179.128344959174 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0327/466852/ztf_20180327466852_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 7: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.147832691832, 50.19380502295 deg.
+mkcoadd.pl: Frame 7: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.147825964085, 50.1935237628073 deg.
+mkcoadd.pl: Frame 7: twist (+Y W. of N.) = 179.122668948933 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0327/493113/ztf_20180327493113_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 8: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.148590544692, 50.1959688810151 deg.
+mkcoadd.pl: Frame 8: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.148583830731, 50.1956876298105 deg.
+mkcoadd.pl: Frame 8: twist (+Y W. of N.) = 179.12447842357 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0327/465868/ztf_20180327465868_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 9: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.148566465051, 50.1934958866623 deg.
+mkcoadd.pl: Frame 9: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.14855970382, 50.1932146437 deg.
+mkcoadd.pl: Frame 9: twist (+Y W. of N.) = 179.118243724763 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0419/364259/ztf_20180419364259_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 10: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.146330048609, 50.1886147222258 deg.
+mkcoadd.pl: Frame 10: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.146323328898, 50.1883335029732 deg.
+mkcoadd.pl: Frame 10: twist (+Y W. of N.) = 179.123494071904 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0327/494097/ztf_20180327494097_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 11: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.148661056492, 50.1960170922316 deg.
+mkcoadd.pl: Frame 11: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.148654331699, 50.1957358447512 deg.
+mkcoadd.pl: Frame 11: twist (+Y W. of N.) = 179.123055338656 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0420/495764/ztf_20180420495764_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 12: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.151964002536, 50.2116286953894 deg.
+mkcoadd.pl: Frame 12: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.151957452708, 50.2113474660044 deg.
+mkcoadd.pl: Frame 12: twist (+Y W. of N.) = 179.14609250077 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0327/451806/ztf_20180327451806_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 13: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.146710505547, 50.1936816593637 deg.
+mkcoadd.pl: Frame 13: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.146703750698, 50.1934004010589 deg.
+mkcoadd.pl: Frame 13: twist (+Y W. of N.) = 179.11912736251 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0327/434931/ztf_20180327434931_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 14: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.146069165001, 50.1918405603183 deg.
+mkcoadd.pl: Frame 14: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.146062382247, 50.191559304202 deg.
+mkcoadd.pl: Frame 14: twist (+Y W. of N.) = 179.115447930424 deg.
+
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from /ztf/archive/sci/2018/0420/471852/ztf_20180420471852_000763_zg_c14_o_q3_sciimg.fits to enable sky <-> image x,y transformations...
+mkcoadd.pl: Frame 15: center pixel ra,dec (at x,y=1536.5,1540.5) = 264.150609871492, 50.2122560832779 deg.
+mkcoadd.pl: Frame 15: top pixel ra,dec (at x,y=1536.5,1541.5) = 264.150603285391, 50.2119748452271 deg.
+mkcoadd.pl: Frame 15: twist (+Y W. of N.) = 179.141402016374 deg.
+
+mkcoadd.pl: CROTA2 for output co-add footprint = 179.1239269 deg.
+mkcoadd.pl: RA for center of output co-add footprint = 264.1486775 deg.
+mkcoadd.pl: Dec for center of output co-add footprint =  50.1936817 deg.
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 0
+Executing 'MskAndResample' on image 0...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0328/521725/ztf_20180328521725_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0328/521725/ztf_20180328521725_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180328521725_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180328521725_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180328521725_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 0:
+"swarp ancdir/ztf_20180328521725_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180328521725_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180328521725_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.03817077710568"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 1
+Executing 'MskAndResample' on image 1...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0328/463970/ztf_20180328463970_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0328/463970/ztf_20180328463970_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180328463970_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180328463970_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180328463970_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 1:
+"swarp ancdir/ztf_20180328463970_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180328463970_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180328463970_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.04564628783646"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 2
+Executing 'MskAndResample' on image 2...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0328/520347/ztf_20180328520347_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0328/520347/ztf_20180328520347_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180328520347_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180328520347_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180328520347_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 2:
+"swarp ancdir/ztf_20180328520347_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180328520347_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180328520347_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.03932936996012"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 3
+Executing 'MskAndResample' on image 3...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0328/498414/ztf_20180328498414_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0328/498414/ztf_20180328498414_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180328498414_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180328498414_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180328498414_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 3:
+"swarp ancdir/ztf_20180328498414_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180328498414_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180328498414_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.03244280009989"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 4
+Executing 'MskAndResample' on image 4...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0328/449768/ztf_20180328449768_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0328/449768/ztf_20180328449768_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180328449768_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180328449768_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180328449768_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 4:
+"swarp ancdir/ztf_20180328449768_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180328449768_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180328449768_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.06379905453509"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 5
+Executing 'MskAndResample' on image 5...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0419/338727/ztf_20180419338727_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0419/338727/ztf_20180419338727_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180419338727_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180419338727_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180419338727_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 5:
+"swarp ancdir/ztf_20180419338727_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180419338727_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180419338727_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.10923917715844"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 6
+Executing 'MskAndResample' on image 6...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0327/521493/ztf_20180327521493_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0327/521493/ztf_20180327521493_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180327521493_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180327521493_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180327521493_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 6:
+"swarp ancdir/ztf_20180327521493_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180327521493_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180327521493_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.00327964229922"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 7
+Executing 'MskAndResample' on image 7...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0327/466852/ztf_20180327466852_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0327/466852/ztf_20180327466852_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180327466852_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180327466852_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180327466852_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 7:
+"swarp ancdir/ztf_20180327466852_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180327466852_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180327466852_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.00505632265921"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 8
+Executing 'MskAndResample' on image 8...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0327/493113/ztf_20180327493113_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0327/493113/ztf_20180327493113_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180327493113_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180327493113_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180327493113_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 8:
+"swarp ancdir/ztf_20180327493113_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180327493113_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180327493113_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.00652090633209"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 9
+Executing 'MskAndResample' on image 9...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0327/465868/ztf_20180327465868_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0327/465868/ztf_20180327465868_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180327465868_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180327465868_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180327465868_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 9:
+"swarp ancdir/ztf_20180327465868_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180327465868_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180327465868_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.01198855286927"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 10
+Executing 'MskAndResample' on image 10...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0419/364259/ztf_20180419364259_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0419/364259/ztf_20180419364259_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180419364259_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180419364259_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180419364259_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 10:
+"swarp ancdir/ztf_20180419364259_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180419364259_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180419364259_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.06938970786265"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 11
+Executing 'MskAndResample' on image 11...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0327/494097/ztf_20180327494097_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0327/494097/ztf_20180327494097_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180327494097_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180327494097_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180327494097_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 11:
+"swarp ancdir/ztf_20180327494097_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180327494097_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180327494097_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.00348203068922"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 12
+Executing 'MskAndResample' on image 12...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0420/495764/ztf_20180420495764_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0420/495764/ztf_20180420495764_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180420495764_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180420495764_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180420495764_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 12:
+"swarp ancdir/ztf_20180420495764_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180420495764_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180420495764_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.02741239293228"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 13
+Executing 'MskAndResample' on image 13...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0327/451806/ztf_20180327451806_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0327/451806/ztf_20180327451806_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180327451806_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180327451806_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180327451806_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 13:
+"swarp ancdir/ztf_20180327451806_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180327451806_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180327451806_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.01992162486331"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 14
+Executing 'MskAndResample' on image 14...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0327/434931/ztf_20180327434931_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0327/434931/ztf_20180327434931_000763_zg_c14_o_q3_mskimg.fits
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180327434931_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180327434931_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180327434931_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 14:
+"swarp ancdir/ztf_20180327434931_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180327434931_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180327434931_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.02256094133154"
+
+mkcoadd.pl: 'MskAndResample' thread spawned on image 15
+Executing 'MskAndResample' on image 15...
+Storing sci frame and mask pixels from: /ztf/archive/sci/2018/0420/471852/ztf_20180420471852_000763_zg_c14_o_q3_sciimg.fits; /ztf/archive/sci/2018/0420/471852/ztf_20180420471852_000763_zg_c14_o_q3_mskimg.fits
+mkcoadd.pl: Interp file for image 0: ancdir/ztf_20180328521725_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 2.139 pix; ZP = 26.284328 mag; ZPUNC = 0.0000035878 mag; clrcoeff = -0.048958; clrcounc = 0.0000066771; nmatches = 1186; pcolor = g - R; scalefac = 1.03817077710568; medlevel = 113.151847839355 DN; raw min saturation level = 49349.75390625 DN; exptime = 30. sec; obsjd = 2458206.0217361 days; astn = 1650; astrms1 = 9.307194012802e-06 deg; astrms2 = 1.049731675205e-05 deg; astchisq = 4.335840225219727; #pixels masked = 715
+mkcoadd.pl: Interp file for image 1: ancdir/ztf_20180328463970_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 2.223 pix; ZP = 26.276538 mag; ZPUNC = 0.0000066254 mag; clrcoeff = -0.057312; clrcounc = 0.0000130024; nmatches = 1150; pcolor = g - R; scalefac = 1.04564628783646; medlevel = 378.338592529297 DN; raw min saturation level = 50027.7421875 DN; exptime = 30. sec; obsjd = 2458205.9639699 days; astn = 1604; astrms1 = 1.033237626554e-05 deg; astrms2 = 1.100394197492e-05 deg; astchisq = 4.557750225067139; #pixels masked = 629
+mkcoadd.pl: Interp file for image 2: ancdir/ztf_20180328520347_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 2.232 pix; ZP = 26.283117 mag; ZPUNC = 0.0000039016 mag; clrcoeff = -0.052333; clrcounc = 0.0000072749; nmatches = 1183; pcolor = g - R; scalefac = 1.03932936996012; medlevel = 103.144401550293 DN; raw min saturation level = 49527.625 DN; exptime = 30. sec; obsjd = 2458206.0203588 days; astn = 1663; astrms1 = 1.037601088382e-05 deg; astrms2 = 1.147163285896e-05 deg; astchisq = 4.937880039215088; #pixels masked = 677
+mkcoadd.pl: Interp file for image 3: ancdir/ztf_20180328498414_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 2.239 pix; ZP = 26.290335 mag; ZPUNC = 0.0000037150 mag; clrcoeff = -0.056776; clrcounc = 0.0000069195; nmatches = 1186; pcolor = g - R; scalefac = 1.03244280009989; medlevel = 137.500717163086 DN; raw min saturation level = 49501.16796875 DN; exptime = 30. sec; obsjd = 2458205.9984144 days; astn = 1657; astrms1 = 1.081226550025e-05 deg; astrms2 = 1.101695232809e-05 deg; astchisq = 4.794060230255127; #pixels masked = 686
+mkcoadd.pl: Interp file for image 4: ancdir/ztf_20180328449768_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 2.307 pix; ZP = 26.257851 mag; ZPUNC = 0.0000060704 mag; clrcoeff = -0.051387; clrcounc = 0.0000126387; nmatches = 1100; pcolor = g - R; scalefac = 1.06379905453509; medlevel = 472.289703369141 DN; raw min saturation level = 49947 DN; exptime = 30. sec; obsjd = 2458205.9497685 days; astn = 1585; astrms1 = 9.929360443286e-06 deg; astrms2 = 1.151041915036e-05 deg; astchisq = 4.644410133361816; #pixels masked = 600
+mkcoadd.pl: Interp file for image 5: ancdir/ztf_20180419338727_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 2.575 pix; ZP = 26.212437 mag; ZPUNC = 0.0000048311 mag; clrcoeff = -0.049526; clrcounc = 0.0000090980; nmatches = 1180; pcolor = g - R; scalefac = 1.10923917715844; medlevel = 78.7036209106445 DN; raw min saturation level = 50352.6015625 DN; exptime = 30. sec; obsjd = 2458227.8387269 days; astn = 1641; astrms1 = 1.164165369078e-05 deg; astrms2 = 1.363578630069e-05 deg; astchisq = 5.407609939575195; #pixels masked = 520
+mkcoadd.pl: Interp file for image 6: ancdir/ztf_20180327521493_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 2.626 pix; ZP = 26.321445 mag; ZPUNC = 0.0000049029 mag; clrcoeff = -0.073890; clrcounc = 0.0000091051; nmatches = 1180; pcolor = g - R; scalefac = 1.00327964229922; medlevel = 105.617149353027 DN; raw min saturation level = 49737.68359375 DN; exptime = 30. sec; obsjd = 2458205.0215046 days; astn = 1666; astrms1 = 1.165773176682e-05 deg; astrms2 = 1.249093906524e-05 deg; astchisq = 5.714900016784668; #pixels masked = 569
+mkcoadd.pl: Interp file for image 7: ancdir/ztf_20180327466852_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 2.653 pix; ZP = 26.319524 mag; ZPUNC = 0.0000044529 mag; clrcoeff = -0.091669; clrcounc = 0.0000082743; nmatches = 1183; pcolor = g - R; scalefac = 1.00505632265921; medlevel = 126.150634765625 DN; raw min saturation level = 49726.609375 DN; exptime = 30. sec; obsjd = 2458204.9668866 days; astn = 1655; astrms1 = 1.208211184611e-05 deg; astrms2 = 1.180410488336e-05 deg; astchisq = 5.174980163574219; #pixels masked = 562
+mkcoadd.pl: Interp file for image 8: ancdir/ztf_20180327493113_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 2.654 pix; ZP = 26.317943 mag; ZPUNC = 0.0000044127 mag; clrcoeff = -0.076788; clrcounc = 0.0000081724; nmatches = 1189; pcolor = g - R; scalefac = 1.00652090633209; medlevel = 81.2106781005859 DN; raw min saturation level = 49963.66796875 DN; exptime = 30. sec; obsjd = 2458204.9931597 days; astn = 1662; astrms1 = 1.191083109611e-05 deg; astrms2 = 1.219215829038e-05 deg; astchisq = 5.333449840545654; #pixels masked = 578
+mkcoadd.pl: Interp file for image 9: ancdir/ztf_20180327465868_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 2.775 pix; ZP = 26.312061 mag; ZPUNC = 0.0000050372 mag; clrcoeff = -0.074911; clrcounc = 0.0000095880; nmatches = 1166; pcolor = g - R; scalefac = 1.01198855286927; medlevel = 131.87336730957 DN; raw min saturation level = 49693.0078125 DN; exptime = 30. sec; obsjd = 2458204.9659144 days; astn = 1657; astrms1 = 1.346324998810e-05 deg; astrms2 = 1.260566932870e-05 deg; astchisq = 6.141910076141357; #pixels masked = 541
+mkcoadd.pl: Interp file for image 10: ancdir/ztf_20180419364259_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 2.751 pix; ZP = 26.252160 mag; ZPUNC = 0.0000044759 mag; clrcoeff = -0.042912; clrcounc = 0.0000083615; nmatches = 1181; pcolor = g - R; scalefac = 1.06938970786265; medlevel = 69.1811828613281 DN; raw min saturation level = 49340.87890625 DN; exptime = 30. sec; obsjd = 2458227.8642708 days; astn = 1643; astrms1 = 1.128700465192e-05 deg; astrms2 = 1.345012703828e-05 deg; astchisq = 5.004340171813965; #pixels masked = 527
+mkcoadd.pl: Interp file for image 11: ancdir/ztf_20180327494097_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 2.930 pix; ZP = 26.321226 mag; ZPUNC = 0.0000047874 mag; clrcoeff = -0.079095; clrcounc = 0.0000088927; nmatches = 1183; pcolor = g - R; scalefac = 1.00348203068922; medlevel = 81.1835174560547 DN; raw min saturation level = 49439.140625 DN; exptime = 30. sec; obsjd = 2458204.9941319 days; astn = 1655; astrms1 = 1.332670670031e-05 deg; astrms2 = 1.278171243938e-05 deg; astchisq = 5.808629989624023; #pixels masked = 518
+mkcoadd.pl: Interp file for image 12: ancdir/ztf_20180420495764_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 3.147 pix; ZP = 26.295638 mag; ZPUNC = 0.0000056226 mag; clrcoeff = -0.034385; clrcounc = 0.0000105761; nmatches = 1166; pcolor = g - R; scalefac = 1.02741239293228; medlevel = 84.1202697753906 DN; raw min saturation level = 49349.8515625 DN; exptime = 30. sec; obsjd = 2458228.9957755 days; astn = 1637; astrms1 = 1.219495074480e-05 deg; astrms2 = 1.395543926454e-05 deg; astchisq = 4.935309886932373; #pixels masked = 520
+mkcoadd.pl: Interp file for image 13: ancdir/ztf_20180327451806_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 3.202 pix; ZP = 26.303583 mag; ZPUNC = 0.0000074593 mag; clrcoeff = -0.068369; clrcounc = 0.0000154423; nmatches = 1098; pcolor = g - R; scalefac = 1.01992162486331; medlevel = 225.248413085938 DN; raw min saturation level = 49795.8515625 DN; exptime = 30. sec; obsjd = 2458204.9518403 days; astn = 1583; astrms1 = 1.342235362084e-05 deg; astrms2 = 1.358801501103e-05 deg; astchisq = 5.319940090179443; #pixels masked = 489
+mkcoadd.pl: Interp file for image 14: ancdir/ztf_20180327434931_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 3.278 pix; ZP = 26.300777 mag; ZPUNC = 0.0000087310 mag; clrcoeff = -0.076674; clrcounc = 0.0000194132; nmatches = 1047; pcolor = g - R; scalefac = 1.02256094133154; medlevel = 315.132995605469 DN; raw min saturation level = 49702.6015625 DN; exptime = 30. sec; obsjd = 2458204.9349653 days; astn = 1578; astrms1 = 1.470462546242e-05 deg; astrms2 = 1.397653239109e-05 deg; astchisq = 6.206769943237305; #pixels masked = 460
+Wrote NaN'd-out bad pix image file: ancdir/ztf_20180420471852_000763_zg_c14_o_q3_sciimg.fits
+Creating WCS header file: ancdir/ztf_20180420471852_000763_zg_c14_o_q3_sciimg.interp.head...
+
+> WARNING: FITS header data read in ancdir/ztf_20180420471852_000763_zg_c14_o_q3_sciimg.interp.head
+
+
+Successfully executed SWarp on image file 15:
+"swarp ancdir/ztf_20180420471852_000763_zg_c14_o_q3_sciimg.fits -c /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -RESAMPLING_TYPE LANCZOS3 -RESAMPLE_DIR ancdir -IMAGEOUT_NAME ancdir/ztf_20180420471852_000763_zg_c14_o_q3_sciimg.interp.fits -WEIGHTOUT_NAME ancdir/ztf_20180420471852_000763_zg_c14_o_q3_sciimg.weight.fits -BLANK_BADPIXELS Y -FSCALE_DEFAULT 1.02579269029982"
+
+mkcoadd.pl: Interp file for image 15: ancdir/ztf_20180420471852_000763_zg_c14_o_q3_sciimg.interp.fits; seeing = 3.230 pix; ZP = 26.297351 mag; ZPUNC = 0.0000056783 mag; clrcoeff = -0.036236; clrcounc = 0.0000106420; nmatches = 1159; pcolor = g - R; scalefac = 1.02579269029982; medlevel = 68.7453994750977 DN; raw min saturation level = 50336.7265625 DN; exptime = 30. sec; obsjd = 2458228.9718634 days; astn = 1640; astrms1 = 1.292686823675e-05 deg; astrms2 = 1.367454213096e-05 deg; astchisq = 4.949140071868896; #pixels masked = 481
+
+mkcoadd.pl: Number of frames to co-add after checking for a valid ZP value = 16 (0 frames skipped)
+
+mkcoadd.pl: Global (scaled median) level to add to final co-add intensity products = 112.335973840254 DN
+mkcoadd.pl: Median of all input seeing values = 2.6535 pixels
+mkcoadd.pl: Approx. saturation level for co-add header = 50903.0288325625 DN
+mkcoadd.pl: zprms = 0.026333235423001
+mkcoadd.pl: zpmin, zpmax = 26.212437, 26.321445
+mkcoadd.pl: medzpunc = 4.867e-06
+mkcoadd.pl: medcolterm = -0.057044
+mkcoadd.pl: medcoltermunc = 9.10155e-06
+mkcoadd.pl: mednmatches = 1180
+mkcoadd.pl: totexptime = 480
+mkcoadd.pl: minseeing, maxseeing = 2.139, 3.278
+mkcoadd.pl: jdstart, jdend = 2458204.9349653, 2458228.9957755
+mkcoadd.pl: astnmed, astnmin, astnmax = 1646.5, 1578, 1666
+mkcoadd.pl: astrms1med, astrms1min, astrms1max = 1.1784281431465e-05, 9.307194012802e-06, 1.470462546242e-05
+mkcoadd.pl: astrms2med, astrms2min, astrms2max = 1.254830419697e-05, 1.049731675205e-05, 1.397653239109e-05
+mkcoadd.pl: astchisqmed, astchisqmin, astchisqmax = 5.08966016769409, 4.33584022521973, 6.2067699432373
+mkcoadd.pl: Minimum scale factor used in ZP matching = 1.00327964229922
+mkcoadd.pl: Maximum scale factor used in ZP matching = 1.10923917715844
+mkcoadd.pl: Median scale factor used in ZP matching = 1.02660254161605
+
+mkcoadd.pl: Defining image header keywords for products...
+
+mkcoadd.pl: Using 16 frames (all input frames) for median/robust-sigma computations...
+mkcoadd.pl: Allocating 0.65536 GB for 16 x 3200 x 3200 pixel cube...
+
+
+mkcoadd.pl: Computing stack trimmed (optionally seeing-weighted) average, std-dev, and uncert images...
+mkcoadd.pl: brute force masking of all pixels with depth <= 11.200000 (0.7 x 16)...
+mkcoadd.pl: Wrote: ztf_000763_zg_c14_q3_refimg.fits
+mkcoadd.pl: Wrote: ztf_000763_zg_c14_q3_refunc.fits
+mkcoadd.pl: Wrote: ztf_000763_zg_c14_q3_refcov.fits
+mkcoadd.pl: Wrote: ztf_000763_zg_c14_q3_refmsk.fits
+mkcoadd.pl: Removed ancillary dir: ancdir
+
+Successfully executed "mkcoadd.pl", version 5.1
+
+ZtfPdlUtils.pl: ExecuteProcess: status from /ztf/ops/sw/180116/ztf/src/pl/perl/mkcoadd.pl = 0
+refimage.pl: elapsed time for executing /ztf/ops/sw/180116/ztf/src/pl/perl/mkcoadd.pl [sec] = 199.660149
+refimage.pl: Deriving image metrics and parameters for use in daophot/allstar...
+
+refimage.pl: elapsed time to compute/extract image QA metrics and generate minimally bckgnd-subtracted image for input into PSF-creation/source extraction [sec] = 3.662110
+refimage.pl: estimating spatially-varing PSF...
+createpsfsci: input FITS image for deriving PSF using daophot/allstar after internal masking = ztf_000763_zg_c14_q3_ref.fits...
+createpsfsci: supplied parameters (external to daophot):
+createpsfsci: params_dao = /ztf/ops/sw/180116/ztf/cdf/daophotref.opt
+createpsfsci: params_pht = /ztf/ops/sw/180116/ztf/cdf/photoref.opt
+createpsfsci: picknum_psf = 1000 sources
+createpsfsci: pickmag_psf = 22 mag
+createpsfsci: re_dao_psf = 1.31289211717704 DN (bckgnd sigma)
+createpsfsci: ga_dao_psf = 96.6293688991752 e-/DN (electronic gain)
+createpsfsci: minbck = 0 DN (background level to subtract)
+createpsfsci: lo_dao_psf = 50.0 sigma (for min pixel value)
+createpsfsci: lo_dao_psf is equiv. to -65.6446058588519 DN (in bck-sub img)
+createpsfsci: hi_dao_psf = 50903.029 DN (max use pixel value)
+createpsfsci: th_dao_psf = 15.0 sigma (find threshold)
+createpsfsci: fw_dao_psf = 2.65 pix (proxy for image FWHM)
+createpsfsci: wa_als_psf = 0 (internal verbosity flag)
+createpsfsci: ma_als_psf = 100 (max group size for allstar)
+createpsfsci: is_als_psf = 2.5 pix (inner sky radius for allstar)
+createpsfsci: os_als_psf = 20.0 pix (outer sky radius for allstar)
+createpsfsci: fi_als_psf = 1.6 pix (PSF fitting radius)
+createpsfsci: ps_als_psf = 9 pix (PSF image half-size)
+createpsfsci: lr_dao_psf = -0.6 (lo thres. for roundness)
+createpsfsci: hr_dao_psf = 0.6 (hi thres. for roundness)
+createpsfsci: apsizes = 4.5 5.5 6.5 7.5 8.5 9.5 pixels (aperture sizes; modified depending on input FWHM value)
+createpsfsci: neimax = 10000 (keep the brightest neimax neighbors over all PSF-picked stars to support 2nd pass refinement)
+createpsfsci: threshold for number of stars below which PSF will not be created = 10
+createpsfsci: wrote ztf_000763_zg_c14_q3_refcreatepsf.fits (with masked pixels; will derive PSF from this image)
+
+ Value unacceptable --- please re-enter
+
+                                                                                                                                                                                                                                      READ NOISE (ADU; 1 frame) = 
+ Value unacceptable --- please re-enter
+
+                                                                                                                                                                                                                                         GAIN (e-/ADU; 1 frame) = 
+  READ NOISE (ADU; 1 frame) =     1.31        GAIN (e-/ADU; 1 frame) =    96.63
+ LOW GOOD DATUM (in sigmas) =     7.00      HIGH GOOD DATUM (in ADU) = 32766.50
+             FWHM OF OBJECT =     2.50         THRESHOLD (in sigmas) =     4.00
+  LS (LOW SHARPNESS CUTOFF) =     0.30    HS (HIGH SHARPNESS CUTOFF) =     1.40
+  LR (LOW ROUNDNESS CUTOFF) =    -1.00    HR (HIGH ROUNDNESS CUTOFF) =     1.00
+             WATCH PROGRESS =     1.00                FITTING RADIUS =     2.00
+                 PSF RADIUS =    11.00                  VARIABLE PSF =     0.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     0.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ Command: 
+                                                                                                                                                                                                             File with parameter values (default KEYBOARD INPUT): 
+  READ NOISE (ADU; 1 frame) =    15.00        GAIN (e-/ADU; 1 frame) =     1.50
+ LOW GOOD DATUM (in sigmas) =    10.00      HIGH GOOD DATUM (in ADU) = 10000.00
+             FWHM OF OBJECT =     2.50         THRESHOLD (in sigmas) =     5.00
+  LS (LOW SHARPNESS CUTOFF) =     0.20    HS (HIGH SHARPNESS CUTOFF) =     1.00
+  LR (LOW ROUNDNESS CUTOFF) =    -2.00    HR (HIGH ROUNDNESS CUTOFF) =     2.00
+             WATCH PROGRESS =    -2.00                FITTING RADIUS =     2.50
+                 PSF RADIUS =     9.00                  VARIABLE PSF =     1.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     5.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT> 
+  READ NOISE (ADU; 1 frame) =     1.31        GAIN (e-/ADU; 1 frame) =    96.63
+ LOW GOOD DATUM (in sigmas) =    50.00      HIGH GOOD DATUM (in ADU) = 50903.03
+             FWHM OF OBJECT =     2.65         THRESHOLD (in sigmas) =    15.00
+  LS (LOW SHARPNESS CUTOFF) =     0.20    HS (HIGH SHARPNESS CUTOFF) =     1.00
+  LR (LOW ROUNDNESS CUTOFF) =    -0.60    HR (HIGH ROUNDNESS CUTOFF) =     0.60
+             WATCH PROGRESS =    -2.00                FITTING RADIUS =     1.60
+                 PSF RADIUS =     9.00                  VARIABLE PSF =     1.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     5.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ Command: 
+     ztf_000763_zg_c14_q3_refcreatepsf...                                                                                                                                                                                                                            
+
+
+                                      Picture size:   3200  3200
+
+
+ Command: 
+      Sky mode and standard deviation =    0.059    1.527
+
+              Clipped mean and median =    0.186    0.143
+   Number of pixels used (after clip) = 9,051
+                       Relative error = 1.18
+
+                 Number of frames averaged, summed:                                                                                                                                                                                               File for positions (default ztf_000763_zg_c14_q3_refcreatepsf.coo): 
+ 
+
+   3076 stars.
+
+
+                           Are you happy with this? 
+ Command: 
+                                                                                                                                                                                                                    File with aperture radii (default photo.opt): 
+  A1  RADIUS OF APERTURE  1 =     4.50     A2  RADIUS OF APERTURE  2 =     5.50
+  A3  RADIUS OF APERTURE  3 =     6.50     A4  RADIUS OF APERTURE  4 =     7.50
+  A5  RADIUS OF APERTURE  5 =     8.50     A6  RADIUS OF APERTURE  6 =     9.50
+  A7  RADIUS OF APERTURE  7 =     0.00     A8  RADIUS OF APERTURE  8 =     0.00
+  A9  RADIUS OF APERTURE  9 =     0.00     AA  RADIUS OF APERTURE 10 =     0.00
+  AB  RADIUS OF APERTURE 11 =     0.00     AC  RADIUS OF APERTURE 12 =     0.00
+  IS       INNER SKY RADIUS =    10.00     OS       OUTER SKY RADIUS =    25.00
+
+ PHO>  PHO>  PHO>  PHO>  PHO>  PHO>  PHO> 
+  A1  RADIUS OF APERTURE  1 =     4.50     A2  RADIUS OF APERTURE  2 =     5.50
+  A3  RADIUS OF APERTURE  3 =     6.50     A4  RADIUS OF APERTURE  4 =     7.50
+  A5  RADIUS OF APERTURE  5 =     8.50     A6  RADIUS OF APERTURE  6 =     9.50
+  A7  RADIUS OF APERTURE  7 =     0.00     A8  RADIUS OF APERTURE  8 =     0.00
+  A9  RADIUS OF APERTURE  9 =     0.00     AA  RADIUS OF APERTURE 10 =     0.00
+  AB  RADIUS OF APERTURE 11 =     0.00     AC  RADIUS OF APERTURE 12 =     0.00
+  IS       INNER SKY RADIUS =    10.00     OS       OUTER SKY RADIUS =    25.00
+
+                                                                                                                                                                                                      Input position file (default ztf_000763_zg_c14_q3_ref.coo):                                                                                                                                                                                                       Output file (default ztf_000763_zg_c14_q3_refcreatepsf.ap): 
+  Estimated magnitude limit (Aperture 1): 19.1 +- 0.1 per star.                  
+
+
+ Command: 
+                                                                                                                                                                                                           Input file name (default ztf_000763_zg_c14_q3_ref.ap):        Desired number of stars, faintest magnitude:                                                                                                                                                                                                          Output file name (default ztf_000763_zg_c14_q3_ref.lst): 
+      1000 suitable candidates were found.
+
+
+ Command: 
+
+ Good bye.
+
+createpsfsci: successfully executed 'find', 'phot', and 'pick' in daophot on ztf_000763_zg_c14_q3_refcreatepsf.fits
+createpsfsci: found 1000 stars for PSF-estimation in ztf_000763_zg_c14_q3_ref.lst
+
+ Value unacceptable --- please re-enter
+
+                                                                                                                                                                                                                                      READ NOISE (ADU; 1 frame) = 
+ Value unacceptable --- please re-enter
+
+                                                                                                                                                                                                                                         GAIN (e-/ADU; 1 frame) = 
+  READ NOISE (ADU; 1 frame) =     1.31        GAIN (e-/ADU; 1 frame) =    96.63
+ LOW GOOD DATUM (in sigmas) =     7.00      HIGH GOOD DATUM (in ADU) = 32766.50
+             FWHM OF OBJECT =     2.50         THRESHOLD (in sigmas) =     4.00
+  LS (LOW SHARPNESS CUTOFF) =     0.30    HS (HIGH SHARPNESS CUTOFF) =     1.40
+  LR (LOW ROUNDNESS CUTOFF) =    -1.00    HR (HIGH ROUNDNESS CUTOFF) =     1.00
+             WATCH PROGRESS =     1.00                FITTING RADIUS =     2.00
+                 PSF RADIUS =    11.00                  VARIABLE PSF =     0.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     0.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ Command: 
+                                                                                                                                                                                                             File with parameter values (default KEYBOARD INPUT): 
+  READ NOISE (ADU; 1 frame) =    15.00        GAIN (e-/ADU; 1 frame) =     1.50
+ LOW GOOD DATUM (in sigmas) =    10.00      HIGH GOOD DATUM (in ADU) = 10000.00
+             FWHM OF OBJECT =     2.50         THRESHOLD (in sigmas) =     5.00
+  LS (LOW SHARPNESS CUTOFF) =     0.20    HS (HIGH SHARPNESS CUTOFF) =     1.00
+  LR (LOW ROUNDNESS CUTOFF) =    -2.00    HR (HIGH ROUNDNESS CUTOFF) =     2.00
+             WATCH PROGRESS =    -2.00                FITTING RADIUS =     2.50
+                 PSF RADIUS =     9.00                  VARIABLE PSF =     1.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     5.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT> 
+  READ NOISE (ADU; 1 frame) =     1.31        GAIN (e-/ADU; 1 frame) =    96.63
+ LOW GOOD DATUM (in sigmas) =    50.00      HIGH GOOD DATUM (in ADU) = 50903.03
+             FWHM OF OBJECT =     2.65         THRESHOLD (in sigmas) =    15.00
+  LS (LOW SHARPNESS CUTOFF) =     0.20    HS (HIGH SHARPNESS CUTOFF) =     1.00
+  LR (LOW ROUNDNESS CUTOFF) =    -0.60    HR (HIGH ROUNDNESS CUTOFF) =     0.60
+             WATCH PROGRESS =    -2.00                FITTING RADIUS =     1.60
+                 PSF RADIUS =     9.00                  VARIABLE PSF =     1.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     5.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ Command: 
+     ztf_000763_zg_c14_q3_refcreatepsf...                                                                                                                                                                                                                            
+
+
+                                      Picture size:   3200  3200
+
+
+ Command: 
+                                                                                                                                                                                       File with aperture results (default ztf_000763_zg_c14_q3_refcreatepsf.ap):                                                                                                                                                                                                       File with PSF stars (default ztf_000763_zg_c14_q3_ref.lst):                                                                                                                                                                                                          File for the PSF (default ztf_000763_zg_c14_q3_ref.psf): 
+
+
+       Chi    Parameters...
+DCHI < 5.E-3!
+>>   0.0177   1.25293   1.24949   
+
+
+ Profile errors:
+
+   1356  0.027      2768  0.010       148  0.009      3053  0.021      1350  0.015   
+   1922  0.021      1429  0.016       854  0.007      1953  0.014      2157  0.016   
+   2079  0.010      2428  0.018      2378  0.022       245  0.013      1703  0.010   
+   1505  0.010      2240  0.014      1280  0.017       712  0.011       976  0.009   
+   2562  0.009      1645  0.013      2538  0.020       747  0.011       684  0.011   
+    932  0.009      1580  0.015      2802  0.018        36  0.009       255  0.012   
+    388  0.013       771  0.013      2272  0.015      2915  0.009      2970  0.014   
+   1530  0.010       199  0.010      1136  0.012       400  0.010       940  0.007   
+   2907  0.007      1148  0.016      2680  0.017      2095  0.023      1799  0.010   
+   1812  0.010      2754  0.009      1889  0.020      2788  0.017      1816  0.018   
+   1247  0.008      1623  0.003      2773  0.022      1523  0.007       130  0.008   
+    442  0.011      1583  0.004      2210  0.022      2352  0.016      2549  0.023   
+    861  0.011      2478  0.015      1070  0.007      1826  0.017      1875  0.012   
+   2609  0.014      1938  0.017      1820  0.017       574  0.011      1203  0.016   
+   2040  0.005       338  0.010       360  0.010      2545  0.009       981  0.012   
+   2323  0.008      2194  0.016      1291  0.017      3037  0.022      1589  0.005   
+   1965  0.014      1362  0.009      2328  0.020      1061  0.014      1160  0.016   
+    675  0.009       910  0.011       667  0.013        70  0.007        40  0.010   
+   1749  0.016       445  0.006      3008  0.007      2659  0.021       244  0.011   
+    393  0.011      1701  0.011      1344  0.011      1502  0.005      1288  0.009   
+   2041  0.017      2411  0.018      1369  0.006      2676  0.019      1632  0.020   
+     64  0.011      2671  0.019      2453  0.017       288  0.009      1435  0.014   
+    463  0.008      2426  0.013       509  0.009      2983  0.023      1352  0.014   
+   1956  0.007      1715  0.006       829  0.011      2792  0.023      2388  0.015   
+   1226  0.007      1451  0.015        72  0.009      2329  0.009      1357  0.017   
+   1428  0.009      1856  0.020       902  0.009       159  0.006        52  0.012   
+     97  0.014        21  0.004      1744  0.018      2044  0.004        20  0.011   
+   1981  0.016      1318  0.009       323  0.012       262  0.009      2690  0.017   
+   2326  0.010      1786  0.018      2955  0.021      2972  0.024      1267  0.011   
+   1440  0.004       579  0.011       965  0.010      2541  0.023      2561  0.018   
+    214  0.012      1189  0.014      2256  0.015      1111  0.013       146  0.011   
+   2976  0.017      1844  0.013      1162  0.011       377  0.007      2114  0.018   
+    679  0.006       387  0.008      2405  0.022      2020  0.012       710  0.016   
+   1608  0.006       700  0.005      2649  0.013       742  0.008       834  0.007   
+   1851  0.007      2397  0.008      2734  0.014      1587  0.011      1648  0.013   
+   1491  0.015      2884  0.021       821  0.012      3027  0.022      2135  0.017   
+   2913  0.014      2141  0.017       191  0.007      1871  0.018      3055  0.025   
+    310  0.011      1386  0.012       822  0.012       688  0.013      2916  0.010   
+   2838  0.017      2067  0.017      1705  0.008       283  0.016      2602  0.020   
+   1186  0.007      2785  0.021      2854  0.014       753  0.010       133  0.015   
+    755  0.011      2814  0.024      2597  0.016      2519  0.022      3002  0.022   
+   1155  0.014       659  0.008      2522  0.007      2827  0.022      2384  0.018   
+   2967  0.017      2310  0.017       738  0.009       155  0.006      1626  0.018   
+   2880  0.021       956  0.012       334  0.011      2345  0.015       916  0.012   
+    960  0.008      3068  0.024      1732  0.015      1311  0.012       735  0.010   
+   2091  0.021      2813  0.022      1723  0.008       544  0.016      1418  0.013   
+   1348  0.006      2964  0.013      1216  0.011      1234  0.012      1797  0.021   
+   2432  0.013       298  0.012      2016  0.015       636  0.012      3016  0.013   
+   2022  0.013      1184  0.005      1900  0.016      1404  0.015      1772  0.012   
+   2642  0.005      1546  0.012       398  0.014      2034  0.015      2438  0.023   
+    666  0.010      1671  0.012       850  0.013      1618  0.016      1571  0.013   
+   2076  0.018       599  0.014      2749  0.016      2435  0.024       325  0.010   
+   2056  0.016       542  0.013      1823  0.018      1231  0.019      2199  0.024   
+   2322  0.013      2046  0.006      2192  0.015       848  0.017      2145  0.023   
+    497  0.011       369  0.010       385  0.014      2738  0.017      2765  0.016   
+    347  0.020       505  0.014      2820  0.007       744  0.014      2809  0.019   
+   1051  0.009      2274  0.020      3034  0.025       591  0.011      2335  0.022   
+   1220  0.007      2547  0.021      3059  0.028      1588  0.006       973  0.009   
+   1679  0.012       350  0.023       424  0.008      2242  0.021       242  0.017   
+   2825  0.016      2958  0.022      2954  0.012      2839  0.022      1728  0.014   
+   1102  0.004      2158  0.003      1622  0.010       174  0.012      2525  0.017   
+   2171  0.012      2540  0.019       571  0.011      2870  0.015      1477  0.016   
+   1337  0.015      1489  0.013       499  0.012      2631  0.019      2512  0.022   
+   1043  0.006      2678  0.019      2148  0.013       390  0.005       575  0.011   
+    111  0.003       531  0.011       570  0.008      2531  0.020      2257  0.017   
+     96  0.009      3025  0.022      2050  0.018      1615  0.020      2557  0.013   
+   1603  0.012        81  0.006        16  0.007      1040  0.002      2147  0.017   
+   2134  0.009      2494  0.014       436  0.008      1929  0.016      1574  0.008   
+   2191  0.022      1228  0.014        15  0.017        12  0.009      2163  0.012   
+    332  0.009       365  0.014       933  0.012      2174  0.025      1500  0.013   
+   1462  0.013      1413  0.010       612  0.007      2515  0.023      1334  0.018   
+    946  0.009      2425  0.020      2083  0.013       578  0.010      1339  0.014   
+    396  0.011      2718  0.021      2591  0.017      1047  0.011        37  0.011   
+    597  0.012      2646  0.012      2492  0.020       109  0.010      1994  0.022   
+   1791  0.010      2603  0.019       135  0.012       739  0.019      2019  0.008   
+   2508  0.015      2475  0.019      1222  0.013      2476  0.012      1035  0.015   
+   1185  0.014      1256  0.005      1984  0.013       558  0.012      2847  0.020   
+    770  0.014      1840  0.010        99  0.012      1863  0.024      1146  0.015   
+   2581  0.016      2359  0.015      2873  0.016        42  0.008      1911  0.013   
+    508  0.010       779  0.012      1417  0.013      1777  0.022      2807  0.015   
+
+
+
+ File with PSF stars and neighbors = ztf_000763_zg_c14_q3_ref.nei                                                                                                                                                                                                                                    
+
+ Command: 
+ Command: 
+
+ Good bye.
+
+createpsfsci: successfully executed initial 'psf' command in daophot on ztf_000763_zg_c14_q3_refcreatepsf.fits
+createpsfsci: ztf_000763_zg_c14_q3_ref.nei contains 488 sources
+createpsfsci: ztf_000763_zg_c14_q3_ref.nei already contains <= 10000 sources; continuing...
+
+ Error opening input file allstar.opt                                            
+
+
+             FITTING RADIUS =     2.50        CE (CLIPPING EXPONENT) =     6.00
+      REDETERMINE CENTROIDS =     1.00           CR (CLIPPING RANGE) =     2.50
+             WATCH PROGRESS =     1.00            MAXIMUM GROUP SIZE =    50.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+      IS (INNER SKY RADIUS) =     0.00         OS (OUTER SKY RADIUS) =     0.00
+
+ OPT>  OPT>  OPT>  OPT>  OPT>  OPT> 
+             FITTING RADIUS =     1.60        CE (CLIPPING EXPONENT) =     6.00
+      REDETERMINE CENTROIDS =     1.00           CR (CLIPPING RANGE) =     2.50
+             WATCH PROGRESS =     0.00            MAXIMUM GROUP SIZE =   100.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+      IS (INNER SKY RADIUS) =     2.50         OS (OUTER SKY RADIUS) =    20.00
+
+                                  Input image name: 
+     ztf_000763_zg_c14_q3_refcreatepsf...                                                                                                                                                                                                                            
+
+
+                                      Picture size:   3200  3200
+
+
+                                                                                                                                                                                               File with the PSF (default ztf_000763_zg_c14_q3_refcreatepsf.psf):                                                                                                                                                                                                        Input file (default ztf_000763_zg_c14_q3_refcreatepsf.ap):                                                                                                                                                                                                          File for results (default ztf_000763_zg_c14_q3_ref.als):                                                                                                                                                                                                    Name for subtracted image (default ztf_000763_zg_c14_q3_refs): 
+     488 stars.  <<
+
+
+ I = iteration number
+
+ R = number of stars that remain
+
+ D = number of stars that disappeared
+
+ C = number of stars that converged
+
+
+
+      I       R       D       C
+      1     488       0       0  <<
+      2     488       0       0  <<
+      3     488       0       0  <<
+      4       9       0     479  <<
+      5       5       0     483  <<
+      6       0       0     488
+
+     Finished ztf_000763_zg_c14_q3_ref                                                                                                                                                                                                                                        
+
+
+ Good bye.
+
+createpsfsci: successfully performed psf-fit photometry to support PSF creation using allstar on ztf_000763_zg_c14_q3_refcreatepsf.fits
+
+ Value unacceptable --- please re-enter
+
+                                                                                                                                                                                                                                      READ NOISE (ADU; 1 frame) = 
+ Value unacceptable --- please re-enter
+
+                                                                                                                                                                                                                                         GAIN (e-/ADU; 1 frame) = 
+  READ NOISE (ADU; 1 frame) =     1.31        GAIN (e-/ADU; 1 frame) =    96.63
+ LOW GOOD DATUM (in sigmas) =     7.00      HIGH GOOD DATUM (in ADU) = 32766.50
+             FWHM OF OBJECT =     2.50         THRESHOLD (in sigmas) =     4.00
+  LS (LOW SHARPNESS CUTOFF) =     0.30    HS (HIGH SHARPNESS CUTOFF) =     1.40
+  LR (LOW ROUNDNESS CUTOFF) =    -1.00    HR (HIGH ROUNDNESS CUTOFF) =     1.00
+             WATCH PROGRESS =     1.00                FITTING RADIUS =     2.00
+                 PSF RADIUS =    11.00                  VARIABLE PSF =     0.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     0.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ Command: 
+                                                                                                                                                                                                             File with parameter values (default KEYBOARD INPUT): 
+  READ NOISE (ADU; 1 frame) =    15.00        GAIN (e-/ADU; 1 frame) =     1.50
+ LOW GOOD DATUM (in sigmas) =    10.00      HIGH GOOD DATUM (in ADU) = 10000.00
+             FWHM OF OBJECT =     2.50         THRESHOLD (in sigmas) =     5.00
+  LS (LOW SHARPNESS CUTOFF) =     0.20    HS (HIGH SHARPNESS CUTOFF) =     1.00
+  LR (LOW ROUNDNESS CUTOFF) =    -2.00    HR (HIGH ROUNDNESS CUTOFF) =     2.00
+             WATCH PROGRESS =    -2.00                FITTING RADIUS =     2.50
+                 PSF RADIUS =     9.00                  VARIABLE PSF =     1.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     5.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT> 
+  READ NOISE (ADU; 1 frame) =     1.31        GAIN (e-/ADU; 1 frame) =    96.63
+ LOW GOOD DATUM (in sigmas) =    50.00      HIGH GOOD DATUM (in ADU) = 50903.03
+             FWHM OF OBJECT =     2.65         THRESHOLD (in sigmas) =    15.00
+  LS (LOW SHARPNESS CUTOFF) =     0.20    HS (HIGH SHARPNESS CUTOFF) =     1.00
+  LR (LOW ROUNDNESS CUTOFF) =    -0.60    HR (HIGH ROUNDNESS CUTOFF) =     0.60
+             WATCH PROGRESS =    -2.00                FITTING RADIUS =     1.60
+                 PSF RADIUS =     9.00                  VARIABLE PSF =     1.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     5.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ Command: 
+     ztf_000763_zg_c14_q3_refcreatepsf...                                                                                                                                                                                                                            
+
+
+                                      Picture size:   3200  3200
+
+
+ Command: 
+                                                                                                                                                                                               File with the PSF (default ztf_000763_zg_c14_q3_refcreatepsf.psf):                                                                                                                                                                                             File with photometry (default ztf_000763_zg_c14_q3_refcreatepsf.nst): 
+ Error opening input file ztf_000763_zg_c14_q3_refcreatepsf.nst                                                                                                                                                                                                                           
+
+                                                                                                                                                                                                                          File with photometry (default GIVE UP):                      Do you have stars to leave in?                                                                                                                                                                                                       File with star list (default ztf_000763_zg_c14_q3_ref.lst):                                                                                                                                                                                                    Name for subtracted image (default ztf_000763_zg_c14_q3_refs): 
+ Command: 
+     ztf_000763_zg_c14_q3_refdaosub...                                                                                                                                                                                                                               
+
+
+                                      Picture size:   3200  3200
+
+
+ Command: 
+                                                                                                                                                                                          File with aperture results (default ztf_000763_zg_c14_q3_refdaosub.ap):                                                                                                                                                                                                       File with PSF stars (default ztf_000763_zg_c14_q3_ref.lst):                                                                                                                                                                                                          File for the PSF (default ztf_000763_zg_c14_q3_ref.psf): 
+ This file already exists: ztf_000763_zg_c14_q3_ref.psf                                                                                                                                                                                                                                    
+
+                                                                                                                                                                                                                        New output file name (default OVERWRITE): 
+
+
+       Chi    Parameters...
+DCHI < 5.E-3!
+>>   0.0177   1.25302   1.24958   
+
+
+ Profile errors:
+
+   1356  0.027      2768  0.010       148  0.009      3053  0.021      1350  0.015   
+   1922  0.021      1429  0.016       854  0.007      1953  0.014      2157  0.016   
+   2079  0.010      2428  0.019      2378  0.022       245  0.013      1703  0.011   
+   1505  0.010      2240  0.014      1280  0.017       712  0.011       976  0.009   
+   2562  0.009      1645  0.013      2538  0.020       747  0.011       684  0.011   
+    932  0.009      1580  0.015      2802  0.018        36  0.009       255  0.012   
+    388  0.013       771  0.013      2272  0.015      2915  0.009      2970  0.014   
+   1530  0.010       199  0.010      1136  0.012       400  0.010       940  0.007   
+   2907  0.007      1148  0.016      2680  0.017      2095  0.024      1799  0.010   
+   1812  0.010      2754  0.009      1889  0.020      2788  0.017      1816  0.018   
+   1247  0.008      1623  0.003      2773  0.022      1523  0.007       130  0.008   
+    442  0.011      1583  0.004      2210  0.022      2352  0.016      2549  0.023   
+    861  0.011      2478  0.015      1070  0.007      1826  0.017      1875  0.012   
+   2609  0.014      1938  0.017      1820  0.017       574  0.011      1203  0.016   
+   2040  0.005       338  0.010       360  0.010      2545  0.009       981  0.012   
+   2323  0.008      2194  0.016      1291  0.017      3037  0.022      1589  0.005   
+   1965  0.014      1362  0.009      2328  0.020      1061  0.014      1160  0.016   
+    675  0.009       910  0.011       667  0.013        70  0.007        40  0.010   
+   1749  0.016       445  0.006      3008  0.007      2659  0.021       244  0.011   
+    393  0.011      1701  0.011      1344  0.011      1502  0.005      1288  0.009   
+   2041  0.017      2411  0.018      1369  0.006      2676  0.019      1632  0.020   
+     64  0.012      2671  0.019      2453  0.017       288  0.009      1435  0.014   
+    463  0.008      2426  0.013       509  0.009      2983  0.023      1352  0.014   
+   1956  0.007      1715  0.006       829  0.011      2792  0.023      2388  0.015   
+   1226  0.007      1451  0.015        72  0.009      2329  0.009      1357  0.017   
+   1428  0.009      1856  0.020       902  0.009       159  0.006        52  0.012   
+     97  0.014        21  0.004      1744  0.018      2044  0.004        20  0.011   
+   1981  0.016      1318  0.009       323  0.012       262  0.009      2690  0.017   
+   2326  0.010      1786  0.018      2955  0.021      2972  0.024      1267  0.011   
+   1440  0.004       579  0.011       965  0.010      2541  0.023      2561  0.018   
+    214  0.012      1189  0.014      2256  0.015      1111  0.013       146  0.011   
+   2976  0.017      1844  0.013      1162  0.011       377  0.007      2114  0.018   
+    679  0.006       387  0.008      2405  0.022      2020  0.013       710  0.016   
+   1608  0.006       700  0.005      2649  0.013       742  0.008       834  0.007   
+   1851  0.007      2397  0.008      2734  0.014      1587  0.011      1648  0.013   
+   1491  0.015      2884  0.021       821  0.012      3027  0.022      2135  0.017   
+   2913  0.014      2141  0.017       191  0.007      1871  0.018      3055  0.025   
+    310  0.011      1386  0.012       822  0.012       688  0.013      2916  0.010   
+   2838  0.017      2067  0.017      1705  0.008       283  0.016      2602  0.021   
+   1186  0.007      2785  0.021      2854  0.014       753  0.010       133  0.015   
+    755  0.011      2814  0.024      2597  0.016      2519  0.022      3002  0.022   
+   1155  0.014       659  0.008      2522  0.007      2827  0.022      2384  0.018   
+   2967  0.017      2310  0.017       738  0.009       155  0.006      1626  0.018   
+   2880  0.021       956  0.012       334  0.011      2345  0.015       916  0.012   
+    960  0.008      3068  0.024      1732  0.015      1311  0.012       735  0.010   
+   2091  0.021      2813  0.022      1723  0.008       544  0.016      1418  0.013   
+   1348  0.006      2964  0.013      1216  0.011      1234  0.012      1797  0.021   
+   2432  0.013       298  0.012      2016  0.015       636  0.012      3016  0.013   
+   2022  0.013      1184  0.005      1900  0.016      1404  0.015      1772  0.012   
+   2642  0.004      1546  0.012       398  0.015      2034  0.015      2438  0.024   
+    666  0.010      1671  0.012       850  0.013      1618  0.016      1571  0.013   
+   2076  0.018       599  0.014      2749  0.016      2435  0.024       325  0.010   
+   2056  0.016       542  0.013      1823  0.018      1231  0.019      2199  0.024   
+   2322  0.013      2046  0.006      2192  0.015       848  0.017      2145  0.023   
+    497  0.011       369  0.010       385  0.014      2738  0.017      2765  0.016   
+    347  0.020       505  0.014      2820  0.007       744  0.014      2809  0.019   
+   1051  0.009      2274  0.020      3034  0.025       591  0.012      2335  0.022   
+   1220  0.007      2547  0.021      3059  0.028      1588  0.006       973  0.009   
+   1679  0.012       350  0.023       424  0.008      2242  0.021       242  0.017   
+   2825  0.016      2958  0.022      2954  0.012      2839  0.022      1728  0.014   
+   1102  0.004      2158  0.003      1622  0.010       174  0.012      2525  0.017   
+   2171  0.012      2540  0.019       571  0.011      2870  0.015      1477  0.016   
+   1337  0.015      1489  0.013       499  0.012      2631  0.019      2512  0.022   
+   1043  0.006      2678  0.019      2148  0.013       390  0.005       575  0.011   
+    111  0.003       531  0.011       570  0.008      2531  0.020      2257  0.017   
+     96  0.009      3025  0.022      2050  0.018      1615  0.020      2557  0.013   
+   1603  0.013        81  0.006        16  0.007      1040  0.002      2147  0.017   
+   2134  0.009      2494  0.014       436  0.008      1929  0.016      1574  0.008   
+   2191  0.022      1228  0.014        15  0.017        12  0.009      2163  0.012   
+    332  0.009       365  0.014       933  0.012      2174  0.025      1500  0.013   
+   1462  0.013      1413  0.010       612  0.007      2515  0.023      1334  0.018   
+    946  0.009      2425  0.020      2083  0.013       578  0.010      1339  0.014   
+    396  0.011      2718  0.021      2591  0.017      1047  0.011        37  0.011   
+    597  0.012      2646  0.012      2492  0.020       109  0.010      1994  0.023   
+   1791  0.010      2603  0.019       135  0.012       739  0.019      2019  0.008   
+   2508  0.015      2475  0.019      1222  0.013      2476  0.012      1035  0.015   
+   1185  0.014      1256  0.005      1984  0.013       558  0.012      2847  0.020   
+    770  0.014      1840  0.010        99  0.012      1863  0.024      1146  0.015   
+   2581  0.016      2359  0.015      2873  0.016        42  0.008      1911  0.013   
+    508  0.010       779  0.012      1417  0.014      1777  0.023      2807  0.015   
+
+
+
+ File with PSF stars and neighbors = ztf_000763_zg_c14_q3_ref.nei                                                                                                                                                                                                                                    
+
+ This file already exists: ztf_000763_zg_c14_q3_ref.nei                                                                                                                                                                                                                                    
+
+                                                                                                                                                                                                                        New output file name (default OVERWRITE): 
+ Command: 
+
+ Good bye.
+
+createpsfsci: successfully executed 'substar' and 'psf' in daophot on ztf_000763_zg_c14_q3_refcreatepsf.fits
+createpsfsci: created daophot-formatted PSF text file: ztf_000763_zg_c14_q3_refdao.psf
+createpsfsci: creating FITS file containing montage of spatially varying PSFs: ztf_000763_zg_c14_q3_refdaopsf.fits...
+Wrote: ztf_000763_zg_c14_q3_refdaopsf.fits
+
+ Value unacceptable --- please re-enter
+
+                                                                                                                                                                                                                                      READ NOISE (ADU; 1 frame) = 
+ Value unacceptable --- please re-enter
+
+                                                                                                                                                                                                                                         GAIN (e-/ADU; 1 frame) = 
+  READ NOISE (ADU; 1 frame) =     1.31        GAIN (e-/ADU; 1 frame) =    96.63
+ LOW GOOD DATUM (in sigmas) =     7.00      HIGH GOOD DATUM (in ADU) = 32766.50
+             FWHM OF OBJECT =     2.50         THRESHOLD (in sigmas) =     4.00
+  LS (LOW SHARPNESS CUTOFF) =     0.30    HS (HIGH SHARPNESS CUTOFF) =     1.40
+  LR (LOW ROUNDNESS CUTOFF) =    -1.00    HR (HIGH ROUNDNESS CUTOFF) =     1.00
+             WATCH PROGRESS =     1.00                FITTING RADIUS =     2.00
+                 PSF RADIUS =    11.00                  VARIABLE PSF =     0.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     0.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ Command: 
+                                                                                                                                                                                                             File with parameter values (default KEYBOARD INPUT): 
+  READ NOISE (ADU; 1 frame) =    15.00        GAIN (e-/ADU; 1 frame) =     1.50
+ LOW GOOD DATUM (in sigmas) =    10.00      HIGH GOOD DATUM (in ADU) = 10000.00
+             FWHM OF OBJECT =     2.50         THRESHOLD (in sigmas) =     5.00
+  LS (LOW SHARPNESS CUTOFF) =     0.20    HS (HIGH SHARPNESS CUTOFF) =     1.00
+  LR (LOW ROUNDNESS CUTOFF) =    -2.00    HR (HIGH ROUNDNESS CUTOFF) =     2.00
+             WATCH PROGRESS =    -2.00                FITTING RADIUS =     2.50
+                 PSF RADIUS =     9.00                  VARIABLE PSF =     1.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     5.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ OPT> 
+ Command: 
+     ztf_000763_zg_c14_q3_refdaopsf...                                                                                                                                                                                                                               
+
+
+                                      Picture size:   3200  3200
+
+
+ Command: 
+                                                                                                                                                                                                  File with the PSF (default ztf_000763_zg_c14_q3_refdaopsf.psf):                                 Seed (any integer):                                    Photons per ADU:                                                                                                                                                                                                                           Input data file (default RANDOM STARS):                                                                                                                                                                                                      Output picture name (default ztf_000763_zg_c14_q3_refxymag): 
+ 
+                                                                                                                                                                                                                                  Input data file (default EXIT): 
+ Command: 
+
+ Good bye.
+
+createpsfsci: successfully executed 'addstar' in daophot on ztf_000763_zg_c14_q3_refdaopsf.fits using ztf_000763_zg_c14_q3_refxymag.txt
+createpsfsci: effective FWHM of zeroth-order GAUSSIAN PSF analytic model = 2.5026 pixels
+createpsfsci: input PSF FWHM (e.g., from SExtractor) = 2.65 pixels
+createpsfsci: % difference of model PSF FWHM estimate from input FWHM = -5.56226415094339 %
+refimage.pl: elapsed time to estimate spatially-varying PSF using DAOPhot [sec] = 4.442752
+refimage.pl: performing source extraction and PSF-fit photometry using DAOPhot/ALLStar...
+
+daopsffitsci: executing daophot/allstar to perform PSF-fit photometry on ztf_000763_zg_c14_q3_ref.fits using PSF in ztf_000763_zg_c14_q3_refdao.psf
+daopsffitsci: supplied parameters (external to daophot):
+daopsffitsci: params_dao = /ztf/ops/sw/180116/ztf/cdf/daophotref.opt
+daopsffitsci: params_pht = /ztf/ops/sw/180116/ztf/cdf/photoref.opt
+daopsffitsci: re_dao = 1.31289211717704 DN (bckgnd sigma)
+daopsffitsci: ga_dao = 96.6293688991752 e-/DN (electronic gain)
+daopsffitsci: lo_dao = 50.0 sigma (for min pixel value)
+daopsffitsci: hi_dao = 50903.029 DN (max use pixel value)
+daopsffitsci: th_dao = 2.0 sigma (find threshold)
+daopsffitsci: fw_dao = 2.5026 pix (proxy for image FWHM)
+daopsffitsci: wa_als = 0 (internal verbosity flag)
+daopsffitsci: ma_als = 100 (max group size for allstar)
+daopsffitsci: is_als = 0 pix (inner sky radius for allstar)
+daopsffitsci: os_als = 0 pix (outer sky radius for allstar)
+daopsffitsci: fi_als = 1.6 pix (PSF fitting radius)
+daopsffitsci: apsizes = 4.5 5.5 6.5 7.5 8.5 9.5 pixels (aperture sizes; modified depending on input FWHM value)
+daopsffitsci: magzp = 0 mag (mag zero-point to tie photometry)
+daopsffitsci: tchi = 1000.0 (threshold on allstar chi parameter)
+daopsffitsci: tshp = 100.0 (thres. on allstar sharp parameter)
+daopsffitsci: tsnr = 3.0 (thres. on psf-fit flux S/N values)
+daopsffitsci: offcor = 0.0 DN (flux-space offset correction)
+daopsffitsci: naxis1,naxis2 = 3200,3200 pixels
+daopsffitsci: nkeepdaodet = 200000 (retain the brightest 200000 detections from the initial daofind detection list for PSF-fitting)
+daopsffitsci: set parameters for 'find' step: lo_sharp = 0; pntmax_sharp = 1; hi_sharp = 2; newhi_dao = 65903.029 DN.
+
+ Value unacceptable --- please re-enter
+
+                                                                                                                                                                                                                                      READ NOISE (ADU; 1 frame) = 
+ Value unacceptable --- please re-enter
+
+                                                                                                                                                                                                                                         GAIN (e-/ADU; 1 frame) = 
+  READ NOISE (ADU; 1 frame) =     1.31        GAIN (e-/ADU; 1 frame) =    96.63
+ LOW GOOD DATUM (in sigmas) =     7.00      HIGH GOOD DATUM (in ADU) = 32766.50
+             FWHM OF OBJECT =     2.50         THRESHOLD (in sigmas) =     4.00
+  LS (LOW SHARPNESS CUTOFF) =     0.30    HS (HIGH SHARPNESS CUTOFF) =     1.40
+  LR (LOW ROUNDNESS CUTOFF) =    -1.00    HR (HIGH ROUNDNESS CUTOFF) =     1.00
+             WATCH PROGRESS =     1.00                FITTING RADIUS =     2.00
+                 PSF RADIUS =    11.00                  VARIABLE PSF =     0.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     0.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ Command: 
+                                                                                                                                                                                                             File with parameter values (default KEYBOARD INPUT): 
+  READ NOISE (ADU; 1 frame) =    15.00        GAIN (e-/ADU; 1 frame) =     1.50
+ LOW GOOD DATUM (in sigmas) =    10.00      HIGH GOOD DATUM (in ADU) = 10000.00
+             FWHM OF OBJECT =     2.50         THRESHOLD (in sigmas) =     5.00
+  LS (LOW SHARPNESS CUTOFF) =     0.20    HS (HIGH SHARPNESS CUTOFF) =     1.00
+  LR (LOW ROUNDNESS CUTOFF) =    -2.00    HR (HIGH ROUNDNESS CUTOFF) =     2.00
+             WATCH PROGRESS =    -2.00                FITTING RADIUS =     2.50
+                 PSF RADIUS =     9.00                  VARIABLE PSF =     1.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     5.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT> 
+  READ NOISE (ADU; 1 frame) =     1.31        GAIN (e-/ADU; 1 frame) =    96.63
+ LOW GOOD DATUM (in sigmas) =    50.00      HIGH GOOD DATUM (in ADU) = 65903.03
+             FWHM OF OBJECT =     2.50         THRESHOLD (in sigmas) =     2.00
+  LS (LOW SHARPNESS CUTOFF) =     0.00    HS (HIGH SHARPNESS CUTOFF) =     2.00
+  LR (LOW ROUNDNESS CUTOFF) =    -2.00    HR (HIGH ROUNDNESS CUTOFF) =     2.00
+             WATCH PROGRESS =    -2.00                FITTING RADIUS =     2.50
+                 PSF RADIUS =     9.00                  VARIABLE PSF =     1.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     5.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ Command: 
+     ztf_000763_zg_c14_q3_ref...                                                                                                                                                                                                                                     
+
+
+                                      Picture size:   3200  3200
+
+
+ Command: 
+      Sky mode and standard deviation =    0.059    1.527
+
+              Clipped mean and median =    0.186    0.143
+   Number of pixels used (after clip) = 9,051
+                       Relative error = 1.14
+
+                 Number of frames averaged, summed:                                                                                                                                                                                                        File for positions (default ztf_000763_zg_c14_q3_ref.coo): 
+ 
+
+ 202645 stars.
+
+
+                           Are you happy with this? 
+ Command: 
+
+ Good bye.
+
+daopsffitsci: successfully executed 'find' in daophot on ztf_000763_zg_c14_q3_ref.fits
+daopsffitsci: stored 202642 raw detections from ztf_000763_zg_c14_q3_ref.coo
+daopsffitsci: stored 191884 detections from ztf_000763_zg_c14_q3_ref.coo with 0 <= sharp <= 1
+daopsffitsci: stored 10203 possible-CR (spike) detections with 1 < sharp <= 2
+Argument "-0.609*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-0.064*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-0.956*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-0.871*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-10.099*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-0.589*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-2.252*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-0.607*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-0.515*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-1.785*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-1.104*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-0.753*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-0.222*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-0.836*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-6.196*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-0.859*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-0.704*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-0.790*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-6.262*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+Argument "-0.220*********" isn't numeric in subroutine entry at /ztf/ops/sw/180116/ext/lib/perl5/lib/perl5/x86_64-linux-thread-multi/PDL/Core.pm line 1257, <COO> line 202648.
+daopsffitsci: keeping all 191884 detections since this is <= maximum tolerable number (200000) for processing
+daopsffitsci: retaining 191884 brightest detections...
+
+ Value unacceptable --- please re-enter
+
+                                                                                                                                                                                                                                      READ NOISE (ADU; 1 frame) = 
+ Value unacceptable --- please re-enter
+
+                                                                                                                                                                                                                                         GAIN (e-/ADU; 1 frame) = 
+  READ NOISE (ADU; 1 frame) =     1.31        GAIN (e-/ADU; 1 frame) =    96.63
+ LOW GOOD DATUM (in sigmas) =     7.00      HIGH GOOD DATUM (in ADU) = 32766.50
+             FWHM OF OBJECT =     2.50         THRESHOLD (in sigmas) =     4.00
+  LS (LOW SHARPNESS CUTOFF) =     0.30    HS (HIGH SHARPNESS CUTOFF) =     1.40
+  LR (LOW ROUNDNESS CUTOFF) =    -1.00    HR (HIGH ROUNDNESS CUTOFF) =     1.00
+             WATCH PROGRESS =     1.00                FITTING RADIUS =     2.00
+                 PSF RADIUS =    11.00                  VARIABLE PSF =     0.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     0.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ Command: 
+                                                                                                                                                                                                             File with parameter values (default KEYBOARD INPUT): 
+  READ NOISE (ADU; 1 frame) =    15.00        GAIN (e-/ADU; 1 frame) =     1.50
+ LOW GOOD DATUM (in sigmas) =    10.00      HIGH GOOD DATUM (in ADU) = 10000.00
+             FWHM OF OBJECT =     2.50         THRESHOLD (in sigmas) =     5.00
+  LS (LOW SHARPNESS CUTOFF) =     0.20    HS (HIGH SHARPNESS CUTOFF) =     1.00
+  LR (LOW ROUNDNESS CUTOFF) =    -2.00    HR (HIGH ROUNDNESS CUTOFF) =     2.00
+             WATCH PROGRESS =    -2.00                FITTING RADIUS =     2.50
+                 PSF RADIUS =     9.00                  VARIABLE PSF =     1.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     5.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ OPT>  OPT>  OPT>  OPT>  OPT>  OPT>  OPT> 
+  READ NOISE (ADU; 1 frame) =     1.31        GAIN (e-/ADU; 1 frame) =    96.63
+ LOW GOOD DATUM (in sigmas) =    50.00      HIGH GOOD DATUM (in ADU) = 50903.03
+             FWHM OF OBJECT =     2.50         THRESHOLD (in sigmas) =     2.00
+  LS (LOW SHARPNESS CUTOFF) =     0.20    HS (HIGH SHARPNESS CUTOFF) =     1.00
+  LR (LOW ROUNDNESS CUTOFF) =    -2.00    HR (HIGH ROUNDNESS CUTOFF) =     2.00
+             WATCH PROGRESS =    -2.00                FITTING RADIUS =     2.50
+                 PSF RADIUS =     9.00                  VARIABLE PSF =     1.00
+              SKY ESTIMATOR =     0.00            ANALYTIC MODEL PSF =     1.00
+  EXTRA PSF CLEANING PASSES =     5.00       USE SATURATED PSF STARS =     0.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+
+ Command: 
+     ztf_000763_zg_c14_q3_ref...                                                                                                                                                                                                                                     
+
+
+                                      Picture size:   3200  3200
+
+
+ Command: 
+                                                                                                                                                                                                                    File with aperture radii (default photo.opt): 
+  A1  RADIUS OF APERTURE  1 =     4.50     A2  RADIUS OF APERTURE  2 =     5.50
+  A3  RADIUS OF APERTURE  3 =     6.50     A4  RADIUS OF APERTURE  4 =     7.50
+  A5  RADIUS OF APERTURE  5 =     8.50     A6  RADIUS OF APERTURE  6 =     9.50
+  A7  RADIUS OF APERTURE  7 =     0.00     A8  RADIUS OF APERTURE  8 =     0.00
+  A9  RADIUS OF APERTURE  9 =     0.00     AA  RADIUS OF APERTURE 10 =     0.00
+  AB  RADIUS OF APERTURE 11 =     0.00     AC  RADIUS OF APERTURE 12 =     0.00
+  IS       INNER SKY RADIUS =    10.00     OS       OUTER SKY RADIUS =    25.00
+
+ PHO> 
+                                                                                                                                                                                                      Input position file (default ztf_000763_zg_c14_q3_ref.coo):                                                                                                                                                                                                                Output file (default ztf_000763_zg_c14_q3_ref.ap): 
+ WARNING:  Corrupt star data encountered in input:
+
+
+   13523  1667.27   253.64  -10.099*********    0.218   -0.375/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+  199598  2404.00  3112.00   -6.262*********    0.803   -0.305/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+  188174   361.48  2944.62   -6.196*********    0.419    0.244/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+   33919  2102.00   568.00   -2.252*********    0.064    1.407/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+  118199  1809.00  1873.00   -1.785*********    0.723    0.823/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+  129611    86.48  2046.36   -1.104*********    0.601    0.103/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+     757    87.00    60.29   -0.956*********    0.729   -0.650/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+    5215  3152.00   125.22   -0.871*********    0.248    0.018/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+  190853    87.00  2986.10   -0.859*********    0.951   -1.688/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+  174732    87.00  2737.00   -0.836*********    0.126   -0.470/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+  193916    86.31  3034.00   -0.790*********    0.557    1.063/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+  129960    85.69  2052.38   -0.753*********    0.815   -0.729/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+  191805  3148.75  2999.00   -0.704*********    0.365    0.786/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+      43  1290.00    51.34   -0.609*********    0.104   -1.051/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+   80522  3150.38  1291.39   -0.607*********    0.413    0.435/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+   25750  3150.58   440.97   -0.589*********    0.042    0.185/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+   90895    89.10  1454.56   -0.515*********    0.525    0.965/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+  170504    87.00  2670.39   -0.222*********    0.138    0.960/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+  201906  1966.98  3139.08   -0.220*********    0.005    0.978/                                                                       
+
+ WARNING:  Corrupt star data encountered in input:
+
+
+     114  1946.51    51.00   -0.064*********    0.662    0.216/                                                                       
+
+  Estimated magnitude limit (Aperture 1): 21.2 +- 0.4 per star.                  
+
+
+ Command: 
+
+ Good bye.
+
+daopsffitsci: successfully executed 'phot' in daophot on ztf_000763_zg_c14_q3_ref.fits
+
+ Error opening input file allstar.opt                                            
+
+
+             FITTING RADIUS =     2.50        CE (CLIPPING EXPONENT) =     6.00
+      REDETERMINE CENTROIDS =     1.00           CR (CLIPPING RANGE) =     2.50
+             WATCH PROGRESS =     1.00            MAXIMUM GROUP SIZE =    50.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+      IS (INNER SKY RADIUS) =     0.00         OS (OUTER SKY RADIUS) =     0.00
+
+ OPT>  OPT>  OPT>  OPT>  OPT>  OPT> 
+             FITTING RADIUS =     1.60        CE (CLIPPING EXPONENT) =     6.00
+      REDETERMINE CENTROIDS =     1.00           CR (CLIPPING RANGE) =     2.50
+             WATCH PROGRESS =     0.00            MAXIMUM GROUP SIZE =   100.00
+       PERCENT ERROR (in %) =     0.75          PROFILE ERROR (in %) =     5.00
+      IS (INNER SKY RADIUS) =     0.00         OS (OUTER SKY RADIUS) =     0.00
+
+                                  Input image name: 
+     ztf_000763_zg_c14_q3_ref...                                                                                                                                                                                                                                     
+
+
+                                      Picture size:   3200  3200
+
+
+                                                                                                                                                                                                        File with the PSF (default ztf_000763_zg_c14_q3_ref.psf):                                                                                                                                                                                                                 Input file (default ztf_000763_zg_c14_q3_ref.ap):                                                                                                                                                                                                          File for results (default ztf_000763_zg_c14_q3_ref.als):                                                                                                                                                                                                    Name for subtracted image (default ztf_000763_zg_c14_q3_refs): 
+  191864 stars.  <<
+
+
+ I = iteration number
+
+ R = number of stars that remain
+
+ D = number of stars that disappeared
+
+ C = number of stars that converged
+
+
+
+      I       R       D       C
+      0  190309    1555       0
+      1  190295    1569       0  <<
+      2  189548    2316       0  <<
+      3  188979    2885       0  <<
+      4  158897   26223    6744  <<
+      5  150410   28159   13295  <<
+      6  140537   30598   20729  <<
+      7  124813   39012   28039  <<
+      8  101735   56494   33635  <<
+      9   77500   75253   39111  <<
+     10   50267   85692   55905  <<
+     11   36160   92763   62941  <<
+     12   25109   99476   67279  <<
+     13   15918  106255   69691  <<
+     14    7991  112774   71099  <<
+     15    1511  118360   71993  <<
+     16    1035  118396   72433  <<
+     17     769  118415   72680  <<
+     18     619  118422   72823  <<
+     19     497  118429   72938  <<
+     20     427  118433   73004  <<
+     21     364  118434   73066  <<
+     22     329  118436   73099  <<
+     23     296  118437   73131  <<
+     24     266  118439   73159  <<
+     25     244  118441   73179  <<
+     26     227  118441   73196  <<
+     27     210  118441   73213  <<
+     28     193  118442   73229  <<
+     29     179  118444   73241  <<
+     30     164  118447   73253  <<
+     31     157  118448   73259  <<
+     32     147  118448   73269  <<
+     33     141  118450   73273  <<
+     34     131  118452   73281  <<
+     35     126  118453   73285  <<
+     36     120  118454   73290  <<
+     37     117  118455   73292  <<
+     38     112  118456   73296  <<
+     39     104  118458   73302  <<
+     40     100  118459   73305  <<
+     41      97  118460   73307  <<
+     42      92  118460   73312  <<
+     43      89  118461   73314  <<
+     44      87  118462   73315  <<
+     45      81  118464   73319  <<
+     46      77  118466   73321  <<
+     47      73  118467   73324  <<
+     48      71  118468   73325  <<
+     49      68  118469   73327  <<
+     50      68  118469   73327  <<
+     51      66  118470   73328  <<
+     52      64  118470   73330  <<
+     53      59  118472   73333  <<
+     54      58  118472   73334  <<
+     55      55  118474   73335  <<
+     56      53  118475   73336  <<
+     57      53  118475   73336  <<
+     58      50  118477   73337  <<
+     59      47  118480   73337  <<
+     60      47  118480   73337  <<
+     61      46  118480   73338  <<
+     62      42  118483   73339  <<
+     63      40  118483   73341  <<
+     64      40  118483   73341  <<
+     65      37  118485   73342  <<
+     66      35  118485   73344  <<
+     67      35  118485   73344  <<
+     68      33  118485   73346  <<
+     69      31  118485   73348  <<
+     70      28  118487   73349  <<
+     71      27  118487   73350  <<
+     72      27  118487   73350  <<
+     73      26  118488   73350  <<
+     74      26  118488   73350  <<
+     75      26  118488   73350  <<
+     76      26  118488   73350  <<
+     77      26  118488   73350  <<
+     78      26  118488   73350  <<
+     79      25  118488   73351  <<
+     80      24  118489   73351  <<
+     81      24  118489   73351  <<
+     82      21  118492   73351  <<
+     83      21  118492   73351  <<
+     84      21  118492   73351  <<
+     85      19  118492   73353  <<
+     86      19  118492   73353  <<
+     87      18  118492   73354  <<
+     88      17  118493   73354  <<
+     89      16  118494   73354  <<
+     90      16  118494   73354  <<
+     91      16  118494   73354  <<
+     92      16  118494   73354  <<
+     93      16  118494   73354  <<
+     94      16  118494   73354  <<
+     95      16  118494   73354  <<
+     96      13  118496   73355  <<
+     97      12  118496   73356  <<
+     98      12  118496   73356  <<
+     99      12  118496   73356  <<
+    100      12  118496   73356  <<
+    101      12  118496   73356  <<
+    102      12  118496   73356  <<
+    103      12  118496   73356  <<
+    104      11  118496   73357  <<
+    105      11  118496   73357  <<
+    106      11  118496   73357  <<
+    107      11  118496   73357  <<
+    108      11  118496   73357  <<
+    109      11  118496   73357  <<
+    110      11  118496   73357  <<
+    111      11  118496   73357  <<
+    112      11  118496   73357  <<
+    113      11  118496   73357  <<
+    114      10  118497   73357  <<
+    115      10  118497   73357  <<
+    116      10  118497   73357  <<
+    117      10  118497   73357  <<
+    118       8  118498   73358  <<
+    119       8  118498   73358  <<
+    120       8  118498   73358  <<
+    121       7  118498   73359  <<
+    122       7  118498   73359  <<
+    123       7  118498   73359  <<
+    124       7  118498   73359  <<
+    125       7  118498   73359  <<
+    126       7  118498   73359  <<
+    127       7  118498   73359  <<
+    128       6  118498   73360  <<
+    129       6  118498   73360  <<
+    130       6  118498   73360  <<
+    131       6  118498   73360  <<
+    132       6  118498   73360  <<
+    133       6  118498   73360  <<
+    134       6  118498   73360  <<
+    135       6  118498   73360  <<
+    136       6  118498   73360  <<
+    137       6  118498   73360  <<
+    138       6  118498   73360  <<
+    139       6  118498   73360  <<
+    140       5  118499   73360  <<
+    141       5  118499   73360  <<
+    142       5  118499   73360  <<
+    143       5  118499   73360  <<
+    144       5  118499   73360  <<
+    145       5  118499   73360  <<
+    146       5  118499   73360  <<
+    147       5  118499   73360  <<
+    148       5  118499   73360  <<
+    149       5  118499   73360  <<
+    150       5  118499   73360  <<
+    151       5  118499   73360  <<
+    152       5  118499   73360  <<
+    153       5  118499   73360  <<
+    154       5  118499   73360  <<
+    155       5  118499   73360  <<
+    156       5  118499   73360  <<
+    157       5  118499   73360  <<
+    158       5  118499   73360  <<
+    159       5  118499   73360  <<
+    160       5  118499   73360  <<
+    161       4  118499   73361  <<
+    162       4  118499   73361  <<
+    163       4  118499   73361  <<
+    164       4  118499   73361  <<
+    165       4  118499   73361  <<
+    166       4  118499   73361  <<
+    167       4  118499   73361  <<
+    168       4  118499   73361  <<
+    169       4  118499   73361  <<
+    170       4  118499   73361  <<
+    171       4  118499   73361  <<
+    172       4  118499   73361  <<
+    173       4  118499   73361  <<
+    174       4  118499   73361  <<
+    175       4  118499   73361  <<
+    176       4  118499   73361  <<
+    177       4  118499   73361  <<
+    178       4  118499   73361  <<
+    179       4  118499   73361  <<
+    180       4  118499   73361  <<
+    181       4  118499   73361  <<
+    182       4  118499   73361  <<
+    183       4  118499   73361  <<
+    184       4  118499   73361  <<
+    185       4  118499   73361  <<
+    186       3  118499   73362  <<
+    187       3  118499   73362  <<
+    188       3  118499   73362  <<
+    189       3  118499   73362  <<
+    190       3  118499   73362  <<
+    191       3  118499   73362  <<
+    192       3  118499   73362  <<
+    193       3  118499   73362  <<
+    194       3  118499   73362  <<
+    195       3  118499   73362  <<
+    196       3  118499   73362  <<
+    197       3  118499   73362  <<
+    198       3  118499   73362  <<
+    199       3  118499   73362  <<
+    200       0  118499   73365
+
+     Finished ztf_000763_zg_c14_q3_ref                                                                                                                                                                                                                                        
+
+
+ Good bye.
+
+daopsffitsci: successfully performed psf-fit photometry using allstar on ztf_000763_zg_c14_q3_ref.fits
+daopsffitsci: stored 73365 rows from ztf_000763_zg_c14_q3_ref.als
+daopsffitsci: filtering output photometry (.als) table...
+daopsffitsci: retaining psf-fit sources with chi <= 1000.0 AND |sharp| <= 100.0 AND snr(flux) > 3.0 ...
+daopsffitsci: number of rows after filtering ztf_000763_zg_c14_q3_ref.als = 26781
+ZtfPdlUtils.pl: initializewcs: setting up WCS structure from ztf_000763_zg_c14_q3_ref.fits to enable sky <-> image x,y transformations...
+daopsffitsci: writing filtered photometry table with wcs to ztf_000763_zg_c14_q3_refpsfcat.tbl...
+daopsffitsci: making DS9 region file: ztf_000763_zg_c14_q3_refpsfcat.reg...
+refimage.pl: removed ztf_000763_zg_c14_q3_ref.fits
+refimage.pl: elapsed time to extract sources and perform PSF-fit photometry using DAOPhot/ALLStar [sec] = 94.660063
+refimage.pl: computing metrics on PSF-fit catalog...
+ZtfPdlUtils.pl: compmaglim: computing mag-limit using semi-empirical method...
+ZtfPdlUtils.pl: compmaglim: instrumental mag-limit from semi-empirical formula = 22.1716173366918 mag (inputs: zp=26.325 mag, fwhm=2.5026 pix, snrlim=5, sigmapix=1.31289211717704 DN, offcor=-0.68 mag ...
+refimage.pl: estimated instrumental PSF catalog-based mag limit of 22.902 mag using 13380 sources in range: 3.0 <= snr <= 5.5 and mag >= -3.653
+refimage.pl: elapsed time to compute metrics on PSF-fit catalog [sec] = 0.018473
+refimage.pl: updating header of ASCII PSF-fit photometry table with frame-collapsed photometric calibration information...
+refimage.pl: converting ASCII PSF-fit table to FITS binary table...
+ZtfPdlUtils.pl: ExecuteProcess: daophotTextToFits -i ztf_000763_zg_c14_q3_refpsfcat.tbl -o ztf_000763_zg_c14_q3_refpsfcat.fits -r
+
+daophotTextToFits, v. 2.60
+
+Inputs:
+   Input IPAC-table file = ztf_000763_zg_c14_q3_refpsfcat.tbl
+   Output FITS-binary-table file = ztf_000763_zg_c14_q3_refpsfcat.fits
+   Switch to indicate input is a reference-image based table = 1
+   Verbose switch = 0
+
+PSF-fit run script = refimage.pl
+PSF-fit run-script version = v2.4,
+Run date = 2018-04-20
+Run time = 07:13:57
+Image File = ztf_000763_zg_c14_q3_refimg.fits
+PSF File = ztf_000763_zg_c14_q3_refdao.psf
+Number of sources = 26781
+Magnitude zero point = 26.325000
+Number of sources used for phot. cal. = 1180
+Magnitude zero point uncertainty = 0.000005
+Magnitude zero point RMS = 0.026333
+Color coefficient = -0.057044
+Color coefficient unc. = 0.000009
+Calibrator color = g-R
+FIELDID = 763
+CCDID = 14
+QID = 3
+FILTERID = 1
+RCID = 54
+RFID = 763120154
+INFOBITS = 0
+Number of data rows = 26781
+ZtfPdlUtils.pl: ExecuteProcess: status from daophotTextToFits = 0
+refimage.pl: elapsed time to update header of PSF-fit catalog and convert to FITS-binary table format [sec] = 0.143528
+refimage.pl: executing SExtractor to generate final catalog...
+ZtfPdlUtils.pl: ExecuteProcess: sex ztf_000763_zg_c14_q3_refimg.fits -c /ztf/ops/sw/180116/ztf/cdf/ztfSexConfigFinalRun.inp -SATUR_LEVEL 50903.029 -SEEING_FWHM 2.65 -PIXEL_SCALE 1.0 -MAG_ZEROPOINT 0 -WEIGHT_IMAGE ztf_000763_zg_c14_q3_refunc.fits,ztf_000763_zg_c14_q3_refunc.fits -FLAG_IMAGE ztf_000763_zg_c14_q3_refmsk.fits -CATALOG_TYPE FITS_1.0 -CATALOG_NAME ztf_000763_zg_c14_q3_refsexcat.fits -VERBOSE_TYPE NORMAL
+[1M> 
+[1A----- SExtractor 2.19.5 started on 2018-04-20 at 07:19:01 with 1 thread
+
+[1M> Setting catalog parameters
+[1A[1M> Reading detection filter
+[1A[1M> Initializing Neural Network
+[1A[1M> Reading Neural Network Weights
+[1A[1M> Initializing catalog
+[1A[1M> Looking for ztf_000763_zg_c14_q3_refimg.fits
+[1A----- Measuring from: ztf_000763_zg_c14_q3_refimg.fits
+      "Unnamed" / no ext. header / 3200x3200 / 32 bits (floats)
+[1M> Looking for ztf_000763_zg_c14_q3_refunc.fits
+[1A----- Weighting from: ztf_000763_zg_c14_q3_refunc.fits
+      "Unnamed" / no ext. header / 3200x3200 / 32 bits (floats)
+[1M> Looking for ztf_000763_zg_c14_q3_refunc.fits
+[1A----- Weighting from: ztf_000763_zg_c14_q3_refunc.fits
+      "Unnamed" / no ext. header / 3200x3200 / 32 bits (floats)
+[1M> Looking for ztf_000763_zg_c14_q3_refmsk.fits
+[1A----- Flagging  from: ztf_000763_zg_c14_q3_refmsk.fits
+      "Unnamed" / no ext. header / 3200x3200 / 16 bits (integers)
+Detection+Measurement image: [1M> Setting up background maps
+[1A[1M> Setting up background map at line:   64
+[1A[1M> Setting up background map at line:  128
+[1A[1M> Setting up background map at line:  192
+[1A[1M> Setting up background map at line:  256
+[1A[1M> Setting up background map at line:  320
+[1A[1M> Setting up background map at line:  384
+[1A[1M> Setting up background map at line:  448
+[1A[1M> Setting up background map at line:  512
+[1A[1M> Setting up background map at line:  576
+[1A[1M> Setting up background map at line:  640
+[1A[1M> Setting up background map at line:  704
+[1A[1M> Setting up background map at line:  768
+[1A[1M> Setting up background map at line:  832
+[1A[1M> Setting up background map at line:  896
+[1A[1M> Setting up background map at line:  960
+[1A[1M> Setting up background map at line: 1024
+[1A[1M> Setting up background map at line: 1088
+[1A[1M> Setting up background map at line: 1152
+[1A[1M> Setting up background map at line: 1216
+[1A[1M> Setting up background map at line: 1280
+[1A[1M> Setting up background map at line: 1344
+[1A[1M> Setting up background map at line: 1408
+[1A[1M> Setting up background map at line: 1472
+[1A[1M> Setting up background map at line: 1536
+[1A[1M> Setting up background map at line: 1600
+[1A[1M> Setting up background map at line: 1664
+[1A[1M> Setting up background map at line: 1728
+[1A[1M> Setting up background map at line: 1792
+[1A[1M> Setting up background map at line: 1856
+[1A[1M> Setting up background map at line: 1920
+[1A[1M> Setting up background map at line: 1984
+[1A[1M> Setting up background map at line: 2048
+[1A[1M> Setting up background map at line: 2112
+[1A[1M> Setting up background map at line: 2176
+[1A[1M> Setting up background map at line: 2240
+[1A[1M> Setting up background map at line: 2304
+[1A[1M> Setting up background map at line: 2368
+[1A[1M> Setting up background map at line: 2432
+[1A[1M> Setting up background map at line: 2496
+[1A[1M> Setting up background map at line: 2560
+[1A[1M> Setting up background map at line: 2624
+[1A[1M> Setting up background map at line: 2688
+[1A[1M> Setting up background map at line: 2752
+[1A[1M> Setting up background map at line: 2816
+[1A[1M> Setting up background map at line: 2880
+[1A[1M> Setting up background map at line: 2944
+[1A[1M> Setting up background map at line: 3008
+[1A[1M> Setting up background map at line: 3072
+[1A[1M> Setting up background map at line: 3136
+[1A[1M> Filtering background map(s)
+[1A[1M> Computing background d-map
+[1A[1M> Computing background-noise d-map
+[1A(M)   Background: 112.043    RMS: 1.33769    / Threshold: 3.34423    
+[1M> Setting up background maps
+[1A[1M> Setting up background map at line:   64
+[1A[1M> Setting up background map at line:  128
+[1A[1M> Setting up background map at line:  192
+[1A[1M> Setting up background map at line:  256
+[1A[1M> Setting up background map at line:  320
+[1A[1M> Setting up background map at line:  384
+[1A[1M> Setting up background map at line:  448
+[1A[1M> Setting up background map at line:  512
+[1A[1M> Setting up background map at line:  576
+[1A[1M> Setting up background map at line:  640
+[1A[1M> Setting up background map at line:  704
+[1A[1M> Setting up background map at line:  768
+[1A[1M> Setting up background map at line:  832
+[1A[1M> Setting up background map at line:  896
+[1A[1M> Setting up background map at line:  960
+[1A[1M> Setting up background map at line: 1024
+[1A[1M> Setting up background map at line: 1088
+[1A[1M> Setting up background map at line: 1152
+[1A[1M> Setting up background map at line: 1216
+[1A[1M> Setting up background map at line: 1280
+[1A[1M> Setting up background map at line: 1344
+[1A[1M> Setting up background map at line: 1408
+[1A[1M> Setting up background map at line: 1472
+[1A[1M> Setting up background map at line: 1536
+[1A[1M> Setting up background map at line: 1600
+[1A[1M> Setting up background map at line: 1664
+[1A[1M> Setting up background map at line: 1728
+[1A[1M> Setting up background map at line: 1792
+[1A[1M> Setting up background map at line: 1856
+[1A[1M> Setting up background map at line: 1920
+[1A[1M> Setting up background map at line: 1984
+[1A[1M> Setting up background map at line: 2048
+[1A[1M> Setting up background map at line: 2112
+[1A[1M> Setting up background map at line: 2176
+[1A[1M> Setting up background map at line: 2240
+[1A[1M> Setting up background map at line: 2304
+[1A[1M> Setting up background map at line: 2368
+[1A[1M> Setting up background map at line: 2432
+[1A[1M> Setting up background map at line: 2496
+[1A[1M> Setting up background map at line: 2560
+[1A[1M> Setting up background map at line: 2624
+[1A[1M> Setting up background map at line: 2688
+[1A[1M> Setting up background map at line: 2752
+[1A[1M> Setting up background map at line: 2816
+[1A[1M> Setting up background map at line: 2880
+[1A[1M> Setting up background map at line: 2944
+[1A[1M> Setting up background map at line: 3008
+[1A[1M> Setting up background map at line: 3072
+[1A[1M> Setting up background map at line: 3136
+[1A[1M> Filtering background map(s)
+[1A[1M> Computing background d-map
+[1A[1M> Computing background-noise d-map
+[1A(D)   Background: 112.043    RMS: 1.33769    / Threshold: 3.34423    
+[1M> Scanning image
+[1A[1M> Line:   25  Objects:        0 detected /        0 sextracted
+[1A[1M> Line:   50  Objects:        0 detected /        0 sextracted
+[1A[1M> Line:   75  Objects:       45 detected /        0 sextracted
+[1A[1M> Line:  100  Objects:       99 detected /        0 sextracted
+[1A[1M> Line:  125  Objects:      155 detected /        0 sextracted
+[1A[1M> Line:  150  Objects:      214 detected /        0 sextracted
+[1A[1M> Line:  175  Objects:      276 detected /        0 sextracted
+[1A[1M> Line:  200  Objects:      339 detected /        0 sextracted
+[1A[1M> Line:  225  Objects:      391 detected /        0 sextracted
+[1A[1M> Line:  250  Objects:      466 detected /        0 sextracted
+[1A[1M> Line:  275  Objects:      534 detected /        0 sextracted
+[1A[1M> Line:  300  Objects:      608 detected /        0 sextracted
+[1A[1M> Line:  325  Objects:      662 detected /        0 sextracted
+[1A[1M> Line:  350  Objects:      730 detected /        0 sextracted
+[1A[1M> Line:  375  Objects:      790 detected /        0 sextracted
+[1A[1M> Line:  400  Objects:      851 detected /        0 sextracted
+[1A[1M> Line:  425  Objects:      902 detected /        0 sextracted
+[1A[1M> Line:  450  Objects:      968 detected /        0 sextracted
+[1A[1M> Line:  475  Objects:     1015 detected /        0 sextracted
+[1A[1M> Line:  500  Objects:     1077 detected /        0 sextracted
+[1A[1M> Line:  525  Objects:     1137 detected /        0 sextracted
+[1A[1M> Line:  550  Objects:     1201 detected /        0 sextracted
+[1A[1M> Line:  575  Objects:     1259 detected /        0 sextracted
+[1A[1M> Line:  600  Objects:     1318 detected /        0 sextracted
+[1A[1M> Line:  625  Objects:     1392 detected /        0 sextracted
+[1A[1M> Line:  650  Objects:     1447 detected /        0 sextracted
+[1A[1M> Line:  675  Objects:     1504 detected /        0 sextracted
+[1A[1M> Line:  700  Objects:     1568 detected /        0 sextracted
+[1A[1M> Line:  725  Objects:     1626 detected /        0 sextracted
+[1A[1M> Line:  750  Objects:     1683 detected /        0 sextracted
+[1A[1M> Line:  775  Objects:     1757 detected /        0 sextracted
+[1A[1M> Line:  800  Objects:     1814 detected /        0 sextracted
+[1A[1M> Line:  825  Objects:     1875 detected /        0 sextracted
+[1A[1M> Line:  850  Objects:     1941 detected /        0 sextracted
+[1A[1M> Line:  875  Objects:     2010 detected /        0 sextracted
+[1A[1M> Line:  900  Objects:     2068 detected /        0 sextracted
+[1A[1M> Line:  925  Objects:     2138 detected /        0 sextracted
+[1A[1M> Line:  950  Objects:     2195 detected /        0 sextracted
+[1A[1M> Line:  975  Objects:     2261 detected /        0 sextracted
+[1A[1M> Line: 1000  Objects:     2333 detected /        0 sextracted
+[1A[1M> Line: 1023  Objects:     2386 detected /        0 sextracted
+[1A[1M> Line: 1025  Objects:     2392 detected /        1 sextracted
+[1A[1M> Line: 1050  Objects:     2463 detected /       10 sextracted
+[1A[1M> Line: 1075  Objects:     2535 detected /       51 sextracted
+[1A[1M> Line: 1100  Objects:     2610 detected /       96 sextracted
+[1A[1M> Line: 1125  Objects:     2673 detected /      144 sextracted
+[1A[1M> Line: 1150  Objects:     2731 detected /      209 sextracted
+[1A[1M> Line: 1175  Objects:     2786 detected /      261 sextracted
+[1A[1M> Line: 1200  Objects:     2857 detected /      334 sextracted
+[1A[1M> Line: 1225  Objects:     2909 detected /      379 sextracted
+[1A[1M> Line: 1235  Objects:     2937 detected /      400 sextracted
+[1A[1M> Line: 1250  Objects:     2977 detected /      454 sextracted
+[1A[1M> Line: 1275  Objects:     3033 detected /      506 sextracted
+[1A[1M> Line: 1300  Objects:     3094 detected /      575 sextracted
+[1A[1M> Line: 1325  Objects:     3144 detected /      628 sextracted
+[1A[1M> Line: 1350  Objects:     3215 detected /      693 sextracted
+[1A[1M> Line: 1375  Objects:     3271 detected /      751 sextracted
+[1A[1M> Line: 1397  Objects:     3325 detected /      800 sextracted
+[1A[1M> Line: 1400  Objects:     3338 detected /      806 sextracted
+[1A[1M> Line: 1425  Objects:     3398 detected /      866 sextracted
+[1A[1M> Line: 1450  Objects:     3453 detected /      910 sextracted
+[1A[1M> Line: 1475  Objects:     3514 detected /      963 sextracted
+[1A[1M> Line: 1500  Objects:     3580 detected /     1014 sextracted
+[1A[1M> Line: 1525  Objects:     3634 detected /     1064 sextracted
+[1A[1M> Line: 1550  Objects:     3694 detected /     1126 sextracted
+[1A[1M> Line: 1575  Objects:     3754 detected /     1174 sextracted
+[1A[1M> Line: 1590  Objects:     3798 detected /     1200 sextracted
+[1A[1M> Line: 1600  Objects:     3818 detected /     1222 sextracted
+[1A[1M> Line: 1625  Objects:     3877 detected /     1290 sextracted
+[1A[1M> Line: 1650  Objects:     3933 detected /     1347 sextracted
+[1A[1M> Line: 1675  Objects:     3985 detected /     1397 sextracted
+[1A[1M> Line: 1700  Objects:     4044 detected /     1467 sextracted
+[1A[1M> Line: 1725  Objects:     4105 detected /     1518 sextracted
+[1A[1M> Line: 1750  Objects:     4155 detected /     1573 sextracted
+[1A[1M> Line: 1760  Objects:     4178 detected /     1600 sextracted
+[1A[1M> Line: 1775  Objects:     4216 detected /     1644 sextracted
+[1A[1M> Line: 1800  Objects:     4271 detected /     1697 sextracted
+[1A[1M> Line: 1825  Objects:     4337 detected /     1756 sextracted
+[1A[1M> Line: 1850  Objects:     4390 detected /     1826 sextracted
+[1A[1M> Line: 1875  Objects:     4451 detected /     1887 sextracted
+[1A[1M> Line: 1900  Objects:     4525 detected /     1943 sextracted
+[1A[1M> Line: 1922  Objects:     4575 detected /     2000 sextracted
+[1A[1M> Line: 1925  Objects:     4583 detected /     2009 sextracted
+[1A[1M> Line: 1950  Objects:     4639 detected /     2064 sextracted
+[1A[1M> Line: 1975  Objects:     4707 detected /     2133 sextracted
+[1A[1M> Line: 2000  Objects:     4791 detected /     2190 sextracted
+[1A[1M> Line: 2025  Objects:     4855 detected /     2241 sextracted
+[1A[1M> Line: 2050  Objects:     4912 detected /     2316 sextracted
+[1A[1M> Line: 2075  Objects:     4976 detected /     2377 sextracted
+[1A[1M> Line: 2085  Objects:     5009 detected /     2400 sextracted
+[1A[1M> Line: 2100  Objects:     5043 detected /     2438 sextracted
+[1A[1M> Line: 2125  Objects:     5108 detected /     2507 sextracted
+[1A[1M> Line: 2150  Objects:     5169 detected /     2565 sextracted
+[1A[1M> Line: 2175  Objects:     5238 detected /     2614 sextracted
+[1A[1M> Line: 2200  Objects:     5299 detected /     2689 sextracted
+[1A[1M> Line: 2225  Objects:     5365 detected /     2753 sextracted
+[1A[1M> Line: 2246  Objects:     5424 detected /     2800 sextracted
+[1A[1M> Line: 2250  Objects:     5432 detected /     2808 sextracted
+[1A[1M> Line: 2275  Objects:     5489 detected /     2867 sextracted
+[1A[1M> Line: 2300  Objects:     5550 detected /     2923 sextracted
+[1A[1M> Line: 2325  Objects:     5600 detected /     2969 sextracted
+[1A[1M> Line: 2350  Objects:     5642 detected /     3034 sextracted
+[1A[1M> Line: 2375  Objects:     5701 detected /     3074 sextracted
+[1A[1M> Line: 2400  Objects:     5766 detected /     3125 sextracted
+[1A[1M> Line: 2425  Objects:     5833 detected /     3193 sextracted
+[1A[1M> Line: 2430  Objects:     5843 detected /     3200 sextracted
+[1A[1M> Line: 2450  Objects:     5896 detected /     3242 sextracted
+[1A[1M> Line: 2475  Objects:     5972 detected /     3303 sextracted
+[1A[1M> Line: 2500  Objects:     6023 detected /     3357 sextracted
+[1A[1M> Line: 2525  Objects:     6082 detected /     3408 sextracted
+[1A[1M> Line: 2550  Objects:     6138 detected /     3465 sextracted
+[1A[1M> Line: 2575  Objects:     6201 detected /     3523 sextracted
+[1A[1M> Line: 2600  Objects:     6283 detected /     3582 sextracted
+[1A[1M> Line: 2612  Objects:     6316 detected /     3600 sextracted
+[1A[1M> Line: 2625  Objects:     6349 detected /     3639 sextracted
+[1A[1M> Line: 2650  Objects:     6409 detected /     3691 sextracted
+[1A[1M> Line: 2675  Objects:     6469 detected /     3746 sextracted
+[1A[1M> Line: 2700  Objects:     6547 detected /     3787 sextracted
+[1A[1M> Line: 2725  Objects:     6616 detected /     3850 sextracted
+[1A[1M> Line: 2750  Objects:     6694 detected /     3901 sextracted
+[1A[1M> Line: 2775  Objects:     6763 detected /     3954 sextracted
+[1A[1M> Line: 2800  Objects:     6827 detected /     3994 sextracted
+[1A[1M> Line: 2803  Objects:     6841 detected /     4000 sextracted
+[1A[1M> Line: 2825  Objects:     6917 detected /     4067 sextracted
+[1A[1M> Line: 2850  Objects:     6974 detected /     4122 sextracted
+[1A[1M> Line: 2875  Objects:     7054 detected /     4171 sextracted
+[1A[1M> Line: 2900  Objects:     7106 detected /     4229 sextracted
+[1A[1M> Line: 2925  Objects:     7172 detected /     4290 sextracted
+[1A[1M> Line: 2950  Objects:     7230 detected /     4297 sextracted
+[1A[1M> Line: 2975  Objects:     7298 detected /     4297 sextracted
+[1A[1M> Line: 3000  Objects:     7373 detected /     4297 sextracted
+[1A[1M> Line: 3025  Objects:     7435 detected /     4297 sextracted
+[1A[1M> Line: 3050  Objects:     7504 detected /     4297 sextracted
+[1A[1M> Line: 3075  Objects:     7569 detected /     4297 sextracted
+[1A[1M> Line: 3100  Objects:     7641 detected /     4297 sextracted
+[1A[1M> Line: 3125  Objects:     7696 detected /     4297 sextracted
+[1A[1M> Line: 3150  Objects:     7760 detected /     4297 sextracted
+[1A[1M> Line: 3175  Objects:     7760 detected /     4297 sextracted
+[1A[1M> Line: 3200  Objects:     7760 detected /     4297 sextracted
+[1A[1M> Line: 3200  Objects:     7760 detected /     4400 sextracted
+[1A[1M> Line: 3200  Objects:     7760 detected /     4800 sextracted
+[1A[1M> Line: 3200  Objects:     7760 detected /     5200 sextracted
+[1A[1M> Line: 3200  Objects:     7760 detected /     5600 sextracted
+[1A[1M> Line: 3200  Objects:     7760 detected /     6000 sextracted
+[1A[1M> Line: 3200  Objects:     7760 detected /     6400 sextracted
+[1A[1M> Line: 3200  Objects:     7760 detected /     6800 sextracted
+[1A[1M> Line: 3200  Objects:     7760 detected /     7200 sextracted
+[1A      Objects: detected 7760     / sextracted 7269            
+
+[1M> Closing files
+[1A[1M> 
+[1A> All done (in 3.1 s: 1044.9 lines/s , 2373.7 detections/s)
+ZtfPdlUtils.pl: ExecuteProcess: status from sex = 0
+refimage.pl: elapsed time to execute SExtractor to generate final catalog [sec] = 3.092714
+refimage.pl: storing columns from SExtractor catalog to support aperture corrections...
+refimage.pl: number of SExtractor sources after filtering = 3479
+refimage.pl: elapsed time to store and filter specific SExtractor catalog columns to support aperture corrections [sec] = 0.795467
+ZtfPdlUtils.pl: ApToPSFmagcorrs: number of PSF-fit sources following mag-range filtering = 1123
+ZtfPdlUtils.pl: ApToPSFmagcorrs: number of aperture-measured sources following mag-range filtering for aperture 0 = 476
+ZtfPdlUtils.pl: ApToPSFmagcorrs: number of aperture-measured sources following mag-range filtering for aperture 1 = 674
+ZtfPdlUtils.pl: ApToPSFmagcorrs: number of aperture-measured sources following mag-range filtering for aperture 2 = 804
+ZtfPdlUtils.pl: ApToPSFmagcorrs: number of aperture-measured sources following mag-range filtering for aperture 3 = 901
+ZtfPdlUtils.pl: ApToPSFmagcorrs: number of aperture-measured sources following mag-range filtering for aperture 4 = 972
+ZtfPdlUtils.pl: ApToPSFmagcorrs: number of aperture-measured sources following mag-range filtering for aperture 5 = 993
+ZtfPdlUtils.pl: SourceMatch: matching source positions between two input catalogs in x,y image frame...
+ZtfPdlUtils.pl: SourceMatch: number of source matches = 391
+ZtfPdlUtils.pl: ApToPSFmagcorrs: final assigned apcorr +/- apcorrunc for aperture 0 = -1.49700617790222 +/- 0.00238472889293893 mag.
+ZtfPdlUtils.pl: SourceMatch: matching source positions between two input catalogs in x,y image frame...
+ZtfPdlUtils.pl: SourceMatch: number of source matches = 610
+ZtfPdlUtils.pl: ApToPSFmagcorrs: final assigned apcorr +/- apcorrunc for aperture 1 = -0.845160186290741 +/- 0.00100163966232316 mag.
+ZtfPdlUtils.pl: SourceMatch: matching source positions between two input catalogs in x,y image frame...
+ZtfPdlUtils.pl: SourceMatch: number of source matches = 759
+ZtfPdlUtils.pl: ApToPSFmagcorrs: final assigned apcorr +/- apcorrunc for aperture 2 = -0.496193736791611 +/- 0.000511115241573669 mag.
+ZtfPdlUtils.pl: SourceMatch: matching source positions between two input catalogs in x,y image frame...
+ZtfPdlUtils.pl: SourceMatch: number of source matches = 879
+ZtfPdlUtils.pl: ApToPSFmagcorrs: final assigned apcorr +/- apcorrunc for aperture 3 = -0.19206291437149 +/- 0.000246771554444969 mag.
+ZtfPdlUtils.pl: SourceMatch: matching source positions between two input catalogs in x,y image frame...
+ZtfPdlUtils.pl: SourceMatch: number of source matches = 944
+ZtfPdlUtils.pl: ApToPSFmagcorrs: final assigned apcorr +/- apcorrunc for aperture 4 = -0.0343542844057083 +/- 0.000298253934848184 mag.
+ZtfPdlUtils.pl: SourceMatch: matching source positions between two input catalogs in x,y image frame...
+ZtfPdlUtils.pl: SourceMatch: number of source matches = 960
+ZtfPdlUtils.pl: ApToPSFmagcorrs: final assigned apcorr +/- apcorrunc for aperture 5 = -0.00155564502347261 +/- 0.00037677810731966 mag.
+refimage.pl: elapsed time to compute SExtractor fixed-aperture corrections relative to PSF-fit catalog [sec] = 0.343385
+refimage.pl: adding photometric calibration info to header of ztf_000763_zg_c14_q3_refsexcat.fits...
+ZtfPdlUtils.pl: ExecuteProcess: missfits ztf_000763_zg_c14_q3_refsexcat.fits -REMOVE_KEYWORD OBJECT,EPOCH,CRVAL1,CRVAL2,CRPIX1,CRPIX2,CDELT1,CDELT2,CROTA1,CROTA2,SEXMGZPT,SEXSATLV,SEXPIXS,SEXGAIN,SEXBKGND,SEXBKDEV,SEXBKTHD,SEXISAPR -SAVE_TYPE REPLACE -WRITE_XML N -HEADER_SUFFIX .addkeys
+
+> WARNING: default.missfits not found, using internal defaults
+
+[1M> 
+[1A----- MissFITS 2.8.0 started on 2018-04-20 at 07:19:05 with 1 thread
+
+[1M> Examining input data...
+[1A[1M> Looking for ztf_000763_zg_c14_q3_refsexcat.addkeys
+[1A[1M> Reading input data...
+[1A[1M> 
+[1Aztf_000763_zg_c14_q3_refsexcat.fits      xxx
+ztf_000763_zg_c14_q3_refsexcat.fits [ 1] xxx
+[1M> 
+[1A> All done (in 0.0 s)
+ZtfPdlUtils.pl: ExecuteProcess: status from missfits = 0
+refimage.pl: elapsed time to update header of SExtractor FITS-binary table [sec] = 0.048084
+refimage.pl: fatal info-bitstring for assigning overall processing status flag = 65956
+refimage.pl: overall processing InfoBits string: 0 = bit(s) null
+refimage.pl: assigning thresholds to infobit definitions from /ztf/ops/sw/180116/ztf/cdf/infobitsref.txt and write to reference image header...
+refimage.pl: adding InfoBit definitions to header of ztf_000763_zg_c14_q3_refimg.fits...
+ZtfPdlUtils.pl: ExecuteProcess: hdrupdate ztf_000763_zg_c14_q3_refimg.fits -a ztf_000763_zg_c14_q3_refimg.addkeys
+ZtfPdlUtils.pl: ExecuteProcess: status from hdrupdate = 0
+refimage.pl: elapsed time to process InfoBits, assign final processing status flag, substitute thresholds, and update final ref-image header with InfoBit definitions [sec] = 0.069399
+
+Successfully executed "refimage.pl", version 2.4
+

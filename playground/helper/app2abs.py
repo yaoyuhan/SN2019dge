@@ -7,7 +7,7 @@ Created on Fri Jul 12 08:41:10 2019
 """
 #import sys
 #import os
-from . import phys
+from helper import phys
 import numpy as np
 import extinction
 from astropy.time import Time
@@ -20,9 +20,9 @@ def deredden_df(tb, ebv):
     perform extinction correction
     """
     if 'mag' in tb.columns:
-        tb['mag0'] = tb['mag'] - ebv * extinction.ccm89(tb['wave'].values, 3.1*ebv, 3.1)
+        tb['mag0'] = tb['mag'] - extinction.ccm89(tb['wave'].values, 3.1*ebv, 3.1) # extinction in magnitude
     if "limmag" in tb.columns:
-        tb['limmag0'] = tb["limmag"] - ebv * extinction.ccm89(tb['wave'].values, 3.1*ebv, 3.1)
+        tb['limmag0'] = tb["limmag"] - extinction.ccm89(tb['wave'].values, 3.1*ebv, 3.1) # extinction in magnitude
     return tb
     
     
@@ -41,23 +41,25 @@ def app2abs_df(tb, z, t_max):
     return tb
 
 
-def add_physcol(tb):
+def add_physcol(tb, magcol = 'mag0_abs'):
     """
     tb is pandas dataframe
     
     columns that must exist: 
         wave: in angstrom
-        mag0_abs: extinction corrected absolute magnitude
+        magcol (e.e.g: mag0_abs): extinction corrected absolute magnitude
         emag: uncertainty in magnitude
         
     please avoid mag == 99 or any invalid values...
     """
     # zero point in AB magnitude: 3631 Jy 
     # 1 Jy = 1e-23 erg / s / Hz / cm^{-2}
-    
-    tb['freq'] = phys.c / (tb['wave'].values * 1e-8) # Hz
+    if "wave" in tb.columns:
+        tb['freq'] = phys.c / (tb['wave'].values * 1e-8) # Hz
+    elif "freq" in tb.columns:
+        tb['wave'] = phys.c / tb['freq'].values * 1e8 # Hz
 
-    tb['fratio'] = 10**(-0.4 * tb['mag0_abs'].values)
+    tb['fratio'] = 10**(-0.4 * tb[magcol].values)
     tb['fratio_unc'] = np.log(10) / 2.5 * tb['emag'].values * tb['fratio'].values
     
     fnu0 = 3631e-23 # erg / s/ Hz / cm^2

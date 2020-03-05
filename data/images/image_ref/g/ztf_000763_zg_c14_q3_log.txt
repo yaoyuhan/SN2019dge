@@ -1,0 +1,116 @@
+Start time = Fri Apr 20 07:13:57 2018
+====================================================
+iam=refimpipe.pl
+version=1.0
+cvsversion=$Id: refimpipe.pl,v 1.29 2017/03/03 20:28:01 laher Exp $ 
+hostname=ztfops18
+PWD=/local/scr/pipe/p12/j4964666
+PATH=/ztf/ops/sw/180116/ext/conda/bin:/ztf/ops/sw/180116/ext/conda/envs/py3/bin:/ztf/ops/sw/180116/ext/bin:/usr/pgsql-9.6/bin:/ztf/ops/sw/180116/ext/source/kafka/bin:/ztf/ops/sw/180116/ztf/bin:/ztf/ops/sw/180116/ext/conda/bin:/ztf/ops/sw/180116/ext/conda/envs/py3/bin:/ztf/ops/sw/180116/ext/bin:/usr/pgsql-9.6/bin:/ztf/ops/sw/180116/ext/source/kafka/bin:/ztf/ops/sw/180116/ztf/bin:/usr/lib64/qt-3.3/bin:/home/ztfpo/perl5/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+LD_LIBRARY_PATH=/usr/pgsql-9.6/lib:/ztf/ops/sw/180116/ztf/lib:/ztf/ops/sw/180116/ext/lib:/usr/lib:/usr/local/lib:/usr/lib64:/usr/lib64/atlas
+WRAPPER_UTILS=/ztf/ops/sw/180116/ztf/src/pl/perl
+Database server=ztfdb1
+Database port=5432
+TARGETDB=ztf2
+SODB_ROLE=ztfOpsRole
+WRAPPER_VERBOSE=1
+ZTF_SW=/ztf/ops/sw/180116
+ZTF_ROOT=/ztf/ops
+ZTF_ARCHIVE_REF=/ztf/archive/ref
+Readout-channel ID: rcId=54
+Field: field=763
+Filter ID: fId=1
+Pipeline ID: ppId=12
+Science-images list filename for refim.pl = refimscilist.txt
+Mask-images list filename for refim.pl = refimmsklist.txt
+Configuration filename for refim.pl = /ztf/ops/sw/stable/ztf/cdf/refimage.txt
+Swarp params filename for refim.pl = /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt
+Start night ID for selecting input images = 400
+End night ID for selecting input images = 9999
+minnumberofinputs = 15
+maxnumberofinputs = 40
+minSeeing = 2
+maxSeeing = 3.5
+omitInfobits = 4352
+pabszplower = 25.5
+pabszpupper = 26.5
+pcoltermlower = -0.12
+pcoltermupper = 0.06
+maglimcatlower = 19.6
+gmedianupper = 500
+gpctdifupper = 15
+Connecting to database...
+Making SODB connection with role ztfOpsRole...
+Connected to SODB.
+
+Executing database stored function getFilterCode(fId=1)...
+Directory for storing output files in sandbox = /ztf/ops/refimg/rc54/fr000751-000800
+Directory for storing output files in archive = /ztf/archive/ref/000/field000763/zg/ccd14/q3
+Executing database stored function getGoodProcImagesAndMasks(field=763, rcId=54, fId=1, minSeeing=2, maxSeeing=3.5, omitInfobits=4352, nIdStart=400, nIdEnd=9999, pabszplower=25.5, pabszpupper=26.5, pcoltermlower=-0.12, pcoltermupper=0.06, maglimcatlower=19.6, gmedianupper=500, gpctdifupper=15)...
+Disconnecting from database...
+Disconnected from SODB by refimpipe.pl.
+
+Elapsed time to query database for input images to coadd (sec.) = 0
+Executing command=/ztf/ops/sw/180116/ztf/src/pl/perl/refimage.pl -scilst refimscilist.txt -msklst refimmsklist.txt -swpcfg /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -inpcfgfile /ztf/ops/sw/stable/ztf/cdf/refimage.txt -v >& ztf_000763_zg_c14_q3_refimlog.txt
+Returned code from /ztf/ops/sw/180116/ztf/src/pl/perl/refimage.pl -scilst refimscilist.txt -msklst refimmsklist.txt -swpcfg /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -inpcfgfile /ztf/ops/sw/stable/ztf/cdf/refimage.txt -v >& ztf_000763_zg_c14_q3_refimlog.txt execution = 0
+Status from /ztf/ops/sw/180116/ztf/src/pl/perl/refimage.pl -scilst refimscilist.txt -msklst refimmsklist.txt -swpcfg /ztf/ops/sw/stable/ztf/cdf/ztfSwarpParams.txt -inpcfgfile /ztf/ops/sw/stable/ztf/cdf/refimage.txt -v >& ztf_000763_zg_c14_q3_refimlog.txt execution = 0
+=========================================================================
+Executing command=hdrupdate ztf_000763_zg_c14_q3_refimg.fits -a hdrupdate.dat >& hdrupdate.out
+Returned code from hdrupdate ztf_000763_zg_c14_q3_refimg.fits -a hdrupdate.dat >& hdrupdate.out execution = 0
+Status from hdrupdate ztf_000763_zg_c14_q3_refimg.fits -a hdrupdate.dat >& hdrupdate.out execution = 0
+No output from sub executeCommand.
+=========================================================================
+Elapsed time to execute refimage.pl (sec.) = 308
+File to be stored (/ztf/archive/ref/000/field000763/zg/ccd14/q3): ztf_000763_zg_c14_q3_refimg.fits ztf_000763_zg_c14_q3_refcov.fits ztf_000763_zg_c14_q3_refunc.fits ztf_000763_zg_c14_q3_refsexcat.fits ztf_000763_zg_c14_q3_refpsfcat.fits ztf_000763_zg_c14_q3_refimlog.txt
+File to be stored (/ztf/ops/refimg/rc54/fr000751-000800): ztf_000763_zg_c14_q3_refpsfcat.reg ztf_000763_zg_c14_q3_refimgqa.txt
+Copied ztf_000763_zg_c14_q3_refpsfcat.reg to /ztf/ops/refimg/rc54/fr000751-000800/ztf_000763_zg_c14_q3_refpsfcat.reg
+Copied ztf_000763_zg_c14_q3_refimgqa.txt to /ztf/ops/refimg/rc54/fr000751-000800/ztf_000763_zg_c14_q3_refimgqa.txt
+
+Connecting to database...
+Making SODB connection with role ztfOpsRole...
+Connected to SODB.
+
+Executing database function registerRefImage(rfId=763120154, rcId=54, fId=1, field=763, ppId=12, filename=/ztf/archive/ref/000/field000763/zg/ccd14/q3/ztf_000763_zg_c14_q3_refimg.fits, checksum=df93759206dec8f4447fd1857707ebba, infobits=0, imagestatus=1)
+Successfully registered RefImages record for rfId=763120154
+Successfully registered RefImAncilFiles record for rfId=763120154
+Successfully registered RefImAncilFiles record for rfId=763120154
+Successfully registered RefImAncilFiles record for rfId=763120154
+Successfully registered RefImAncilFiles record for rfId=763120154
+Successfully registered RefImAncilFiles record for rfId=763120154
+Successfully registered RefImAncilFiles record for rfId=763120154
+Successfully registered RefImCatalogs record for rfId=763120154
+Successfully registered RefImCatalogs record for rfId=763120154
+RefImImages record successfully registered (rfId=763120154, pId=451521735415).
+RefImImages record successfully registered (rfId=763120154, pId=451463965415).
+RefImImages record successfully registered (rfId=763120154, pId=451520355415).
+RefImImages record successfully registered (rfId=763120154, pId=451498415415).
+RefImImages record successfully registered (rfId=763120154, pId=451449765415).
+RefImImages record successfully registered (rfId=763120154, pId=473338725415).
+RefImImages record successfully registered (rfId=763120154, pId=450521505415).
+RefImImages record successfully registered (rfId=763120154, pId=450466885415).
+RefImImages record successfully registered (rfId=763120154, pId=450493155415).
+RefImImages record successfully registered (rfId=763120154, pId=450465915415).
+RefImImages record successfully registered (rfId=763120154, pId=473364275415).
+RefImImages record successfully registered (rfId=763120154, pId=450494135415).
+RefImImages record successfully registered (rfId=763120154, pId=474495775415).
+RefImImages record successfully registered (rfId=763120154, pId=450451845415).
+RefImImages record successfully registered (rfId=763120154, pId=450434965415).
+RefImImages record successfully registered (rfId=763120154, pId=474471865415).
+Successfully registered RefImQA record for rfId=763120154
+Disconnecting from database...
+Disconnected from SODB by refimpipe.pl.
+
+Connecting to database...
+Making SODB connection with role ztfOpsRole...
+Connected to SODB.
+
+Successfully registered RefIms record for rfId=763120154
+Elapsed time to store and DB register reference-image products (sec.) = 1
+Disconnecting from database...
+Disconnected from SODB by refimpipe.pl.
+
+====================================================
+End time = Fri Apr 20 07:19:06 2018
+Elapsed time (seconds) = 309
+Terminating normally (exitCode = 0).
+Note: The exitCode can be different if there is a problem storing the log file.
+File to be stored (/ztf/archive/ref/000/field000763/zg/ccd14/q3): ztf_000763_zg_c14_q3_log.txt
