@@ -43,7 +43,7 @@ def get_at2019dge(colorplt=False):
         ix = np.any([tb["instrument"].values == "P48",
                      tb["instrument"].values == "LT+IOO"], axis=0)
         tb = tb[ix]
-        ix = np.in1d(tb["filter"].values, np.array(['g', 'r', 'i']))
+        ix = np.in1d(tb["filter"].values, np.array(['g', 'r', 'i', 'z']))
         tb = tb[ix]
         
         dates = get_date_span(tb)
@@ -66,12 +66,14 @@ def get_at2019dge(colorplt=False):
             rmag = 99
             gmag = 99
             imag = 99
+            zmag = 99
             x = datesave[i]
             ix = tb["date"].values == x
             tbsub = tb[ix]
             gtb = tbsub[tbsub["filter"].values=="g"]
             rtb = tbsub[tbsub["filter"].values=="r"]
             itb = tbsub[tbsub["filter"].values=="i"]
+            ztb = tbsub[tbsub["filter"].values=="z"]
             if len(gtb)!=0:
                 gmjds = gtb["mjd"].values
                 gmags = gtb["mag0"].values
@@ -96,6 +98,14 @@ def get_at2019dge(colorplt=False):
                 imag = np.sum(imags * iwtgs) / np.sum(iwtgs)
                 imjd = np.sum(imjds * iwtgs) / np.sum(iwtgs)
                 iemag = 1/ np.sqrt(np.sum(iwtgs))
+            if len(ztb)!=0:
+                zmjds = ztb["mjd"].values
+                zmags = ztb["mag0"].values
+                zemags = ztb["emag"].values
+                zwtgs = 1/zemags**2
+                zmag = np.sum(zmags * zwtgs) / np.sum(zwtgs)
+                zmjd = np.sum(zmjds * zwtgs) / np.sum(zwtgs)
+                zemag = 1/ np.sqrt(np.sum(zwtgs))
             if len(gtb)!=0 and len(rtb)!=0:
                 mcolor.append(gmag - rmag)
                 mjds.append( 0.5 * (gmjd + rmjd) )
@@ -106,6 +116,11 @@ def get_at2019dge(colorplt=False):
                 mjds.append( 0.5 * (rmjd + imjd) )
                 mcolor_unc.append( np.sqrt(remag**2 + iemag**2) )
                 colorname.append("rmi")
+            if len(itb)!=0 and len(ztb)!=0:
+                mcolor.append(imag - zmag)
+                mjds.append( 0.5 * (imjd + zmjd) )
+                mcolor_unc.append( np.sqrt(iemag**2 + zemag**2) )
+                colorname.append("imz")
             
         ctb = Table(data = [mjds, mcolor, mcolor_unc, colorname],
                     names = ["mjd", "c", "ec", "cname"])
@@ -115,7 +130,6 @@ def get_at2019dge(colorplt=False):
         
         result.update({"ctb": ctb})
         return result
-
 
 
 def get_iPTF14gqr(colorplt=False):
@@ -384,7 +398,115 @@ def get_sn2005ek(colorplt=False):
         ctb['tmax_rf'] = (ctb['mjd'] - t_max) / (1+z)
         ctb = ctb.to_pandas()
         return ctb
-
+    
+    
+def get_iPTF16hgs(colorplt = False):
+    """
+    De+18, Table 1, already corrected for extinction
+    """
+    z = 0.017
+    ebv = 0
+    D = cosmo.luminosity_distance([z])[0].value * 1e+6 # in pc
+    dis_mod = 5*np.log10(D / 10)
+    
+    tb = pd.read_csv('../data/otherSN/iPTF16hgs/table1.txt', sep="\t")
+    tb = tb.drop(columns=["Unnamed: 5"])
+    tb = tb.rename(columns={'Filter' : 'filter',
+                            'MJD': 'mjd'})
+    tb = tb[~np.array([x[0]=='>' for x in tb['Magnitude'].values])]
+    tb['mag'] = np.array([float(x.split(" +or-")[0]) for x in tb['Magnitude'].values])
+    tb['emag'] = np.array([float(x.split(" +or-")[1]) for x in tb['Magnitude'].values])
+    tb = tb.drop(columns=["Magnitude"])
+    
+    ixg = tb['filter'].values == "g"
+    ixr = tb['filter'].values == "r"
+    ixi = tb['filter'].values == "i"
+    tb['wave'] = np.zeros(len(tb))
+    tb['wave'].values[ixg] = 4814
+    tb['wave'].values[ixr] = 6422
+    tb['wave'].values[ixi] = 7883
+    tb['mag0'] = tb['mag'] - extinction.ccm89(tb['wave'].values, 3.1*ebv, 3.1)
+    tb['mag0_abs'] = tb['mag0'] - dis_mod
+    t_max = 57691.59 # from the paper
+    tb['tmax_rf'] = (tb['mjd'] - t_max) / (1+z)
+    """
+    plt.errorbar(tb["tmax_rf"].values[ixg], tb["mag"].values[ixg], tb["emag"].values[ixg], fmt=".g")
+    plt.errorbar(tb["tmax_rf"].values[ixr], tb["mag"].values[ixr], tb["emag"].values[ixr], fmt=".r")
+    plt.errorbar(tb["tmax_rf"].values[ixi], tb["mag"].values[ixi], tb["emag"].values[ixi], fmt=".y")
+    """
+    if colorplt==False:
+        return tb
+    else:
+        tb = add_datecol(tb)
+        #tb = tb[tb.mjd > 55352.5]
+        #tb = tb[tb.mjd < 55593.5]
+        
+        dates = get_date_span(tb)
+        datesave = []
+        for i in range(len(dates)):
+            x = dates[i]
+            ix = tb["date"].values == x
+            tbsub = tb[ix]
+            if len(tbsub)!=0:
+                flts = tbsub['filter'].values
+                if "r" in flts and np.sum(np.unique(flts))!=1:
+                    datesave.append(x)
+        datesave = np.array(datesave)
+        
+        mcolor = []
+        mcolor_unc = []
+        mjds = []
+        colorname = []
+        for i in range(len(datesave)):
+            x = datesave[i]
+            ix = tb["date"].values == x
+            tbsub = tb[ix]
+            gtb = tbsub[tbsub["filter"].values=="g"]
+            rtb = tbsub[tbsub["filter"].values=="r"]
+            itb = tbsub[tbsub["filter"].values=="i"]
+            if len(gtb)!=0:
+                gmjds = gtb["mjd"].values
+                gmags = gtb["mag0"].values
+                gemags = gtb["emag"].values
+                gwtgs = 1/gemags**2
+                gmag = np.sum(gmags * gwtgs) / np.sum(gwtgs)
+                gmjd = np.sum(gmjds * gwtgs) / np.sum(gwtgs)
+                gemag = 1/ np.sqrt(np.sum(gwtgs))
+            if len(rtb)!=0:
+                rmjds = rtb["mjd"].values
+                rmags = rtb["mag0"].values
+                remags = rtb["emag"].values
+                rwtgs = 1/remags**2
+                rmag = np.sum(rmags * rwtgs) / np.sum(rwtgs)
+                rmjd = np.sum(rmjds * rwtgs) / np.sum(rwtgs)
+                remag = 1/ np.sqrt(np.sum(rwtgs))
+            if len(itb)!=0:
+                imjds = itb["mjd"].values
+                imags = itb["mag0"].values
+                iemags = itb["emag"].values
+                iwtgs = 1/iemags**2
+                imag = np.sum(imags * iwtgs) / np.sum(iwtgs)
+                imjd = np.sum(imjds * iwtgs) / np.sum(iwtgs)
+                iemag = 1/ np.sqrt(np.sum(iwtgs))
+            if len(gtb)!=0 and len(rtb)!=0:
+                mcolor.append(gmag - rmag)
+                mjds.append( 0.5 * (gmjd + rmjd) )
+                mcolor_unc.append( np.sqrt(gemag**2 + remag**2) )
+                colorname.append("gmr")
+            if len(rtb)!=0 and len(itb)!=0:
+                mcolor.append(rmag - imag)
+                mjds.append( 0.5 * (rmjd + imjd) )
+                mcolor_unc.append( np.sqrt(remag**2 + iemag**2) )
+                colorname.append("rmi")
+            
+        ctb = Table(data = [mjds, mcolor, mcolor_unc, colorname],
+                    names = ["mjd", "c", "ec", "cname"])
+        
+        ctb['tmax_rf'] = (ctb['mjd'] - t_max) / (1+z)
+        ctb = ctb.to_pandas()
+        return ctb
+    
+    
 
 def get_ptf10iuv(colorplt = False):
     """
@@ -498,7 +620,7 @@ def get_ptf10iuv(colorplt = False):
     
             
 
-def get_sn1010X(colorplt = False):
+def get_sn2010X(colorplt = False):
     """
     Kasliwal+10
     """
@@ -792,198 +914,6 @@ def get_sn2019bkc(colorplt = False):
         return ctb
     
 
-def get_ogle13sn079(colorplt=False):
-    ebv = 0.02 # SFD2011
-    z = 0.07
-    D = cosmo.luminosity_distance([z])[0].value * 1e+6 # in pc
-    dis_mod = 5*np.log10(D / 10)
-    t_max = 56565.19  # I band maximum
-    print ("adopt I band t_max estimated by myself")
-    
-    tb = pd.read_csv("../data/otherSN/Inserra2015/table1", sep='\t')
-    tb = tb.drop(columns=["Unnamed: 9", "Date"])
-    tb = tb.rename(columns={'MJD': 'mjd'})
-    
-    mjds = []
-    mags = []
-    emags = []
-    filts = []
-    for i in range(len(tb)):
-        tdt = tb['mjd'].values[i]
-        gdt = tb["g"].values[i]
-        rdt = tb["r"].values[i]
-        idt = tb["I"].values[i]
-        if type(gdt)==str:
-            if not gdt[0]=='>':
-                mags.append( float(gdt.split(" (")[0]) )
-                emags.append( float(gdt.split(" (")[1][:-1]) )
-                mjds.append(tdt)
-                filts.append("g")
-        if type(rdt)==str:
-            if not rdt[0]=='>':
-                mags.append( float(rdt.split(" (")[0]) )
-                emags.append( float(rdt.split(" (")[1][:-1]) )
-                mjds.append(tdt)
-                filts.append("r")
-        if type(idt)==str:
-            if not idt[0]=='>':
-                mags.append( float(idt.split(" (")[0]) )
-                emags.append( float(idt.split(" (")[1][:-1]) )
-                mjds.append(tdt)
-                filts.append("i")
-    
-    tb = Table(data = [mjds, mags, emags, filts],
-               names = ["mjd", "mag", "emag", "filter"])
-    ixr = tb['filter'] == "r"
-    ixg = tb['filter'] == "g"
-    ixi = tb['filter'] == "i"
-    tb['wave'] = np.zeros(len(tb))
-    tb['wave'][ixg] = 4814
-    tb['wave'][ixr] = 6422
-    tb['wave'][ixi] = 7883
-    
-    tb['mag0'] = tb['mag'] - extinction.ccm89(tb['wave'], 3.1*ebv, 3.1)
-    tb['mag0_abs'] = tb['mag0'] - dis_mod
-    tb['tmax_rf'] = (tb['mjd'] - t_max) / (1+z)
-    tb = tb.to_pandas()
-    if colorplt==False:
-        return tb
-    
-    else:
-        tb = add_datecol(tb)
-        dates = get_date_span(tb)
-        datesave = []
-        for i in range(len(dates)):
-            x = dates[i]
-            ix = tb["date"].values == x
-            tbsub = tb[ix]
-            if len(tbsub)!=0:
-                flts = tbsub['filter'].values
-                if "r" in flts and np.sum(np.unique(flts))!=1:
-                    datesave.append(x)
-        datesave = np.array(datesave)
-        
-        mcolor = []
-        mcolor_unc = []
-        mjds = []
-        colorname = []
-        for i in range(len(datesave)):
-            x = datesave[i]
-            ix = tb["date"].values == x
-            tbsub = tb[ix]
-            gtb = tbsub[tbsub["filter"].values=="g"]
-            rtb = tbsub[tbsub["filter"].values=="r"]
-            itb = tbsub[tbsub["filter"].values=="i"]
-            if len(gtb)!=0:
-                gmjds = gtb["mjd"].values
-                gmags = gtb["mag0"].values
-                gemags = gtb["emag"].values
-                gwtgs = 1/gemags**2
-                gmag = np.sum(gmags * gwtgs) / np.sum(gwtgs)
-                gmjd = np.sum(gmjds * gwtgs) / np.sum(gwtgs)
-                gemag = 1/ np.sqrt(np.sum(gwtgs))
-            else:
-                gmag=0
-            if len(rtb)!=0:
-                rmjds = rtb["mjd"].values
-                rmags = rtb["mag0"].values
-                remags = rtb["emag"].values
-                rwtgs = 1/remags**2
-                rmag = np.sum(rmags * rwtgs) / np.sum(rwtgs)
-                rmjd = np.sum(rmjds * rwtgs) / np.sum(rwtgs)
-                remag = 1/ np.sqrt(np.sum(rwtgs))
-            else:
-                rmag = 0
-            if len(itb)!=0:
-                imjds = itb["mjd"].values
-                imags = itb["mag0"].values
-                iemags = itb["emag"].values
-                iwtgs = 1/iemags**2
-                imag = np.sum(imags * iwtgs) / np.sum(iwtgs)
-                imjd = np.sum(imjds * iwtgs) / np.sum(iwtgs)
-                iemag = 1/ np.sqrt(np.sum(iwtgs))
-            else:
-                imag = 0
-            if gmag and rmag:
-                mcolor.append(gmag - rmag)
-                mjds.append( 0.5 * (gmjd + rmjd) )
-                mcolor_unc.append( np.sqrt(gemag**2 + remag**2) )
-                colorname.append("gmr")
-            if rmag and imag:
-                mcolor.append(rmag - imag)
-                mjds.append( 0.5 * (rmjd + imjd) )
-                mcolor_unc.append( np.sqrt(remag**2 + iemag**2) )
-                colorname.append("rmi")
-            
-        ctb = Table(data = [mjds, mcolor, mcolor_unc, colorname],
-                    names = ["mjd", "c", "ec", "cname"])
-        
-        ctb['tmax_rf'] = (ctb['mjd'] - t_max) / (1+z)
-        ctb = ctb.to_pandas()
-        return ctb
-    
-
-    
-def get_ias(name = "ZTF18abclfee", cut=27):
-    aam_df = pd.read_csv('/Users/yuhanyao/Desktop/earlyIa/2018/table/merged_table.csv')
-    mylc = pd.read_csv('/Users/yuhanyao/Desktop/earlyIa/2018/data/binned_lc/'+name+'.csv')
-    mylc = mylc[mylc.mag!=99]
-    
-    ix = np.where(aam_df['name'].values == name)[0][0]
-    t_max = float(aam_df['t0_g_adopted'][aam_df['name'] == name].values)
-    z = aam_df['z_adopt'].values[ix]
-    ebv = aam_df['E_B_V_SandF'].values[ix]
-    D = cosmo.luminosity_distance([z])[0].value * 1e+6 # in pc
-    dis_mod = 5*np.log10(D / 10)
-    
-    phase = (mylc['jd'].values - t_max) / (1+z)
-    mag = mylc['mag'].values
-    
-    emag = mylc['mag_unc'].values
-    
-    filt = np.repeat("g", len(mag))
-    ix = mylc['filterid'].values==2
-    filt[ix] = "r"
-    
-    tb = Table(data = [phase / (1+z), mag, emag, filt],
-               names = ['tmax_rf', 'mag', 'emag', 'filter'])
-    
-    ixr = tb['filter'] == "r"
-    ixg = tb['filter'] == "g"
-    tb['wave'] = np.zeros(len(tb))
-    tb['wave'][ixg] = 4814
-    tb['wave'][ixr] = 6422
-    
-    tb['mag0'] = tb['mag'] - extinction.ccm89(tb['wave'], 3.1*ebv, 3.1)
-    tb['mag0_abs'] = tb['mag0'] - dis_mod
-    tb = tb.to_pandas()
-    
-    tb = tb[tb.tmax_rf < cut]
-    return tb
-    
-
-def get_at2018erx():
-    tb = asci.read('/Users/yuhanyao/Desktop/ZTF18abfcmjw/data/De2020/ztf18abkmbpy')
-    tb = tb[tb['filter']=='r']
-    tb = tb[tb['mag']!=99]
-    tb = tb[tb['emag']<1]
-    ebv = 0.016 # SFD2011
-    z = 0.02938
-    D = cosmo.luminosity_distance([z])[0].value * 1e+6 # in pc
-    dis_mod = 5*np.log10(D / 10)
-    t_max = 2458333.83  # r band maximum
-    
-    ixr = tb['filter'] == "r"
-    tb['wave'] = np.zeros(len(tb))
-    tb['wave'][ixr] = 6422
-    
-    tb['mag0'] = tb['mag'] - extinction.ccm89(tb['wave'], 3.1*ebv, 3.1)
-    tb['mag0_abs'] = tb['mag0'] - dis_mod
-    tb['tmax_rf'] = (tb['jdobs'] - t_max) / (1+z)
-    tb = tb.to_pandas()
-    return  tb
-    
-
 def get_ptf09dav():
     tb = asci.read('../data/otherSN/Sullivan2011/ptf09dav')
     tb.rename_column('band', 'filter')
@@ -1010,109 +940,6 @@ def get_ptf09dav():
     tb = tb.to_pandas()
     return  tb
 
-
-def _read_2016hnk_band():
-    tb = Table(fits.open('../data/otherSN/Galbany2019/tablec3.fit')[1].data)
-    #tb.remove_columns(['Bmag', 'e_Bmag', 'zmag', 'e_zmag', 'imag', 'e_imag'])
-    #tb.remove_columns(['Vmag', 'e_Vmag', 'gmag', 'e_gmag', 'umag', 'l_umag'])
-    colpool = ["Bmag", "zmag", "imag", "rmag", "Vmag", "gmag"]
-    for magcol in colpool:
-        emagcol = "e_"+magcol
-        tb1 = tb[~np.isnan(tb[magcol])]
-        tb1["filter"] = magcol[0]
-        tb1.rename_column(magcol, 'mag')
-        tb1.rename_column(emagcol, 'emag')
-        if magcol == "Bmag":
-            tb1['wave'] = np.ones(len(tb1))* 4450
-            tb2 = tb1
-        else:
-            if magcol == "rmag":
-                tb1['wave'] = np.ones(len(tb1))* 6422
-            elif magcol == "zmag":
-                tb1['wave'] = np.ones(len(tb1))* 8500
-            elif magcol == "imag":
-                tb1['wave'] = np.ones(len(tb1))* 7500
-            elif magcol == "gmag":
-                tb1['wave'] = np.ones(len(tb1))* 4810
-            elif magcol == "Vmag":
-                tb1['wave'] = np.ones(len(tb1))* 5510
-            tb2 = vstack([tb2, tb1])
-    tb2.remove_columns(colpool)
-    tb2.remove_columns(["umag", "l_umag", "Inst"])
-    for magcol in colpool:
-        emagcol = "e_"+magcol
-        tb2.remove_columns([emagcol])
-    tb2 = tb2[~np.isnan(tb2["emag"])]
-    return tb2
-
-
-def _read_2016hnk_ATLAS():
-    tb = Table(fits.open('../data/otherSN/Galbany2019/table2.fit')[1].data)
-    colpool = ["cmag", "omag"]
-    for magcol in colpool:
-        emagcol = "e_"+magcol
-        tb1 = tb[~np.isnan(tb[magcol])]
-        tb1["filter"] = magcol[0]
-        tb1.rename_column(magcol, 'mag')
-        tb1.rename_column(emagcol, 'emag')
-        if magcol == "cmag":
-            tb1['wave'] = np.ones(len(tb1))* 5300
-            tb2 = tb1
-        else:
-            if magcol == "omag":
-                tb1['wave'] = np.ones(len(tb1))* 6900
-            tb2 = vstack([tb2, tb1])
-    tb2.remove_columns(colpool)
-    tb2.remove_columns(["l_omag"])
-    for magcol in colpool:
-        emagcol = "e_"+magcol
-        tb2.remove_columns([emagcol])
-    tb2 = tb2[~np.isnan(tb2["emag"])]
-    return tb2
-            
-
-def get_sn2016hnk():
-    z = 0.016
-    D = cosmo.luminosity_distance([z])[0].value * 1e+6 # in pc
-    ebv = 0.0224
-    dis_mod = 5*np.log10(D / 10)
-    tb1 = _read_2016hnk_band()
-    tb2 = _read_2016hnk_ATLAS()
-    
-    tb = vstack([tb1, tb2])
-    
-    tb['tmax_rf'] = (tb['Epoch']*(1+z)-3.5)/(1+z)
-    
-    tb['mag0'] = tb['mag'] - extinction.ccm89(tb['wave'], 3.1*ebv, 3.1)
-    tb['mag0_abs'] = tb['mag0'] - dis_mod
-    tb = tb.to_pandas()
-    return  tb
-    
-    
-def get_sn2007ax():
-    z = 0.006878 
-    D = cosmo.luminosity_distance([z])[0].value * 1e+6 # in pc
-    ebv = 0.0446
-    dis_mod = 5*np.log10(D / 10)
-    
-    tb = asci.read('/Users/yuhanyao/Desktop/ZTF18abfcmjw/data/Kasliwal2008/sn2007ax')
-    
-    
-    tb.rename_column('band', 'filter')
-    tb.rename_column('magnitude', 'mag')
-    tb.rename_column('e_magnitude', 'emag')
-    #tb = tb[tb['mag']>19.7]
-    ix = np.any([tb['filter']=='r', tb['filter']=='R'], axis=0)
-    tb = tb[ix]
-
-    t_max = 2454187-2400000.5+3  # r band maximum
-    
-    tb['wave'] = np.ones(len(tb))* 6422
-    tb['mag0'] = tb['mag'] - extinction.ccm89(tb['wave'], 3.1*ebv, 3.1)
-    tb['mag0_abs'] = tb['mag0'] - dis_mod
-    tb['tmax_rf'] = (tb['time'] - t_max) / (1+z)
-    tb = tb.to_pandas()
-    return  tb
 
 
 def get_sn2002bj(colorplt = False):

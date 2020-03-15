@@ -26,14 +26,15 @@ def deredden_df(tb, ebv):
     return tb
     
     
-def app2abs_df(tb, z, t_max):
+def app2abs_df(tb, z, t_max=None):
     """
     convert apparent magnitude (already de-reddened) into absolute magnitude
     """
     D = cosmo.luminosity_distance([z])[0].value * 1e+6 # in pc
     dis_mod = 5*np.log10(D/10)
-    tb['tmax_rf'] = (tb['mjd'] - t_max) / (1+z)
-    tb['tmax_of'] = (tb['mjd'] - t_max)
+    if t_max!=None:
+        tb['tmax_rf'] = (tb['mjd'] - t_max) / (1+z)
+        tb['tmax_of'] = (tb['mjd'] - t_max)
     if 'mag0' in tb.columns:
         tb['mag0_abs'] = tb['mag0'] - dis_mod
     if "limmag0" in tb.columns:

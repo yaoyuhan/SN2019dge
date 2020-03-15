@@ -17,29 +17,25 @@ import emcee
 import matplotlib.pyplot as plt
 import corner
 fs = 14
-    
+
+
 ##### interaction: Piro and Nakar model
-def model_piro15_bol(t_, Renv=1e+13, Menv_=0.01, E51=0.5, Mcore_=4):
+def model_piro15_bol_recast(t_, Renv=1e+13, Menv_=0.01, E51=6, Eext49 = 11):
     t = t_ * 24*3600 #  in seconds
     
     Menv_001 = Menv_ / 0.01
     
-    v_e = 1.5e+9 * E51**0.5 * (Mcore_/3)**(-0.35) * Menv_001**(-0.15) # Nakar & Piro 2014, Eq (8)
-    t_e = Renv / v_e
-    E_e = 4e+49 * E51 * Mcore_**(-0.7) * Menv_001**(0.7) # Piro 2015 Eq (3)
-    
+    E_e = 1e+49 * Eext49
+    t_e = 1e-9 * Renv *  Eext49**-0.5 * Menv_001**0.5
     kappa = 0.2
-    t_p = 0.9 * (kappa/0.34)**0.5 * E51**(-1/4) * Mcore_**0.17 * Menv_001**0.57 * (3600 * 24)  
-    # Piro 2015 Eq (6), convert day to seconds
+    pre_fac = 0.9 * (3600 * 24) * 0.5**(-0.17 / 0.35)
+    t_p = pre_fac * (kappa/0.34)**0.5 * E51**(-0.01/1.4) * Eext49**(-0.17/0.7) * Menv_001**0.74 
+    
     L = t_e * E_e / t_p**2 * np.exp(- t * (t + 2*t_e) / (2*t_p**2)) # Piro 2015 Eq (15)
-    # R = v_e * t + Renv # Piro 2015 Eq (8)
-    # sigmaT4 = L / (4 * np.pi * R **2)
-    # T = (sigmaT4/phys.sigma)**(1/4.)
     return L
 
 
-
-def model_piro15(t_, wv, Renv=1e+13, Menv_=0.01, E51=0.5, Mcore_=4):
+def model_piro15_recast(t_, wv, Renv=1e+13, Menv_=0.01, E51=6, Eext49 = 11):
     """
     wv in angstrom
     t_ in day
@@ -52,23 +48,16 @@ def model_piro15(t_, wv, Renv=1e+13, Menv_=0.01, E51=0.5, Mcore_=4):
     predict Llambda
     """
     t = t_ * 24*3600 #  in seconds
-    #Menv = Menv_ * phys.sm
-    
-    #E51 = 0.5 # 1 * phys.sm * (9000*1e+5)**2 * 0.3 / 1e+51
-    #Mcore_ = 4
     Menv_001 = Menv_ / 0.01
     
-    v_e = 2e+9 * E51**0.5 * Mcore_**(-0.35) * Menv_001**(-0.15) # Piro 2015, Eq (2)
-    t_e = Renv / v_e
-    E_e = 4e+49 * E51 * Mcore_**(-0.7) * Menv_001**(0.7) # Piro 2015 Eq (3)
-    
+    E_e = 1e+49 * Eext49
+    t_e = 1e-9 * Renv *  Eext49**(-0.5) * Menv_001**0.5
     kappa = 0.2
-    
-    t_p = 0.9 * (kappa/0.34)**0.5 * E51**(-1/4) * Mcore_**0.17 * Menv_001**0.57 * (3600 * 24)  
-    # Piro 2015 Eq (6), convert day to seconds
+    pre_fac = 0.9 * (3600 * 24) * 0.5**(-0.17 / 0.35)
+    t_p = pre_fac * (kappa/0.34)**0.5 * E51**(-0.01/1.4) * Eext49**(-0.17/0.7) * Menv_001**0.74 
     
     L = t_e * E_e / t_p**2 * np.exp(- t * (t + 2*t_e) / (2*t_p**2)) # Piro 2015 Eq (15)
-    R = v_e * t + Renv # Piro 2015 Eq (8)
+    R = Renv + 1e+9 * Eext49**0.5 * Menv_001**(-0.5) * t
     
     sigmaT4 = L / (4 * np.pi * R **2)
     T = (sigmaT4/phys.sigma)**(1/4.)
@@ -82,11 +71,11 @@ def piro15_lnlike(theta, tt, wv, lgL, lgL_unc):
     """
     taum_, Mni_, texp_ are in the unit of day, Msun, day
     """
-    lgRenv, lgMenv_, texp, E51, Mcore_ = theta
+    lgRenv, lgMenv_, texp, E51, Eext49 = theta
     Renv = 10**lgRenv
     Menv_ = 10**lgMenv_
     t_ = tt - texp
-    model = model_piro15(t_, wv, Renv, Menv_, E51, Mcore_)
+    model = model_piro15_recast(t_, wv, Renv, Menv_, E51, Eext49)
     lgmodel = np.log10(model)
     
     chi2_term = -1/2*np.sum((lgL - lgmodel)**2/lgL_unc**2)
@@ -95,12 +84,13 @@ def piro15_lnlike(theta, tt, wv, lgL, lgL_unc):
     ln_l = chi2_term + error_term
     return ln_l
 
+
 piro15_nll = lambda *args: -piro15_lnlike(*args)
 
 
 def piro15_lnprior(theta):
-    lgRenv, lgMenv_, texp, E51, Mcore_ = theta
-    if ((5 < lgRenv < 25) and (-4 < lgMenv_ < 0) and (-8 < texp < -2.76) and (0.01 < E51 < 10) and (0.1 < Mcore_ < 50)):
+    lgRenv, lgMenv_, texp, E51, Eext49 = theta
+    if ((5 < lgRenv < 25) and (-4 < lgMenv_ < 0) and (-8 < texp < -2.76) and (0.01 < E51 < 10) and (0.1 < Eext49 < 100)):
         return 0.0
     return -np.inf
 
@@ -156,13 +146,13 @@ def plotSED(tt, wv, lgL, lgL_unc, filename):
     lgM_sigmas = np.percentile(samples[:,1], (0.13, 2.27, 15.87, 50, 84.13, 97.73, 99.87))
     t0_sigmas = np.percentile(samples[:,2], (0.13, 2.27, 15.87, 50, 84.13, 97.73, 99.87))
     E51_sigmas = np.percentile(samples[:,3], (0.13, 2.27, 15.87, 50, 84.13, 97.73, 99.87))
-    Mcore_sigmas = np.percentile(samples[:,4], (0.13, 2.27, 15.87, 50, 84.13, 97.73, 99.87))
+    Eext49_sigmas = np.percentile(samples[:,4], (0.13, 2.27, 15.87, 50, 84.13, 97.73, 99.87))
     
     Renv = 10**lgR_sigmas[3]
     Menv_ = 10**lgM_sigmas[3]
     t0 = t0_sigmas[3]
     E51 = E51_sigmas[3]
-    Mcore_ = Mcore_sigmas[3]
+    Eext49 = Eext49_sigmas[3]
     
     plt.figure(figsize=(6,6))
     wvs = np.array([2079. , 2255.1, 2614.2, 3475.5, 4359.1, 4800. , 5430.1, 6300. , 7800. , 9670. ])
@@ -175,7 +165,7 @@ def plotSED(tt, wv, lgL, lgL_unc, filename):
         name = names[i]
         ix = wv == wave
         plt.errorbar(tt[ix]-t0, lgL[ix], lgL_unc[ix], fmt="o-", color = color)
-        mymodel = model_piro15(tgrid, wv=wave, Renv=Renv, Menv_=Menv_, E51 = E51, Mcore_ = Mcore_)
+        mymodel = model_piro15_recast(tgrid, wv=wave, Renv=Renv, Menv_=Menv_, E51 = E51, Eext49 = Eext49)
         lgLmodel = np.log10(mymodel)
         plt.plot(tgrid, lgLmodel, color = color, label = name)
     plt.ylim(36, 39.3)
@@ -202,13 +192,13 @@ def submcmcfit(tcut, tt, wv, lgL, lgL_unc):
     
        
     nwalkers = 100
-    ml_guess = np.array([13., -1, -4.3, 3, 10])
+    ml_guess = np.array([12.4, -1.0, -3.2, 7.0, 11.5])
     #initial position of walkers
     ndim = len(ml_guess)
     nfac = [1e-3]*ndim
     pos = [ml_guess + nfac * np.random.randn(ndim) for i in range(nwalkers)]
     
-    max_samples = 20000
+    max_samples = 5000
     check_tau = 200
     
     filename = dirpath + "sampler.h5"
@@ -259,7 +249,7 @@ def submcmcfit(tcut, tt, wv, lgL, lgL_unc):
                     'lg' +r'$M_\mathrm{env}$', 
                     r"$t_0$",
                     "E51", 
-                    r"$M_{\rm core}$"]
+                    "Eext49"]
 
     plotChains(sampler, 25, paramsNames, nplot=35)
     plt.tight_layout()
@@ -336,21 +326,12 @@ if __name__ == "__main__":
        0.024, 0.072, 0.068, 0.024, 0.032, 0.12 , 0.036, 0.032, 0.048,
        0.032, 0.024, 0.04 , 0.04 ])
         
-    """
-    # remove the first data point from fitting:
-    ix = tt>1
-    tt = tt[ix]
-    wv = wv[ix]
-    lgL = lgL[ix]
-    lgL_unc = lgL_unc[ix]
-    """
     tcut = 2.0
     
-    tcuts = np.linspace(1.0, 7.0, 7)
+    tcuts = np.linspace(1.0, 5.0, 5)
     for i in range(len(tcuts)):
         tcut = tcuts[i]
         submcmcfit(tcut, tt, wv, lgL, lgL_unc)
     
     #submcmcfit(tcut, tt, wv, lgL, lgL_unc)
-    
     

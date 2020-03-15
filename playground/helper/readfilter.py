@@ -8,6 +8,8 @@ Created on Fri Jun 14 16:04:35 2019
 import numpy as np
 import pandas as pd
 import extinction
+from astropy.io import fits
+from astropy.table import Table
 import astropy.io.ascii as asci
 import matplotlib.pyplot as plt
 import matplotlib
@@ -51,7 +53,82 @@ def get_LT_eff_wave(filename, return_type = 'R'):
         return Rg
     elif return_type == 'more':
         return g_eff, wv, fg
+    
+    
+def get_SDSS_eff_wave(ext=2, return_type = 'more'):
+    """
+    extension 2: g band
+    """
+    tb = Table(fits.open("../data/filters/SDSS/filter_curves.fits")[ext].data)
+    wv = tb["wavelength"].data
+    fg = tb["respt"].data
+    fg /= max(fg)
+    wv_diff_ = wv[1:] - wv[:-1]
+    wv_diff = 0.5 * (np.hstack([wv_diff_[0], wv_diff_]) + np.hstack([wv_diff_, wv_diff_[-1]]))
 
+    g_eff = np.sum(wv_diff * fg * wv) / np.sum(wv_diff * fg)
+    ebv = 1
+    Rg = extinction.ccm89(np.array([float(g_eff)]), 3.1*ebv, 3.1)[0]
+    
+    if return_type == 'R':
+        return Rg
+    elif return_type == 'more':
+        return g_eff, wv, fg
+    
+    
+def get_PS1_eff_wave(myfilter="g", return_type = 'more'):
+    tb = asci.read("../data/filters/PS1/PAN-STARRS_PS1."+myfilter+".dat")
+    wv = tb["col1"].data
+    fg = tb["col2"].data
+    fg /= max(fg)
+    wv_diff_ = wv[1:] - wv[:-1]
+    wv_diff = 0.5 * (np.hstack([wv_diff_[0], wv_diff_]) + np.hstack([wv_diff_, wv_diff_[-1]]))
+
+    g_eff = np.sum(wv_diff * fg * wv) / np.sum(wv_diff * fg)
+    ebv = 1
+    Rg = extinction.ccm89(np.array([float(g_eff)]), 3.1*ebv, 3.1)[0]
+    
+    if return_type == 'R':
+        return Rg
+    elif return_type == 'more':
+        return g_eff, wv, fg
+    
+    
+def get_2MASS_eff_wave(myfilter="J", return_type = 'more'):
+    tb = asci.read("../data/filters/2MASS/2MASS_2MASS."+myfilter+".dat")
+    wv = tb["col1"].data
+    fg = tb["col2"].data
+    fg /= max(fg)
+    wv_diff_ = wv[1:] - wv[:-1]
+    wv_diff = 0.5 * (np.hstack([wv_diff_[0], wv_diff_]) + np.hstack([wv_diff_, wv_diff_[-1]]))
+
+    g_eff = np.sum(wv_diff * fg * wv) / np.sum(wv_diff * fg)
+    ebv = 1
+    Rg = extinction.ccm89(np.array([float(g_eff)]), 3.1*ebv, 3.1)[0]
+    
+    if return_type == 'R':
+        return Rg
+    elif return_type == 'more':
+        return g_eff, wv, fg
+    
+    
+def get_WISE_eff_wave(myfilter="W1", return_type = 'more'):
+    tb = asci.read("../data/filters/WISE/WISE_WISE."+myfilter+".dat")
+    wv = tb["col1"].data
+    fg = tb["col2"].data
+    fg /= max(fg)
+    wv_diff_ = wv[1:] - wv[:-1]
+    wv_diff = 0.5 * (np.hstack([wv_diff_[0], wv_diff_]) + np.hstack([wv_diff_, wv_diff_[-1]]))
+
+    g_eff = np.sum(wv_diff * fg * wv) / np.sum(wv_diff * fg)
+    ebv = 1
+    Rg = extinction.ccm89(np.array([float(g_eff)]), 3.1*ebv, 3.1)[0]
+    
+    if return_type == 'R':
+        return Rg
+    elif return_type == 'more':
+        return g_eff, wv, fg
+    
 
 def get_UVOT_eff_wave(filename, return_type = 'R'):
     specg = asci.read('../data/filters/UVOT/'+filename)
