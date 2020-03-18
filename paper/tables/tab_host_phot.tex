@@ -1,0 +1,44 @@
+\begin{deluxetable}{llll}[htbp!]
+		\tabletypesize{\scriptsize}
+		\tablecaption{Photometry of the host galaxy \label{tab:host_phot}}
+		\tablehead{
+\colhead{Instrument/Filter}
+& \colhead{$\lambda_{\rm eff}$ ($\AA$)}
+& \colhead{$m$}
+& \colhead{$\sigma_{m}$}
+	}
+\startdata
+% UVOT checked (lambda_eff, mag, emag)
+UVOT/$UVW2$ 		& 2079.0  & 20.492 & 0.124\\
+UVOT/$UVM2$		& 2255.1  &  20.471 & 0.172\\
+UVOT/$UVW1$ 		& 2614.2  &  20.081  & 0.155\\
+UVOT/$U$		& 3475.5  &  19.631 & 0.145\\
+UVOT/$B$		& 4359.1  &  18.812 & 0.139\\
+UVOT/$V$		& 5430.1  &  18.194  & 0.171\\
+% SDSS checked (lambda_eff, mag, emag)
+SDSS/$u'$ 		& 3561.8  &  19.636	& 0.082	\\
+SDSS/$g'$ 		& 4718.9  &  18.540 & 0.015	\\
+SDSS/$r'$ 		& 6185.2  & 18.056	 & 0.026 \\
+SDSS/$i'$ 		& 7499.7     &17.885 & 0.028\\
+SDSS/$z'$ 		& 8961.5     &17.697 & 0.089\\
+% PS1 checked (lambda_eff, mag, emag)
+PS1/$g_{\rm PS1}$	& 4866.5     & 18.538 & 0.042\\
+PS1/$r_{\rm PS1}$	& 6214.6     & 18.029  & 0.030\\
+PS1/$i_{\rm PS1}$	& 7544.6     &17.845 &0.033\\
+PS1/$z_{\rm PS1}$	& 8679.5     & 17.755 & 0.050\\
+PS1/$y_{\rm PS1}$	& 9633.3     &17.710  & 0.063\\
+% 2MASS
+2MASS/$J$ 		& 12410.5   & 17.653 & 0.215\\
+2MASS/$H$ 		& 16513.7   &17.690 & 0.420\\
+% WISE
+WISE/$W1$ 		& 34002.6    & 18.460 & 0.069\\
+WISE/$W2$   & 46520.1    & 18.953 &  0.136\\
+\enddata
+\tablecomments{$m$ and $\sigma_m$ are observed magnitude (without extinction correction) in AB 
+system.
+	% SDSS \citep{Alam2015} 
+	%AllWISE 	\citep{Cutri2013} measurements are in the Vega system and the conversion to flux 
+	%density are performed using \citet[][Table~1]{Jarrett2011}.
+}
+\end{deluxetable}
+	

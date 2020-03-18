@@ -4,7 +4,7 @@
 \usepackage{empheq}
 \usepackage{mathrsfs}
 \usepackage{textcomp}
-%\usepackage{enumitem}   
+\usepackage{enumitem}   
 \usepackage{gensymb}
 \usepackage{hyperref}
 \usepackage{graphicx}
@@ -90,9 +90,13 @@
 
 %\author{Friends}
 
-% KDE, Mansi, Shri
+% Main: Kishalay, Mansi
 
-% Zhihui
+% Host galaxy analysis: Steve (photometry), Zhihui (fitting)
+
+% HST data: Andy (PI), David (reducer)
+
+% early data: Anna, Dan (LT),  Matthew Graham (LRIS PI)
 
 
 \begin{abstract}
@@ -109,7 +113,7 @@ fast-rising SNe.
 %% Keywords should appear after the \end{abstract} command. 
 %% See the online documentation for the full list of available subject
 %% keywords and the rules for their use.
-\keywords{supernovae: general -- supernovae: individual (AT2019dge/ZTF18abfcmjw) -- surveys}
+\keywords{supernovae: general -- supernovae: individual (AT2019dge) -- surveys}
 
 %% From the front matter, we move on to the body of the paper.
 %% Sections are demarcated by \section and \subsection, respectively.
@@ -129,31 +133,57 @@ fast-rising SNe.
 \vspace{1em}
 
 \section{Introduction}
-Type Ib/c supernovae (SNe Ib/c) are explosions of massive stars that lost their 
-hydrogen envelopes. Their typical rise time ($t_{\rm rise}\approx 20\,{\rm d}$) and peak luminosity 
-($M_{R\rm , peak} \approx -18$\,mag) suggest ejecta mass of $M_{\rm ej}\approx 2\, M_\odot$ and 
-$^{56}$Ni mass 
-of $M_{\rm Ni}\approx 0.2\, M_\odot$ \citep{Drout2011, Prentice2019}. Today, a growing number of 
-subluminous and rapidly-evolving SNe Ib/c are discovered by wide-field optical surveys, such as 
-SN2005ek \citep{Drout2013}, SN2010X \citep{Kasliwal2010}, iPTF14gqr \citep{De2018}, and the class of 
-Ca-rich gap transients \citep{Kasliwal2012}. However, the physical origin of this population of SNe still 
-remains largely elusive. 
+Type Ibc supernovae (SNe Ibc) are explosions of massive stars that have lost their 
+hydrogen envelopes. Their typical rise time ($t_{\rm rise}$ in the range of 10--25\,days) and peak 
+luminosity ($M_{R\rm , peak}$ between $-17$ and $-19$\,mag) suggest ejecta mass ($M_{\rm ej}$) of 
+1--5\,$M_\odot$ and $^{56}$Ni mass ($M_{\rm Ni}$) of 0.1--0.4\,$M_\odot$ \citep{Drout2011, 
+Taddia2018, Prentice2019}. The relatively low $M_{\rm ej}$ and high rates of SNe Ibc are not compatible 
+with prediction from the evolution of single massive stars, whose mass-loss rates are not high enough 
+to strip most of the outer layers. In contrast, Wolf-Rayet (WR) or helium star descendants of massive 
+stars in close binary systems are thought to be the dominate progenitor for the Ibc population 
+\citep{Smith2011, Dessart2012, Lyman2016}. The pre-SN star sheds its envelope by mass transfer to 
+the companion, leaving a final envelope mass of 1$M_\odot$ or more prior to explosion 
+\citep{Yoon2010}.
 
-Theoretical interpretation for faint and fast SNe include scenarios not related to the explosion of 
-massive stars \citep{Shen2010, Sim2012, Metzger2009, Margalit2016}, an ultra-stripped massive star 
-progenitor \citep{Tauris2015}, core-collapse supernovae (CCSNe) with fallback \citep{Moriya2010}, and
-explosions of extended helium giant stars \citep{KleiserFuller2018}. Interaction with circumstellar 
-material (CSM) and alternative power sources, on the other hand, are always invoked to explain 
-more brighter and slow-evolving events (e.g. \citealt{Chevalier2011, Hotokezaka2017}).
+SNe Ibc with the lowest $M_{\rm ej}$ arise from iron-core collapse of a stellar core that stripped its 
+envelope to a greater extent. This can occur in tight binaries where a helium star transfers 
+mass to a neutron star (NS). Such a scenario was invoked to explain the fast evolution of Type Ic SN 
+1994I with a carbon-oxygen progenitor star of $\sim 2\,M_\odot$ and $M_{\rm ej }\sim 0.9\, M_\odot$ 
+\citep{Nomoto1994}. Should the degree of stripping be more extreme, we may 
+expect the so-called \textit{ultra-stripped} envelope SNe with $M_{\rm ej}$ and $M_{\rm Ni} $ on the 
+order of $0.1 \, M_\odot$ and $0.01 \, M_\odot$, respectively \citep{Tauris2013,Tauris2015, Suwa2015}. 
+These weak explosions are likely the only channel to the formation of double neutron star 
+(DNS) binaries that are compact enough to merge within a Hubble time due to gravitational 
+wave (GW) radiation \citep{Tauris2017}. Ultra-stripped SNe are therefore progenitors of 
+multi-messenger sources that can be  jointly studied by the LIGO/VIRGO/KAGRA network  
+\citep{LIGO2018} and electromagnetic efforts.
 
-Here we report observations of the rapidly rising ($t_{\rm rise}\lesssim3$\,d) subluminous ($M_{R\rm , 
-peak} \approx -16$\,mag) helium-rich event AT2019dge discovered by the Zwicky Transient Facility 
-(ZTF; \citealt{Bellm2019b};  \citealt{Graham2019}), and put it in the context of ultra-stripped envelope 
-SNe. Calculations in this paper assume a $\Lambda$CDM cosmology with $H_0= 70 \, \rm km \, s^{-1}\, 
+Compared with canonical SNe Ibc, we expext light curves of ultra-stripped SNe to be rapidly-evolving 
+and subluminous due to the small amount of $M_{\rm ej}$ and $M_{\rm Ni}$ produced. Among the 
+group of faint and fast objects, SN2005ek \citep{Drout2013}, SN2010X \cite{Kasliwal2010}, as well as 
+some of the calcium-rich gap transients such as iPTF10iuv \citep{Kasliwal2012} and iPTF16hgs 
+\citep{DeKC2018} have been suggested to be good candidates for ultra-stripped SNe 
+\citep{Moriya2017}. However, properties of these objects are also consistent with alternative 
+interpretations, including core-collapse of stars with extended hydrogen-free envelopes
+\citep{Kleiser2014, KleiserFuller2018, KleiserKasen2018}, and scenarios not related to the explosion of 
+massive stars \citep{Metzger2009, Shen2010, Sim2012, Margalit2016}.
+
+The most convincing ultra-stripped event to date is the Type Ic SN iPTF14gqr \citep{De2018}. Its 
+radioactive-powered emission reveals $M_{\rm ej}\sim 0.2\, M_\odot$ and $M_{\rm Ni}\sim 
+0.05\,M_\odot$, whereas the detection of early-time shock cooling signatures pins down its 
+core-collapse origin. Discovered within one day of explosion, iPTF14gqr also demonstrates the 
+importance of early-time observations in securely identify ultra-stripped SNe. 
+
+Here we report observations and modelling of the rapidly rising ($t_{\rm rise}\lesssim3$\,d) 
+subluminous ($M_{R\rm , peak} \sim -16.3$\,mag) Type Ib SN AT2019dge (ZTF18abfcmjw) discovered 
+by the Zwicky Transient Facility (ZTF; \citealt{Bellm2019b};  \citealt{Graham2019}). AT2019dge provides 
+the second consistent observation of an ultra-stripped SN, and the first helium-rich event in this class. 
+Calculations in this paper assume a $\Lambda$CDM cosmology with $H_0= 70 \, \rm km \, s^{-1}\, 
 Mpc^{-1}$, $\Omega_m = 0.27$ and $\Omega_{\Lambda} = 0.73$ \citep{Komatsu2011}. UT times are 
-used throughout the paper. Alongside this paper, we have released our open-source analysis and all of 
-the data utilized in this study at \url{https://github.com/yaoyuhan/AT2019dge}. All spectra and 
-photometry will also be made available by the WISeREP repository \citep{Yaron2012}.
+used throughout the paper. 
+%Alongside this paper, we have released our open-source analysis and all of 
+% the data utilized in this study at \url{https://github.com/yaoyuhan/AT2019dge}. 
+All spectra and photometry also be made available by the WISeREP repository \citep{Yaron2012}.
 
 \section{Observations} 
 \subsection{The Detection and SN Location}
@@ -166,7 +196,8 @@ photometry will also be made available by the WISeREP repository \citep{Yaron201
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\columnwidth]{figures/offset.pdf}
-	\caption{The position of AT2019dge (red crosshairs) in its host galaxy.
+	\caption{\textit{HST} image of the field on Apr 22 in the F350LP filter. The position of AT2019dge is 
+	marked by the red crosshairs.
 		%Images are combined using the prescription in \citet{Lupton2004}.
 		\label{fig:offset}}
 \end{figure}
@@ -178,68 +209,63 @@ photometry will also be made available by the WISeREP repository \citep{Yaron201
 		with the letter `S' along the upper axis.\label{fig:lightcurve}}
 \end{figure*}
 % In this section, I report values on Marshal
-AT2019dge was first detected by ZTF using the Palomar Oschin Schmidt 48 inch (P48) telescope. On 
-2019 April 7 10:18:46 (JD $=2458580.9297$), a $g$-band detection at 
-$20.66\pm0.34$ mag and J2000 coordinates $\alpha = 
-17^{\mathrm{h}}36^{\mathrm{m}}46.75^{\mathrm{s}}$, $\delta = 
-+50^{\mathrm{d}}32^{\mathrm{m}}52.2^{\mathrm{s}}$
+AT2019dge was first detected by ZTF, which runs on the Palomar Oschin Schmidt 48 inch (P48) 
+telescope. The first real-time alert \citep{Patterson2019} was generated  on 2019 April 7 10:18:46 (JD 
+$=2458580.9297$) for a $g$-band detection at $20.66\pm0.34$ mag and J2000 coordinates $\alpha 
+= 17^{\mathrm{h}}36^{\mathrm{m}}46.75^{\mathrm{s}}$, $\delta = 
++50^{\mathrm{d}}32^{\mathrm{m}}52.2^{\mathrm{s}}$.
 %$\alpha = 17^{\mathrm{h}}36^{\mathrm{m}}46.76^{\mathrm{s}}$, $\delta = 
 %+50^{\mathrm{d}}32^{\mathrm{m}}52.5^{\mathrm{s}}$ (J2000) 
-met the machine-learning thresholds \citep{Mahabal2019} and real-time alerts were generated 
-\citep{Patterson2019}. On April 8, the transient was flagged by a science program filter on the 
+On April 8, a new alert was flagged by a science program filter on the 
 GROWTH Marshal \citep{Kasliwal2019} that is designed to look for fast evolving transients. 
 Figure~\ref{fig:detection} shows the ZTF detection image on April 10. AT2019dge resildes in a compact 
 galaxy SDSS J173646.73+503252.3 at the redshift of $z=0.0213$ (See Appendix 
-\ref{subsec:appspec_data}). Since AT2019dge is offset from the nucleus of the host in the 
-\textit{Hubble Space Telescope} ($HST$) image (Figure~\ref{fig:offset}), the explosion can not be a 
-tidal distruption event.
+\ref{subsec:appspec_data}). 
 
-\begin{figure*}[htbp!]
-	%
-	\centering
-	\includegraphics[width=\textwidth]{figures/spectra_early.pdf}
-	\includegraphics[width=\textwidth]{figures/spectra_phot.pdf}
-	\caption{Observed ealy-time and photosperic phase spectra of AT2019dge. For ground-based 
-		spectroscopy, the original spectra are	shown in translucent colors, with the overlying black 
-		lines showing the same spectra convolved with an 
-		${\rm FWHM} = 800\, {\rm km\, s^{-1}}$ (for LT) or ${\rm FWHM} = 200\, {\rm km\, 
-			s^{-1}}$ (for DBSP and LRIS) Gaussian kernel. We mask prominent galaxy lines of the 
-		DBSP spectrum in light red. In the right panels, we show spectral 
-		evolution in velocity space around prominent SN lines, where the $y$-axis is 
-		\label{fig:spectra}}
-	%
-\end{figure*}
-\begin{figure*}[htbp!]
-	%
-	\centering
-	\includegraphics[width=\textwidth]{figures/spectra_late.pdf}\\
-	\caption{Observed late-time spectra of AT2019dge. See 
-		Figure~\ref{fig:spectra}
-		\label{fig:spectra_late}}
-\end{figure*}
+\subsection{HST Observation}
+HST observations are obtained as part of our  \textit{Hubble Space Telescope} ($HST$) ``Rolling 
+Snapshots'' program (GO-15675, \citealt{Fruchter2018}). This new observational approach requires the 
+PI to update a list of objects of interest each week before the schedule is build, giving the 
+scheduler flexibility to choose a possible source of snapshots. Under this program, we obtained a NUV 
+spectrum using the WFC3 G280 grism, a short (60\,s) direct image of this field in the F300X filter to 
+set the wavelength scale of the  spectrum, as well as a longer exposure (200\,s) in the F350LP filter. 
+The image in the F350LP filter is shown in Figure~\ref{fig:offset}. It has very similar throughput to the 
+zeroth order of the G280 grism. We convolved this image to match the slight blurring of the zeroth 
+order G280 grism and then scaled and subtracted it, dramatically reducing host contamination from 
+the zeroth order host image.
 
+ Since AT2019dge is offset from the nucleus of the host in Figure~\ref{fig:offset}, the explosion can 
+ not be a  tidal distruption event.
  
 \subsection{Photometry}
 \subsubsection{Optical Photometry}
 We perform forced PSF photometry on ZTF difference images following the steps illustrated in 
 \citet{Yao2019}. The sky region of AT2019dge is covered by two ZTF fields with fieldid 763 and 
 1799. We exclude all data in field 1799 since the reference image was constructed using images 
-obtained between May 25 2018 and July 12 2019, which is after the explosion of the 
-transient\footnote{The ZTF name (ZTF18abfcmjw) indicates that the transient was discovered in 2018. 
-However, this is due to a candidate detection from negative subtraction (reference minus science) in 
-2018 in field 1799.}.
+obtained between May 25 2018 and July 12 2019 (see \citealt{Masci2019} fordetails of  reference image 
+generation), which is after the explosion of the transient. Although the ZTF name of this object 
+(ZTF18abfcmjw) may indicate that the transient was discovered in 2018, this is due to an alert 
+generated on July 7 2018 from a candidate detection in negative subtraction (reference minus science) 
+in field 763. We note that the seeing at that night was 4.2 arcsec, larger than 99\% of Palomar nights. 
+The irregular-shaped PSF might caused over-subtraction around the galaxy nucleus in the difference 
+imaging process.
 
 Since field 763 was included in both the northern sky survey with two epochs (one 
 $g\, +$ one $r$) per three nights and the extragalactic high-cadence survey with six epochs (three 
-$g\,+$ three $r$) per night\footnote{See \citet{Bellm2019a} for the ZTF experiments design.}, this 
+$g\,+$ three $r$) per night (see \citealt{Bellm2019a} for the ZTF experiments design), this 
 transient are visited muliple times every night. Therefore, single-night flux measurements in the same 
 filter are binned (by taking the inverse variance-weighted average). This gives a pre-explosion 
 $r$-band limit of 18.95 mag (5$\sigma$ limit computed at the expected position of the transient) on 
 April 4 10:36:34. Five-$\sigma$ detections are converted to magnitude for further analysis.
 
 Following the discovery of AT2019dge, we obtained follow-up photometry in $griz$ with the optical 
-imager (IO:O) on the Liverpool Telescope (LT; \citealt{Steele2004}). LT and P48 photometry are shown 
-in Figure~\ref{fig:lightcurve}. Absolute magnitude is determined by correcting for the distance modulus 
+imager (IO:O) on the Liverpool Telescope (LT; \citealt{Steele2004}). Digital image subtraction and 
+photometry for LT imaging was performed using the Fremling Automated Pipeline (\texttt{FPipe}; 
+\citealt{Fremling2016}). \texttt{Fpipe} performs calibration and host subtraction against Sloan Digital 
+Sky Survey reference images and catalogs (SDSS, \citealt{Alam2015}).
+
+LT and P48 photometry are shown in Figure~\ref{fig:lightcurve}. Absolute magnitude is determined by 
+correcting for the distance modulus 
 and Galactic extinction $E(B-V)=0.022$ estimated by \citet{Schlafly2011}, which builds upon 
 \citet{Schlegel1998}. We assume $R_V=3.1$, and adopt reddening law from \citet{Cardelli1989}. We do 
 not correct for host-galaxy contamination given the absence of \ion{Na}{I} D absorption in all spectra 
@@ -248,7 +274,7 @@ at the host redshift.
 We also performed forced photometry on archival PTF/iPTF difference images spanning May 07 2009 to 
 June 13 2016\footnote{We followed the procedure described in 
 	\url{http://web.ipac.caltech.edu/staff/fmasci/home/miscscience/forcedphot.pdf}}. No historical 
-detections was found. 
+detection was found. 
 \subsubsection{Swift Photometry}
 Space-based observations with the \textit{Neil Gehrels Swift Observatory} (\textit{Swift}; 
 \citealt{Gehrels2004}) was triggered on April 9 and April 10. Ultraviolet/Optical Telescope (UVOT; 
@@ -260,14 +286,20 @@ host-galaxy contribution at the location of the SN, we obtained a final epoch in
 on June 23 2019 and measured the photometry with the same aperture used for the transient. We 
 present a table of our optical and UV photometry in Section \ref{subsec:appphot_data}.
 
-We note that no point sources were detected in the XRT event files with $\rm{SNR}>2$.
+We note that no point sources were detected in the XRT event files with $\rm{SNR}>3$.
 The 3$\sigma$ limits in count\,s$^{-1}$ in the April 9, April 10, and June 23 observations are $7.8\times 
 10^{-3}$,  $5.8\times 10^{-3}$, and $6.1\times 10^{-3}$, respectively.
 
 \subsubsection{Radio Follow-up}
-We observed at high frequency radio bands using the Submillimeter Array (SMA, \citealt{Ho2004}) on 
-UT 2019 xx xx under its target-of-opportunity program. The project ID was xxx. Obser \todo{finish this}
-
+Shortly after the discovery of AT2019dge, we initiated radio follow-up in order to constrain the 
+presence of a radio counterpart, as potentially expected in some rapidly-rising transients with 
+circumstellar interaction \citep{HoPhinney2019}. We observed at high frequency radio bands using the 
+Submillimeter Array (SMA, \citealt{Ho2004}) on UT 2019 Apr 09 between 15:49:17 and 19:51:26 UTC 
+under its target-of-opportunity program. The 
+project ID is 2018B-S047 (PI: Anna Ho). We did not detect AT2019dge in the resulting image, while we 
+can place 3$\sigma$ upper limits to the flux density of 2.25\,mJy at 230\,GHz and 8.4\,mJy at 
+345\,GHz. 
+%The actual rms are 0.75 mJy for the 230 GHz image and 2.8 mJy for the 345 GHz image.
 
 \subsection{Spectroscopy}
 
@@ -275,22 +307,14 @@ We obtained eight optical spectroscopic follow-up of AT2019dge from $-1.1$\,d to
 to $g$-band peak using the Rapid Acquisition of Transients (SPRAT; \citealt{Piascik2014}) on the 
 Liverpool Telescope (LT), the Double Spectrograph (DBSP) on the 200-inch Hale telescope 
 \citep{Oke1982}, and the Low Resolution Imaging Spectrograph (LRIS) on the Keck-I telescope 
-\citep{Oke1995}. We use the automated LT pipeline reduction and extraction for the LT spectra. The 
-DBSP spectrum was reduced using a \texttt{PyRAF}-based reduction pipeline \citep{Bellm2016}. LRIS 
+\citep{Oke1995}. To extract the LT spectra, we use the automated SPRAT reduction pipeline, which is a 
+modification of the pipeline for FrodoSpec \citep{Barnsley2012}. The DBSP spectrum was reduced using 
+a \texttt{PyRAF}-based reduction pipeline \citep{Bellm2016}. LRIS 
 spectra were reduced and extracted using \texttt{Lpipe} \citep{Perley2019lpipe}. 
 
-
-An HST slitless NUV spectrum was obtained at phase $+12.0$\,d as part of our HST program 
-(GO-15675, PI Fruchter) using the WFC3 G280 grism. We obtained a short (60\,s) direct image of this 
-field in the F300X filter to  set  the wavelength scale of the  spectrum. We also obtained  a longer 
-exposure (200\,s) in the F350LP filter (see Figure~\ref{fig:offset}), which has very similar throughput to 
-the zeroth order of the G280 grism. We convolved this image to match the slight blurring of the 
-zeroth order G280 grism and then scaled and subtracted it, dramatically reducing host contamination 
-from the zeroth order host image.
-%70@300nm and an average dispersion of about 1.3 nm per pixel 
-
 A log of our spectroscopic observations is presented in Appendix \ref{subsec:appspec_data}. We 
-present our sequence of spectra in Figure~\ref{fig:spectra} and Figure~\ref{fig:spectra_late}.
+present our sequence of spectra in Figure~\ref{fig:spectra_early}, Figure~\ref{fig:spectra} and 
+Figure~\ref{fig:spectra_late}.
 
 \section{Properties of the Explosion \\and Its Host Galaxy}
 \subsection{Light Curve Properties}\label{subsec:lc_properties}
@@ -304,16 +328,16 @@ at $M_{g\rm , peak}=-16.45\pm0.04$ mag on ${\rm MJD}=58583.19$, and $M_{r \rm ,p
 with respect to the $g$-band maximum light epoch, ${\rm MJD}=58583.2$.
 
 The $g$- and $r$-band peak luminosity of AT2019dge ($\approx -16.3$\,mag) is around the lower limit 
-of stripped envelope SNe, and more similar to those of the Ca-rich gap transients, 
-which occupy the luminosity `gap' between novae and SNe (peak absolute magnitude $M_R \approx 
+of stripped envelope SNe, and similar to those of the Ca-rich gap transients, which occupy the 
+luminosity `gap' between novae and SNe (peak absolute magnitude $M_R \approx 
 -15.5$ to $-16.5$\,mag).
 
 \begin{figure}[htbp!]
 	\centering
 	\includegraphics[width=\columnwidth]{figures/compare_mag.pdf}
 	\caption{Comparison of the photometric evolution timescales ($t_{\rm rise}$ and $t_{\rm  
-			decay}$) and peak absolute magnitude of AT2019dge to other H-deficient fast-evolving 
-		These include 
+			decay}$) and peak absolute magnitude of AT2019dge to other H-deficient fast-evolving SNe, 
+		including
 		SN2002bj \citep{Poznanski2010},
 		SN2005ek \citep{Drout2013},  
 		PTF09dav \citep{Sullivan2011},
@@ -325,51 +349,63 @@ which occupy the luminosity `gap' between novae and SNe (peak absolute magnitude
 		 iPTF16hgs \citep{DeKC2018},
 		SN2018gep \citep{Ho2019},
 		SN2018kzr \citep{McBrien2019}, 
-		and SN2019bkc \citep{Chen2020}. 
-		For the two SNe with double peaked light 
-		curve (iPTF14gqr and iPTF16hgs), $t_{\rm rise}$ is estimated from model fitting to the first peak 
-		since the rise of first-peak was not observed, and $t_{\rm decay}$ is estimated from the decline of 
-		the second peak. Peak magnitude is given in $r$-band, except for KSN2015K where we 
-		only have observations in the \textit{Kepler} white filter, and iPTF16asu where the rise was only 
-		caught in $g$-band (but in rest-frame $r$-band since this is a high-redshift event).
-		%\\ZTF $g$-band detection for SN2019bkc and ATLAS $o$-band detection for SN2016hnk. 
+		and SN2019bkc \citep{Chen2020}. See the text for details.
 		\label{fig:compare_mag}}
 \end{figure}
 
 
 To characterize the rise and decline timescales of AT2019dge, we calculate rise time ($t_{\rm rise}$) 
-defined by how long it takes the $r$-band light curve to rise from one magnitude below peak to peak, 
-and decline time ($t_{\rm decay}$) determined by how long it takes to decline from peak by one 
-magnitude. In Figure \ref{fig:compare_mag} we compare the rise time, decay time, 
-and peak absolute magnitude between AT2019dge and other fast-evolving hydrogen-deficient 
-transients from the literature. 
+defined by how long it takes the $r$-band light curve to rise from 0.75\,mag below peak to peak, 
+and decline time ($t_{\rm decay}$) determined by how long it takes to decline from peak by 0.75\,mag 
+(corresponding to half of maximum flux). In Figure \ref{fig:compare_mag} we compare the rise time, 
+decay time, and peak absolute magnitude between AT2019dge and other fast-evolving 
+hydrogen-deficient transients from the literature. 
+
+In Figure \ref{fig:compare_mag}, peak magnitudes is given in $r$-band, except for KSN2015K where we 
+only have observations in the \textit{Kepler} white filter, and iPTF16asu where the rise was only 
+caught in $g$-band (but in rest-frame $r$-band since this is a high-redshift event). We only correct 
+for Galactic extinction to compute $M_{r\rm , peak}$ (assming no host extinction). Note that 
+iPTF14gqr and iPTF16hgs are two SNe exhibiting double peaked light curves. Since rising of their first 
+peaks were not captured, an upper limit of $t_{\rm rise}$ is calculated by taking the time difference 
+between the first $r$-band detection and the latest pre-discovery non-detection. Absolute magnitude 
+of the first $r$-band detection is considered to be a fainter limit of $M_{r\rm , peak}$ (plotted in the 
+upper panel). In the lower panel, since observation of iPTF14gqr does not extend to 0.75\,mag below 
+its second peak, we present a lower limit of its $t_{\rm decay}$.
 
 It is clear from the upper panel that AT2019dge rose faster than normal Ca-rich events such as 
 PTF09dav and PTF10iuv. The rise time of $\approx 2$\,d is similar to some fast evolving luminous 
-transients (FELTs) such as KSN2015K, iPTF16asu, and SN2018gep, but its substantially low luminosity 
-suggests that AT2019dge is physically distinct from the class of FELTs. In the subluminous regime, 
-iPTF14gqr and iPTF16hgs have $t_{\rm rise}$ comparable to AT2019dge. Both transients exhibit 
-double-peaked light curve where the first peak is postulated to be caused by the diffusion of 
-shock-deposited energy out of an envelope around the progenitor star.
+transients (FELTs) such as KSN2015K, iPTF16asu, and SN2018gep, but AT2019dge is substantially 
+fainter than FELTs. In the subluminous regime, iPTF14gqr and likely iPTF16hgs have $t_{\rm rise}$ 
+comparable to AT2019dge. Their first peaks have been postulated to be caused by the diffusion of 
+shock-deposited energy out of an envelope around the progenitor star \citep{De2018, DeKC2018}.
  
 The bottom panel of Figure \ref{fig:compare_mag} shows that $t_{\rm decay}$ of AT2019dge is 
-longer than many well-observed rapid-fading Type Ib/c SNe, such as SN2002bj, SN2018kzr, SN2005ek, 
-and SN2019bkc. Its decay timescale is more similar to SN2010X, iPTF14gqr, as well as the population of 
-Ca-rich transients PTF09dav, PTF10iuv, and iPTF16hgs. It has been suggested that the latter group of 
-events have radioactivivity powered main peak with low mass of nickel ($M_{\rm Ni} \lesssim 0.1 
+longer than the most rapidly-fading SNe Ibc, such as SN2005ek, SN2018kzr, 
+and SN2019bkc. Its decay timescale is more similar to SN2002bj, SN2010X, the population of Ca-rich 
+transients (PTF09dav, PTF10iuv, iPTF16hgs) and likely iPTF14gqr. It has been suggested that the latter 
+group of events have radioactivity powered main peak with low mass of nickel ($M_{\rm Ni} \lesssim 0.1 
 M_\odot$).
-
-We conclude that the AT2019dge is not one of FELTs. Its fast $t_{\rm rise}$ is reminiscent of shock 
-cooling emission, and the moderate $t_{\rm decay}$ is consistent with coming from radioactivity.
 
 \subsubsection{Bolometric Evolution}
 \begin{figure}[!htbp] 
 	\centering
 	\includegraphics[width=\columnwidth]{figures/Tbb_Rbb.pdf}
 	\caption{Evolution of blackbody properties (lumionosity, temperature, radius) over time of 
-		AT2019dge compared to iPTF14gqr and ZTF18aalrxas.}
+		AT2019dge compared to iPTF14gqr and iPTF16hgs. We adopt blackbody parameters of iPTF14gqr 
+		provided by \citet{De2018}, and use the same method as applied in AT2019dge to derive 
+		parameters of iPTF16hgs. At epochs where data in more than two filters are available, estimated 
+		values are plotted in solid dots, whereas estimates from only two filters are shown in empty 
+		circles.}
 	\label{fig:Tbb_Rbb_Lbb}
 \end{figure}
+\begin{figure*}[htbp!]
+	\centering
+	\includegraphics[width=\textwidth]{figures/compare_color.pdf}
+	\caption{Comparison of the color evolution of AT2019dge with a subset of fast SNe shown in 
+		Figure~\ref{fig:compare_mag}. All colors have been corrected for Galactic extincton. Due to 
+		absence of photometry in identical filters, we compare colors in corresponding filter pairs of 
+		$B$/$g$, $R$/$r$ and $I$/$i$.  \label{fig:compare_color}}
+\end{figure*}
 
 We constructed the bolometric light curve evolution by fitting a blackbody function to the spectral 
 energy distribution (SED). At eighteen epochs where at least detections in three flters are available, we 
@@ -381,196 +417,235 @@ five epochs that we only have photometric observations in two filters, we fit fo
 $R_{\rm bb}$ with no estimates on the parameter uncetainties. The SED fits are shown in 
 Appendix \ref{subsec:appphot_data}. 
 
-Adopting the explosion epoch estimated in Section \ref{subsec:fastrise} at $\Delta t=-3.20$\,d (i.e., 
-0.46\,d before the discovery epoch), we plot the physical evolution in Figure~\ref{fig:Tbb_Rbb_Lbb}, 
-with a comparison to peculiar SN Ic iPTF14gqr \citep{De2018} and stripped envelope SN IIb 
-ZTF18aalrxas \citep{Fremling2019}. The bolometric luminosity peaks at $ t=1$--2\,d 
-after the assumed explosion epoch, at $\sim 5\times 10^{42}\,{\rm erg\, s^{-1}}$. The initial fast drop of 
-luminsity ($0.36\,{\rm mag\,d^{-1}}$) and temperature is similar to the early evolution of several 
-stripped envelope SNe displaying double-peaked light curve, where the first peak has been modelled 
-by cooling emission from an extended envelope around the progenitor after the core-collapse SN 
-shock breaks out \citep{Modjaz2019}. We interpret the early evolution in the context of shock-cooling 
-emission in Section \ref{subsec:fastrise}.
+In Figure~\ref{fig:Tbb_Rbb_Lbb}, we plot the physical evolution of AT2019dge with a comparison to 
+iPTF14gqr and iPTF16hgs. We adopt the explosion epoch of iPTF14gqr, iPTF16hgs, and AT2019dge 
+estimated by \citet{De2018}, \citet{DeKC2018}, and Section \ref{subsec:fastrise} of this paper, 
+respectively. The bolometric luminosity of AT2019dge reaches $\sim 5\times 10^{42}\,{\rm erg\, s^{-1}}$ 
+at $\sim 1.5$\,d after the assumed explosion epoch. The subsequent decline displays an initial 
+fast drop of $0.36\,{\rm mag\,d^{-1}}$ at age 2--7\,d, and transitions to a slower drop of $0.11\,{\rm 
+mag\,d^{-1}}$ at age 8--30\,d. Noe that data points of AT2019dge at age 0.5\,d are plotted in 
+empty circles, indicating that no uncertainties can be obtained and their values should only be 
+considered as rough estimates. 
 
-The lumnosity falls at a much slower rate at later times ($ t \gtrsim 9$\,d) while the radius remains flat. 
-The total integrated blackbody energy output during $ t = 0.6$--30\,d is $\sim 
-2\times 10^{43}\,{\rm erg\,s^{-1}}$. Assuming that the photospheric radius linearly expands at early 
-phase, we fit a linear function to the $R_{\rm bb}$ vs.~$\Delta t$ diagram (bottom panel of 
-Figure~\ref{fig:Tbb_Rbb_Lbb}). 
+The bolometric temperature of AT2019dge reaches as high as $\sim 2.3\times 10^4$\,K at age $1.5$\,d 
+and rapidly falls afterwards. The maximum $T_{\rm bb}$ is much hotter than that observed in normal 
+SNe Ibc (6000--10000\,K, \citealt{Taddia2018}). Its early evolution is less fast than iPTF14gqr, but 
+similar to iPTF16hgs and several other stripped envelope SNe displaying double-peaked light curve 
+(e.g., see Figure~2 of \citealt{Fremling2019}). Their first peaks have been modelled by cooling emission 
+from an extended envelope around the progenitor after the core-collapse SN shock breaks out 
+\citep{Modjaz2019}. After $\sim 8$\,d past explosion, $T_{\rm bb}$ flattens to $6000\pm1000$\,K, 
+similar to the behavior of normal SNe Ibc at a much later phase ($\sim30$\,d after explosion, 
+\citealt{Taddia2018}).
+
+Assuming that the photospheric radius can be approximated by $R_{\rm bb}$ and linearly expands at 
+early phase, we fit a linear function to the first few $R_{\rm bb}$ vs.~time measurements of AT2019dge 
+(lower panel of Figure \ref{fig:Tbb_Rbb_Lbb}), which gives $\approx 8150\, {\rm km\,s^{-1}}$. The radius 
+remains flat at $\sim 6.6\times 10^3\,R_\odot$ during age 8--30\,day, and even appears to slowly 
+recede. The total integrated blackbody energy output during $ t = 0.5$--30\,d is $\sim 2\times 
+10^{43}\,{\rm erg\,s^{-1}}$. 
 
 \subsubsection{Color Evolution}
-\begin{figure*}[htbp!]
-	\centering
-	\includegraphics[width=\textwidth]{figures/compare_color.pdf}
-	\caption{Comparison of the color evolution of AT2019dge with some other fast SNe shown in 
-		Figure~\ref{fig:compare_mag}. All colors have been corrected for Galactic extincton. Due to 
-		absence of photometry in identical filters, we compare colors in corresponding filter pairs of 
-		$B$/$g$, $R$/$r$ and $I$/$i$.  \label{fig:compare_color}}
-\end{figure*}
 We compare the color curves of other fast transients to that of AT2019dge in 
 Figure~\ref{fig:compare_color}, in corresponding pairs of $B$/$g-R$/$r$ and $R$/$r-I$/$i$ colors. For 
 double-peaked events iPTF14gqr and iPTF16hgs, ``maximum'' time corresponds to epoch of maximum 
 light in the second peak.
 
-The 
-early-time blue color of AT2019dge arises from the high-temperature peak. Subsequently, AT2019dge 
-has relatively typical $g-r$ color evolution among this set of transients, displaying a 
-progression from a very blue transient ($g-r \approx -0.4$ mag) at early times to a relatively red 
-transient ($g-r \approx 0.5$) within 10 days of explosion. This fast reddening is indicative of rapid 
-cooling of the ejecta since the spectra at these phases are broadly consistent with featureless 
-continua. We conclude that the multi-color light curves of the main peak of iPTF 14gqr exhibit several 
-similarities (light curve shape and timescales) as well as unique differences (short rise time) in this 
-sample of transients.
+The early-time blue color of AT2019dge arises from the high-temperature peak. Among other events, 
+SN2002bj, iPTF14gqr and iPTF16hgs exhibit earliest colors as blue as AT2019dge. Subsequently, 
+AT2019dge displays a color starting out blue and turning redder with time, consistent with a cooling 
+process. 
 
-AT2019dge shows a color starting out blue and turning redder with time, consistent with an expanding 
-and cooling photosphere.
-
-Although AT2019dge has the same optical peak luminsity as Ca-rich transients, their multi-color light 
-curves of are very different in shape. The color evolution  which otherwise form a fairly homogeneous 
-class. 
-
-\todo{AT2019dge is special in that the color even turned green a littble bit at $6<\Delta t<10$.}
-
-
-\subsection{Spectroscopic Properties}\label{subsec:spec_properties}
-\subsubsection{Early Spectral Evolution}
-
-The very early spectra at $-1.1$, $-0.1$, and $+0.4$\,d show a blue continuum and strong galaxy 
-emision lines from the underlying \ion{H}{II} region (see the top panel of Figure~\ref{fig:spectra}). In 
-addition, these spectra also show prominent \ion{He}{I} $\lambda5875$ and high-ionization \ion{He}{II} 
-$\lambda4686$ narrow emission lines ($\sim 600\,{\rm km\,s^{-1}}$). The low-velocity flash lines are 
-not coming from the fast SN ejecta but rather from photoionized material in a region of undistrubed 
-CSM exterior to the SN \citep{Leonard2000}. Using the line index definition given by 
-\citet{Khazov2016}, we calculated the equivalent width of \ion{He}{II} to be $-7.56\pm 1.07$ $-2.66\pm 
-1.30$, and $-3.77\pm 0.16$ in the $-1.1$\,d, $-0.1$\,d, and $+0.4$\,d spectra.
-
-\todo{rewrite this: If the exploding star is embedded in circumstellar material (CSM) that is dense (n∼ 
-1012 cm−3) and extended (r> 1013 cm), the CSM will be flash-ionized and quickly recombine, imprinting 
-a strong emission-line pattern onto the underlying hot continuum. Eventually, the expanding SN ejecta 
-plow through any nearby CSM (moving at typical expansion velocities of 104 km s−1, SN ejecta cover ∼ 
-9×1013 cm per day) and wipe out the emission-line spectrum, transforming it into a blue, featureless 
-continuum that is typical for few-day old SN spectra;}
-These lines were created by recombination of some CSM flash-ionized by a shock breakout 
-\citep{Khazov2016}
-
-We make an order-of-magnitude estimate on the progenitor mass-loss rate following the xx given by 
-\citet{Ofek2013}
-
+One uniqueness of AT2019dge is that at 6--9 days after maximum light, the $g-r$ color becomes bluer 
+by $\approx 0.2$\,mag, while after that the color continues to redden. We notice that iPTF14gqr also 
+exhibit this behavior --- around 4\,day before the second peak, its $g-r$ color stays flat before getting 
+redder afterwards, while around 2\,day before the second peak, its $r-i$ color alsp turns bluer by 
+$\approx 0.2$\,mag.
 
 \begin{figure*}[htbp!]
 	\centering
-	\includegraphics[width=0.495\textwidth]{figures/hst_opt.pdf}
-	\includegraphics[width=0.495\textwidth]{figures/hst_all.pdf}
-	\caption{$Left$: AT2019dge compared with spectra of 
-	other SNe, 
-	including SN2002bj \citep{Poznanski2010}, SN2005bf \citep{Folatelli2006}, SN2008ax 
-	\citep{Chornock2011}, PTF12os and iPTF13bvn \citep{Fremling2016} \todo{include iPTF10iuv??? 
-	iPTF16hgs??? }
-	$Right$: HST spectrum of AT2019dge compared with spectra of other SNe, including SN2006jc 
-	\citep{Bufano2009}, SN1993J \citep{Jeffery1994}, SN2011fe \citep{Mazzali2014}, and Gaia16apd 
-	\citep{Yan2017}.
-		\label{fig:hst}}
+	\includegraphics[width=\textwidth]{figures/spectra_early.pdf}
+	\caption{Early-time spectra of AT2019dge.  In panel (a), the original spectra are	
+		shown in translucent colors, with the overlying black lines showing the same spectra convolved 
+		with an ${\rm FWHM} = 800\, {\rm km\, s^{-1}}$ (for LT)  or ${\rm FWHM} = 200\, {\rm km\, 
+			s^{-1}}$ (for LRIS) Gaussian kernel. Prominent galaxy lines are marked by the 
+		dash-dotted lines. In panel (b) (c) and (d), we show the observed spectra (not convolved with any 
+		kernels) in velocity space around the \ion{He}{II} $\lambda 4686$, \ion{He}{I} $\lambda 5876$ and 
+		H$\alpha$ emission lines.
+		\label{fig:spectra_early}}
 \end{figure*}
+
+\begin{figure*}[htbp!]
+	\centering
+	\includegraphics[width=\textwidth]{figures/spectra_phot.pdf}
+	\caption{Photosperic phase spectra of AT2019dge. In panel (a), the original DBSP 
+	spectrum is shown in translucent colors, with the overlying black lines showing the same spectrum 
+	convolved with an ${\rm FWHM} = 200\, {\rm km\, s^{-1}}$ Gaussian kernel. We mask prominent 
+	galaxy lines in the DBSP spectrum in light red. In pabel (b), we show the observed spectra (not 
+	convolved with any kernels) in velocity space around \ion{He}{I} $\lambda 5876$ .
+		\label{fig:spectra}}
+\end{figure*}
+
+\subsection{Spectroscopic Properties}\label{subsec:spec_properties}
+The phases of the spectra indicated in this section are relative to $r$-band peak.
+\subsubsection{Early Spectral Evolution} \label{subsubsec:spec_early}
+The very early spectra at $-1.1$, $-0.1$, and $+0.4$\,d show a blue continuum and strong galaxy 
+emision lines from the underlying \ion{H}{II} region (see Figure~\ref{fig:spectra_early}). In 
+addition, these spectra also show prominent \ion{He}{I} $\lambda5875$ and high-ionization \ion{He}{II} 
+$\lambda4686$ narrow emission lines. Using the line index definition given by \citet{Khazov2016}, we 
+calculated the equivalent width of \ion{He}{II} to be $-7.56\pm 1.07$ 
+$-2.66\pm 1.30$, and $-3.77\pm 0.16$ in the $-1.1$\,d, $-0.1$\,d, and $+0.4$\,d spectra. Full-width at 
+half-maximum intensity (FWHM) velocities of the \ion{He}{II}, \ion{He}{I}, and H$\alpha$ emission lines 
+are $\sim 550\,{\rm km\,s^{-1}}$, $\sim 570\,{\rm km\,s^{-1}}$, and $320\,{\rm km\,s^{-1}}$ (unresolved), 
+respectively. Thus, we infer that the hydrogen emission is from the host galaxy, while the helium lines 
+are from photoionized material in a region of immediate environment exterior to the SN.
+
+Early-time low-velocity \ion{He}{II} $\lambda4686$ emission has been detected in nearly twenty
+hydrogen-rich CCSNe and one hydrogen-poor SN iPTF14gqr. This feature often fades away within a 
+few hours to a few days after the explosion \citep{Yaron2017}. The high ionization potential of this line 
+requires high temperature or an ionizing flux, which might come from either shock breakout or CSM 
+interaction \citep{GalYam2014, Smith2015}. Due to the rapid decrease in $T_{\rm bb}$ at the three 
+epochs of our early-time spectra and the similarity between AT2019dge and iPTF14gqr, we favor shock 
+cooling emission as the origion of recombination helium lines.
+
 \subsubsection{Photosperic Phase Spectral Evolution}
-Broad transient features show up in the $+12.0$ adn $+14.3$\,d spectra. The existence of P-Cygni 
-\ion{He}{I} $\lambda5876$ profile and non-existence of hydrogen is reminiscent of Type Ib 
-SN. The HST spectrum should contain little host-galaxy contamination due to its narrow 
-slitwidth and high resolution, otherwise we should see emission features at prominent galaxy line 
-wavelengths (H$\alpha$, [\ion{O}{III}], [\ion{O}{II}], etc). The UV part is much weaker than a blackbody 
-extrapolation opf their optical spectra would predict. This has also been seen in previous UV 
-observations of SNe, and interpreted as strong metal-line blanketing, mostly by \ion{Fe}{II} and 
-\ion{Co}{II} lines \citep{Gal-Yam2008}.
 
-\todo{say that the undulations at 6700\AA is likely just noise. Ask David to put a trace on the galaxy 
-center and show spectrum to get a sense of the SNR}
+\begin{figure}[htbp!]
+	\centering
+	\includegraphics[width=\columnwidth]{figures/hst_opt.pdf}
+	\caption{Photosperic phase spectra of AT2019dge compared with 
+		other SNe, including SN2000er \citep{Pastorello2008}, SN2002bj \citep{Poznanski2010}, iPTF14aki 
+		\citep{Hosseinzadeh2017}, PTF12os and iPTF13bvn \citep{Fremling2016}. \ion{He}{I} transitions at 
+		rest wavelength are marked by the vertical cyan lines (though note that not all of these lines are 
+		visible in all spectra shown here).
+		\label{fig:hst_opt}}
+\end{figure}
 
-In Figure~\ref{fig:hst_opt} we show that AT2019dge share similarity with those of normal SNe Ib/IIb in 
-the optical region, but the spectrum does not match any known SN in 4000-4500\AA\,and 
-6500--7500\AA. In Figure~\ref{fig:hst_all} we compare the HST UV spectrum too other type of SN. 
-AT2019dge most closely resemble SN1993J between 2000 and 4000\AA. .
-
-Enhanced (and potentially eruptive) mass-loss during the final stages of stellar evolution is a key probe 
-of poorly understood physics (e.g., Shiode \& Quataert 2013; Smith \& Arnett 2014) that sets the initial 
-conditions to core-collapse. 
-
+Broad transient features show up in the $+12.0$ and $+14.3$\,d spectra (Figure~\ref{fig:spectra}). The 
+HST spectrum contains little host-galaxy contamination 
+due to its high angular resolution. Prominent galaxy emission lines in the DBSP 
+spectrum are identified and plotted in light red to emphasize transient features. The existence of 
+P-Cygni \ion{He}{I} $\lambda5876$ profile and non-existence of hydrogen is reminiscent of Type Ib SN. 
 We measure the velocity of the \ion{He}{I} $\lambda5876$ line by fitting a parabola to the absorption 
-minimum. This resulting fits give a velocity of $\approx 6000\, {\rm km\,s^{-1}}$ and $ 5900\, {\rm 
-km\,s^{-1}}$ for the $+12.0$\,d and $+14.3$\,d spectra, respectively; At maximum light, we expect the 
-photospheric velocity to be higher. A linear fit to the first few $R_{\rm bb}$ vs. time measurements 
-(lower panel of Figure \ref{fig:Tbb_Rbb_Lbb}) gives $\approx 8150\, {\rm km\,s^{-1}}$. Hereafter we 
-assume the ejecta velocity to be $v_{\rm ej} = 8150\, {\rm km\,s^{-1}}$
+minimum. The resulting fits give velocities of $\approx 6000\, {\rm km\,s^{-1}}$ and $ 5900\, {\rm 
+km\,s^{-1}}$ for the $+12.0$\,d and $+14.3$\,d spectra, respectively. This is lower than velocities of 
+normal SNe Ib measured from the \ion{He}{I} $\lambda5876$ absorption minimum ($\sim 10^4\, \rm km\, 
+s^{-1}$, \citealt{Liu2016}), but higher than that in Type Ibn SNe ($\sim 3000\, \rm km\, s^{-1}$, 
+\citealt{Hosseinzadeh2017}).
 
+\begin{figure}[htbp!]
+	\centering
+	\includegraphics[width=\columnwidth]{figures/hst_all.pdf}
+	\caption{HST spectrum of AT2019dge compared with other SNe, including SN2006jc 
+		\citep{Bufano2009}, SN1993J \citep{Jeffery1994}, SN2011fe \citep{Mazzali2014}, and Gaia16apd 
+		\citep{Yan2017}.
+		\label{fig:hst}}
+\end{figure}
 
-\todo{consider use Marc Williamson 2019 paper to confirm the peculiarity of this event}
+In Figure~\ref{fig:hst_opt}, we compare the photosperic phase optical spectra of 
+AT2019dge with other helium-rich events. Note that the DBSP specrum has host emission lines 
+masked. AT2019dge is different from normal helium-rich stripped envelope SNe Ib/IIb or SNe Ibn in the 
+sense that its P-Cygni absoprtion minimum in the \ion{He}{I} $\lambda5876$ line is much weaker. The 
+feature at $\sim5000{\rm \AA}$ is often attributed to \ion{He}{I} $\lambda 5016$ and \ion{Fe}{II} triplet 
+$\lambda\lambda\lambda4924$, 5018, and 5169 \citep{Liu2016}. The shape of this feature in 
+AT2019dge is similar to normal SNe Ib/IIb at much later phase ($\sim 20$\,d post maximum), indicating 
+that the spectral evolution of AT2019dge is faster. The complex absorption 
+profile at $\sim4500{\rm \AA}$ has been identified as a blend of \ion{Fe}{II}, \ion{Mg}{II} $\lambda 4481$ 
+and \ion{He}{I} $\lambda 4472$ \citep{Hamuy2002}. In the DBSP spectrum, we detected \ion{O}{I} 
+$\lambda 7774$ and broad \ion{Ca}{II} at $\sim8500{\rm \AA}$ (due to the triplet at 8498, 8542, and 
+8662\AA) with clear P-Cgyni profiles; Both are major features of stripped envelope SNe. 
 
-The UV emission fades with time from explosion as the photosphere cools and line blanketing from 
-metals becomes important in this part of the spectrum (particularly Fe II and Fe III; see M00; DH05, 
-DH06). Thus when reached by HST about two weeks after burst, the UV and blue optical spectrum of 
-the supernova is dramatically altered by the metal content of the ejecta at the line forming region.   In 
-particular, the combination of both UV and optical spectra allows us to break degeneracy between 
-temperature and metallicity. 
-
-Ba03:  Baron, E., et al.2003, ApJ, 586, 1199
-%M00:  Mazzali, P. A.2000, A&A, 363, 705
-%D05:  Dessart, L., & Hillier, D. J. 2005, A&A, 437, 667
-%DH06:  Dessart, L., & Hillier, D. J. 2006, A&A, 447, 691
-
- On the other hand, the limited number of UV spectra of Type Ib/c SNe have revealedconsiderable 
- differences – while the Type Ib SN 1983N (P03) showed several similarities toType Ia SNe in its UV 
- spectrum, the Type Ib SN 2006jc appeared to exhibit emission linesof likely Mg II features, suggested 
- to be associated with interaction of the SN ejecta witha pre-exisiting CSM wind.  In these cases, 
- ionization of the wind material by the SN shockwave can produce emission features of highly ionized 
- elements (e.g.  N V, N III and Si IV) aspreviously suggested in UV spectrum modeling of older events 
- (SN 1979C and SN 1980K;Be82; Pa80; Fr84).  Thus, UV spectra of core-collapse SNe are also a 
- powerful probe of in-teraction between the SN ejecta and a pre-existing CSM around the progenitor, 
- constrainingthe pre-explosion mass loss history of the progenitor stars
+In Figure~\ref{fig:hst}, we compare the HST NUV spectrum with other types of SNe. 
+The UV part of AT2019dge is much weaker than a blackbody extrapolation of the optical spectra would 
+predict. This has also been seen in normal thermonuclear and CCSNe, and interpreted as strong 
+metal-line blanketing caused by iron-peak elements, particularly \ion{Fe}{II} and \ion{Co}{II} 
+\citep{Gal-Yam2008}. AT2019dge bears a close resembance to SN1993J between 2000 and 4000\AA. 
+In Figure~\ref{fig:hst} we also marked rest wavelength of \ion{Mg}{I} $\lambda2852$ and \ion{Mg}{II} 
+$\lambda \lambda 2796$, 2803. The emission features at $\sim2760{\rm \AA}$ in AT2019dge and 
+Gaia16apd are similar to the bump at $\sim2730{\rm \AA}$ in SN1993J, which was found to be a NLTE 
+\ion{Mg}{II} emission line \citep{Jeffery1994}. This resonance line is blueshifted from its rest wavelength 
+since the ejecta are very optically thick, and has been interpreted as interaction of the SN ejecta and a
+circumstellar shell. Such an UV emitting shell may consist of gas originally ejected by the 
+stellar progenitor as a stellar wind or during an episodic mass ejection. 
 
 \subsubsection{Late-time  Spectral Evolution}
+\begin{figure*}[htbp!]
+	%
+	\centering
+	\includegraphics[width=\textwidth]{figures/spectra_late.pdf}
+	\caption{Late-time spectra of AT2019dge. In panel (a), the original spectra are	
+		shown in translucent colors, with the overlying black 
+		lines showing the same spectra convolved with ${\rm FWHM} = 200\, {\rm km\, 
+			s^{-1}}$ Gaussian kernels. We mask prominent galaxy lines in light red. Possible SN features are 
+			marked by the dashed lines. In panel (b) (c) and (d), 
+			 the spectra at phase $+85.3$\,d, $+143.1$\,d, $+171.1$\,d, and $+314.4$\,d, are 
+			 binned by 1, 2, 3, and 1 pixel(s), respectively. The binning factors are chosen based on the 
+			 different signal-to-noise ratio (SNR) in these spectra (see exposure times in 
+			 Table~\ref{tab:spec}). Note that in panel (b), we plot evolution of \ion{He}{I} $\lambda 5876$, 
+			 $\lambda 6678$, and $\lambda 7065$ emissions in green, blue, and crimson, respectively.
+		\label{fig:spectra_late}}
+\end{figure*}
+
 \begin{figure*}
 		\centering
 	\includegraphics[width=\textwidth]{figures/spec_host_subtracted.pdf}
-		\caption{some caption}
+		\caption{Subtracted nebular spectrum of AT2019dge compared with Type Ibn SNe SN2006jc 
+		\citep{Shivvers2019}, 
+		SN2011hw \citep{Pastorello2015}, and SN2015G \citep{Shivvers2017}.
+		\label{fig:spec_subtract}}
 \end{figure*}
-In our late time spectrum obtained at $+85.3$, $+143.1$ and $+171.1$\,d, we observe narrow emission 
-lines that are typically the most prominent features of SNe Ib/c at nebular epochs. The emission feature 
-at $\sim6300$\AA\,is regularly attributed to [\ion{O}{I}] $\lambda\lambda$6300, 6364 
-\citep{Maedo2008}
+Panel (a) of Figure~\ref{fig:spectra_late} shows late time spectra of AT2019dge obtained at $+85.3$, 
+$+143.1$, $+171.1$, and $+314.4$\,d.  The general shape of the spectra is determined by the host 
+galaxy, while possible SN features are marked by the dashed lines. The right panels (b), (c), and (d) 
+highlight emission lines at wavelengths of \ion{He}{I}, [\ion{O}{I}], and [\ion{Ca}{II}]. FWHM velosities 
+of the narrow emissions are not well resolved $\sim 300\,{\rm km\,s^{-1}}$. 
+The intensities decrease by a factor of approximately two from $+85.3$\,d to $+314.4$\,d. In panel (c), 
+the [\ion{O}{I}] $\lambda \lambda 6300, 6363$ feature consists of two narrow emission 
+peaks. This doublet transitions share the same upper level ($\rm ^{3}P_{1,2}$--$\rm ^{1}D_2$). The 
+observed intensity ratio $R \equiv F(6300/6364) \sim 3.1$ agrees with the nebular condition, as one 
+would expect in the optically thin regime. In panel (d), we mark position of the [\ion{Ca}{II}] 
+$\lambda \lambda 7291$, 7324 doublet in dashed lines, but only the $\lambda 
+7324$ line is clearly detected. It presents a double-peaked profile with a peak separation of $\sim 
+400\,{\rm km\,s^{-1}}$. 
+%\todo{I don't know why the 7291 narrow line is not observed, and the origin of 
+%the double-peaked narrow compoennts}
 
-\ion{O}{I}, \ion{Ca}{II} and \ion{He}{I} lines. 
-This feature is , and  (e.g., Maeda et al. 2008; Taubenberger et al. 
-2009). The presence or absence of this feature has often been considered the sharpest observational 
-discrimination between core-collapse and thermonuclear SNe (e.g., Filippenko 1997). 
-the [O i] λλ6300, 6364 feature consists of two similarly strong, fairly narrow emission peaks on top of 
-a broad base (figure blah blah)
+To further investigate SN features from the galaxy light dominated spectra, we use the $+314.4$\,d 
+spectrum as a galaxy template and subtract it from the $+85.3$\,d spectrum. The resulting subtraction 
+(Figure~\ref{fig:spec_subtract}) reveals intermediate-width (FWHM $\sim 
+2000\,{\rm km\,s^{-1}}$) components of \ion{He}{I}, [\ion{Ca}{II}], and \ion{Ca}{II} IR triplet ($\lambda 
+\lambda \lambda 8498$, 8542, 8662), and shares a resemblance to some 
+Type Ibn SNe, such as SN2011hw \citep{Pastorello2015} and SN2015G \citep{Shivvers2017}. These 
+intermediate-width features are too narrow to be explained by emission from
+radioactivity-heated optically thin SN ejecta. Instead, they are probably emitted by a dense  CSM shell 
+formed by radiative cooling of the  post-shock material, as was proposed to be the case in interacting 
+Type IIn/Ibn SNe \citep{Chugai1994, Smith2017}. 
 
-In Figure \ref{fig:HeI_dbsp} we show the 
-Its absorption minimum indicates a velocity of xxx
+The temporal evolution in strength of the narrow ($< 300\,{\rm km\,s^{-1}}$) lines shows that the 
+emissions are connected to the explosion and are not merely a background contamination of an 
+underlying \ion{H}{II} region. Such narrow lines have been observed at late-time in old nearby CCSNe 
+such as Type Ib Type SN1985F \citep{Filippenko1989}, Type IIn SN1986J \citep{Leibundgut1991} and 
+Type IIb SN1993J \citep{Matheson2000}. They were suggested to arise from dense clumpy regions in 
+the SNe ejecta or circumstellar gas.
 
-only three months after maximum light, a spectrum taken with LRIS
-The timescale to become nebular was surprising as it was faster than that of typical supernovae by a 
-factor of a few.
+pre-shock circumstellar medium
+(CSM).
+
+Matheson 2001 \citep{Matheson2001}
+
+The narrow components are not from the ejecta but instead from slow pre-shock CSM
 
 \subsection{Host Galaxy Properties}
-In Figure~\ref{fig:offset}, we show the source position on the image from the Beijing-Arizona Sky 
-Survey(BASS, \citealt{Zou2017}), which is part of the DESI Legacy Imaging Surveys \citep{Dey2019}. 
-Using the xx, we calculated 
-that AT2019dge is $0.14^{\prime\prime}$ (0.06\,kpc) away from the galaxy nucleus, which is defined to 
-be the flux-weighted first 
-moment of the BASS $g$-band image.
+\begin{figure}[htbp!]
+	\centering
+	\includegraphics[width=\columnwidth]{figures/SDSSJ17+50_best_model.pdf}
+	\caption{Spectral energy distribution of the host galaxy of AT2019dge. The observed photometric 
+		data (with 1$\sigma$ error bars) are shown in blue open squares, and the model is shown in black 
+		curve. The relative residual flux is shown in the bottom panel.
+		\label{fig:SEDfit}}
+\end{figure}
 
-Since there was no pre-explosion spectrum of the host galaxy, we estimated the host flux 
-by fitting a synthetic galaxy spectrum with SDSS model magnitudes (van Velzen et al. 2019). To 
-perform subtraction of the host flux, we calibrated the flux level in each optical spectrum against ZTF 
-$r$-band photometry, interpolated to the spectroscopic epochs. We then convolved the synthetic 
-host galaxy spectrum new
-Gaussian kernel to account for instrumental broadening and subtracted 
-the broadened, synthetic spectrum from our observed spectra. A montage of the host-subtracted 
-spectra is shown in Figure \ref{fig:spectra}. The flux is normalized to the 5500–6000 A ̊ region in rest 
-wavelength and offset from each other for better visualization.
-
-In Fig we shoulw the SED of xx, which was compiled from Swfit/UVOT, SDSS, and catalogs and 
-
-We measure the metallicity of the host galaxy using  the spectrum xx. 
+We measure the properties of the host galaxy using the spectrum obtained at phase $+314.4$\,d, 
+assuming that the nebular line emissions are from the host galaxy. 
 
 We infer a star-formation rate of $0.10 \pm 0.02 \, M_\odot\, {\rm yr^{-1}}$ from the H$\alpha$ 
 emission line using the \citet{Kennicutt1998} relation converted to use a Chabrier initial mass function 
@@ -579,6 +654,10 @@ emission line using the \citet{Kennicutt1998} relation converted to use a Chabri
 We also compute the oxygen abundance using the strong-line metallicity indicator N2 
 \citep{Pettini2004} with the updated calibration reported in \citet{Marino2013}. The oxygen abundance 
 in the N2 scale is 8.23 $\pm$ 0.01 (stat) $\pm$ 0.05 (sys).
+
+In Figure~\ref{fig:SEDfit} we shoulw the SED of xx, which was compiled from Swfit/UVOT, SDSS, PS1, 
+2MASS,, and WISE catalogs. The measured host photometry is 
+given in Table~\ref{tab:host_phot}.
 
 \textcolor{red}{Zhihui:} 
 We further determine the stellar mass ($M_{\star}$) of the host galaxy by SED modeling using 
@@ -590,35 +669,10 @@ emission. Finally, the total SED model is attenuated by the Calzetti extinction 
 The fitted SED is shown in Figure 7. The derived stellar mass is log $M_{\star}/M_{\odot}$ = 
 $8.0 \pm 0.1$, and the SFR is $0.8 \pm0.1\, M_\odot\, {\rm yr^{-1}}$.
 
-\begin{figure*}[htbp!]
-	\centering
-	\includegraphics[width=1.2\columnwidth]{figures/SDSSJ17+50_best_model.pdf}
-	\caption{Spectral energy distribution of the host galaxy of AT2019dge. The observed photometric 
-	data (with 1$\sigma$ error bars) are shown in blue open squares, and the model is shown in black 
-	curve. The relative residual flux is shown in the bottom panel.
-		\label{fig:SEDfit}}
-\end{figure*}
-
 It is worth noting that while several 
 previously reported events (SN\,2005ek, SN\,2010X, iPTF\,14gqr) and SN\,2018kzr were found in star 
 forming host galaxies, SN\,2019bkc stands out as a hostless transient offset by tens of kpc from any 
 likely host (see Table \ref{tab:compare}). 
-
-
-\subsection{Spectroscopy}
-
-Although there is a large diversity in the properties of these events, most of them can be 
-grouped into events that are similar to thermonuclear SNe (e.g. PTF09dav, \citealt{Sullivan2011}; 
-OGLE-2013-SN-079, \citealt{Inserra2015}; SN2016hnk, \citealt{Galbany2019, Jacobson-Galan2019}) 
-likely arising from old white dwarfs, and those similar to Type Ib/c SNe (SN\,2002bj, 
-\citealt{Poznanski2010}; SN\,2005ek, \citealt{Drout2013}; SN\,2010X, \citealt{Kasliwal2010}; iPTF\,14gqr, 
-\citealt{De2018}) possibly arising from extremely stripped massive stars or white dwarfs in close binary 
-systems.
-
-Ca-rich transients have detectable [O I] λλ6300, 6364 emission in nebular spectra, but a defining 
-feature of the class is an integrated [Ca II]/[O I] flux ratio greater than ∼2. 
-
-\subsection{Host Environment}
 
 Table \ref{tab:compare} shows a summary of our literature search.
 
@@ -634,23 +688,12 @@ Table \ref{tab:compare} shows a summary of our literature search.
 	\startdata
 	SN\,2002bj & 0.012   & NGC 1821 (small barred irregular galaxy, $D\sim$1.1'') & 1.8\,kpc \\
 	SN\,2005ek & 0.016 & UGC 2526 (edge-on spiral galaxy of morphology Sb) & 30\,kpc \\
-	% SN 2007ax, from the SDSS image, I think it is 5 arcsec from the host
-	SN\,2007ax & 0.007  & NGC 2577 (small lenticular galaxy with a condensed core) &1.0\,kpc 
-	\\
-	PTF\,09dav & 0.036& spiral galaxy & $\sim40.6$\,kpc\\
 	SN\,2010X &  0.015  & NGC 1573A (small spiral galaxy, $D\sim$1.6'') & 2.3\,kpc\\
 	%PTF\,10iuv & 0.025?   &  Galaxy cluster with early-type and late-type galaxies   & $\geq 37$\,kpc  \\
-	OGLE13-079 & $\sim$0.07  & in the extreme outskirts of two ellipticals & 40.2--49.9\,kpc \\
 	iPTF\,14gqr & 0.063 & IV Zw 155 (a tidally interacting spiral galaxy) & 29\,kpc & \citet{De2018} \\
-	SN\,2016hnk & 0.016 & MCG-01-06-070 (Sb-type galaxy)  & 3.71 & \citet{Galbany2019}\\
-	% SN2018kzr (ZTF18adaykvg), host is SDSS J082853.50$+$010638.6, offset D = d_A \times \theta = 
-	%d_L / (1+z)^2 \times \theta
-	SN\,2018kzr & 0.053  &  SDSS J082853.50$+$010638.6 (star forming galaxy)   &  0.6 & 
-	\citet{McBrien2019}\\
 	SN\,2019bkc & $\sim$0.02   & maybe NGC 3090 (giant elliptical in the MKW1 galaxy group) 
 	&$\sim94.6$ & \citet{Chen2019}  \\
 	AT2019dge & 0.021 & SDSS J17$+$50 (small) & 0.06 kpc & This work \\
-	%ZTF\,18abkmbpy & 0.029 (129\,Mpc) &  &   kpc \\
 	\enddata
 	%\tablecomments{Reference: SN\,2019bkc \citep{Prentice2019}, iPTF\,14qgr \citep{De2018}, 
 	%OGLE13-079 \citep{Inserra2015}, SN\,2002bj 
@@ -658,10 +701,24 @@ Table \ref{tab:compare} shows a summary of our literature search.
 	%AT\,2018dge (Yao in prep), SN\,2005ek \citep{Drout2013}.}
 \end{deluxetable*}
 
-\clearpage
-
-\section{Interpretation}
+\section{Modelling}
 \subsection{Shock Cooling Powered Fast Rise} \label{subsec:fastrise}
+
+\todo{We 
+	interpret the AT2019dge's early evolution in the context of shock-cooling emission in Section 
+xx. present evidence 1234}
+
+\todo{early blue clor: This serves as 
+	another evidence that the early emission of AT2019dge is dominated by shock cooling, as in the 
+	case 
+	of iPTF14gqr and iPTF16hgs.}
+
+
+\todo{ Interestingly, it is also around 
+6--9 days after maximum that we observed the change in bolometric luminosity decline rate 
+(Figure~\ref{fig:Tbb_Rbb_Lbb}). This further supports the idea that the dominate power mechanisms 
+before and after this transition are different.}
+
 SNe light cuves are mainly powered by shock energy or radiative diffusion from a heating 
 source. We first examine if the peak of AT2019dge is likely to be powered by the radioactive decay of 
 $^{56}\rm Ni \rightarrow ^{56}Co \rightarrow ^{56}Fe$. With power a peak luminosity of $L_{\rm 
@@ -689,10 +746,11 @@ to multi-band observations are illustrated in Appendix \ref{subsec:p15fit}.
 In Figure~\ref{fig:Lbb}, bolometric light curve measured in Section \ref{subsec:lc_properties} are shown 
 in black. We also show late-time $r$-band $\nu L_{\nu}$ measurements in grey empty circles as a 
 proxy of bolometric light curve evolution. The dashed green line  shows the best-fit model of 
-$M_{\rm ext} = 9.40_{-0.33}^{+0.35}\times 10^{-2} M_\odot$, $R_{\rm ext} 
-=2.69_{-0.16}^{+0.18}\times10^{12}$\,cm (i.e., $38.7_{-2.4}^{+2.5} R_\odot$), and first light epoch at 
-phase $t_{\rm fl}= -3.20_{-0.04}^{+0.03}$\,day (i.e., the explosion occurred 0.44\,d before the first 
-detection in $g$-band).
+$M_{\rm ext} = 9.34 \pm 0.36 \times 10^{-2} M_\odot$,
+ $R_{\rm ext} =2.71_{-0.17}^{+0.19}\times10^{12}$\,cm (i.e., $39.0_{-2.5}^{+2.7} R_\odot$), 
+ and first light epoch at phase $t_{\rm fl}= -3.21_\pm 0.04$\,day (i.e., the explosion occurred 0.45\,d 
+ before the first detection in $g$-band). The amount of energy passed into the extended material is 
+ well constrained to be $E_{\rm ext} = (1.15\pm 0.07) \times 10^{50}\,{\rm erg\, s^{-1}}$.
 
 Given the simple assumptions of the model, we expect the constraints on $M_{\rm ext}$ and $R_{\rm 
 ext}$ to be only approximatedly accurate. There are now numerous cases of early cooling envelope 
@@ -702,10 +760,129 @@ emission observed in CCSNe, where the extented matrial is estimated to have lowe
 extended shell (instead of an envelope) with a mass of $\sim 0.1 M_\odot$ locating at a radius of $\sim 
 3\times 10^{12}\,{\rm cm}$. 
 
-\todo{try to see if puffier helium star produce lower ejecta mass}
+\todo{try to see if puffier helium star produce lower ejecta mass. See eg Fig.16.7: Tauris 2003.
+However, if it was really 50 Rsun at explosion, it would have been in such a wide binary that it could 
+not have been 
+stripped down to an envelope layer of just 0.3 Msun. This is quite intriguing! How sure are you of a 
+progenitor 
+radius of 50 Rsun? Could this radius instead represent some sort cocoon of helium-rich material 
+ejected shortly 
+before the SN? Even in the case of 14gqr, we saw that the star was too large (~ 500 Rsol) to explain a 
+binary 
+system stripped that much. We had explained this by invoking a short lived common envelope phase 
+just before 
+the explosion where the companion gets engulfed by the expanding He star. This could perhaps be the 
+case here 
+as well.}
+
+\todo{rephrase: We conclude that the AT2019dge is not one of FELTs. Its fast $t_{\rm rise}$ is 
+reminiscent of shock 
+	cooling emission, and the moderate $t_{\rm decay}$ is consistent with coming from radioactivity.}
 
 \input{tables/tab_p15fit_comparion.tex}
 
+\subsection{Mass Loss Estimate from \ion{He}{II}} \label{subsec:flash}
+
+ following the procedure given by \citet{Ofek2013} and \citet{De2018}, 
+we use luminosity of the \ion{He}{II} $\lambda4686$ line to make an order-of-magnitude estimate on 
+properties of the emission material. We get radius of the line emitting region $r \gtrsim 4.8 \times 
+10^{13} \beta \,{\rm cm}$, mass losss parameter $K \gtrsim 1.2\times 10^{14} \, {\rm g\,cm^{-1}}$, and 
+helium mass of the emitting region $M_{\rm He} \gtrsim 3.6\times 10^{-5} \beta^2\, M_{\odot}$, where 
+$\beta$ is the ratio of the CSM width over radius. Note that these estimates can be affected if the CSM 
+can not be well characterized by a spherically symmetric $\rho(r) \propto r^{-2}$ density profile, or if 
+the emitting region was confined to a thin shell ($\beta \ll 1$).
+
+
+Assuming that the CSM around the progenitor has a spherical wind-density profile of the form
+$\rho = K r^{-2}$, where $r$ is distance from the progenitor, $K\equiv \dot M / (4\pi v_{\rm w})$ is the 
+wind density parameter, $v_{\rm w}$ is the wind/outburst velocity, and $\dot M$ is the mass loss rate. 
+The integrated mass of the emitting material from $r$ to $r_1$ is 
+\begin{align}
+M_{\rm He} = \int_{r}^{r_1}4\pi r^2 \rho(r) {\rm d}r=4\pi K \beta r
+\end{align}
+where $\beta \equiv (r_1 - r) /r $ is assumed to be of the order unity.
+
+Following \citet{De2018}, we can relate the mass of the \ion{He}{II} region to the \ion{He}{II} 
+$\lambda4686$ line luminosity using 
+\begin{align}
+L_{\lambda 4686} \approx \frac{A n_e M_{\rm He}}{m_{\rm He}} \label{eq:L4686}.
+\end{align}
+Here
+\begin{align}
+A = \frac{4\pi j_{\lambda 4686}}{n_e n_{\rm He^{++}}},
+\end{align}
+$ j_{\lambda4868}$ (in ${\rm erg \, cm^{-3}\, s^{-1}\, sr^{-1}}$) is the emission coefficient for the 
+$\lambda4686$ transition. $m_{\rm He}$ is mass of a He nucleus, $n_{\rm He^{++}}$ is the number 
+density of doubly ionized helium and $n_e$ is the number density of electrons.
+
+Assuming a temperature of $10^4$\,K, electron density of $10^{10}\,{\rm cm^{-3}}$, and Case B 
+recombination, we get $A=1.32\times 10^{-24}\,{\rm erg\, cm^{3}\, s^{-1}}$ \citep{Storey1995}. 
+Assuming $n_e = 2 n_{\rm He^{++}}$ and using the density profile, Eq.~(\ref{eq:L4686}) can be written 
+as
+\begin{align}
+L_{\lambda 4686} \approx \frac{8\pi A \beta}{m_{\rm He}^2} \frac{K^2}{r}.
+\end{align}
+
+The location of the emitting region can be constrained by requiring that the Thompson optical depth 
+($\tau$) in the region must be small for the lines to escape. We require
+\begin{align}
+\tau = n_e \sigma_{\rm T} \int_{r}^{r_1} {\rm d}r = \frac{2\sigma_{\rm T}K\beta}{m_{\rm He}r} \lesssim 1
+\end{align}
+Thus
+\begin{align}
+r^2 &\gtrsim  \left (\frac{2\sigma_{\rm T}\beta}{m_{\rm He}} \right)^2 \frac{L_{\lambda 4686} m_{\rm 
+		He}^2 r }{8\pi A \beta } \notag \\
+r & \gtrsim L_{\lambda 4686} \frac{\sigma_{\rm T}^2  \beta }{2\pi A }
+\end{align}
+
+The $+0.4$\,d emission line flux is meausred to be $F = (8.37\pm 0.65)\times10^{-16}\,{\rm erg\, 
+	cm^{-2}\,s^{-1}}$, correslonding to $L_{\lambda 4686} = 8.6\times 10^{38}\,{\rm erg\, s^{-1}}$. Hence, 
+we get $r \gtrsim 4.8 \times 10^{13} \beta \,{\rm cm}$, $K \gtrsim 1.2\times 10^{14} \, {\rm 
+	g\,cm^{-1}}$, and $M_{\rm He} \gtrsim 3.6\times 10^{-5} \beta^2\, M_{\odot}$.
+
+\subsection{Constraints on Radio Emission}
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{figures/radio_230GHz_s2.pdf}
+	\includegraphics[width=\columnwidth]{figures/radio_230GHz_s0.pdf}
+	\caption{Expected radio luminosity at 230\,GHz at different shock velocity $v_s$ and 
+	wind mass-loss parameter $K$ in the case of $\rho \propto r^{-2}$ CSM environment (upper panel) 
+	or number density $n_0$ in the constant-density case (bottom panel). The black contour in each 
+	panel shows the location of the 3$\sigma$ upper limit at 230\,GHz on AT2019dge. The phase space 
+	with a luminosity higher the black line in each panel is ruled out by the observation.
+		\label{fig:radio}}
+\end{figure}
+Radio emission in SNe is produced by shock accelerated electrons in the circumstellar material as they 
+gyrate in the post-shock magnetic field when the shock freely expands. Should the circumstellar 
+medium be formed by a pre-SN stellar wind, the radio synchrotron radiation can be used to probe the 
+pre-explosion mass-loss \citep{Chevalier1982}. High frequency ($\nu>90$\,GHz) bright 
+($\nu L_\nu \gtrsim 10^{40} \, \rm erg\, 
+s^{-1}$) radio sources are often found to be associated with gamma-ray bursts (GRBs), TDEs, and 
+relativistic transients (see Figure~6 of \citealt{HoPhinney2019}). Among normal SNe Ibc, moderate 
+submillimeter luminosity at $\sim 5\times 10^{37}\, \rm erg\, s^{-1}$ has been observed in SN1993J 
+\citep{Weiler2007} and SN2011dh \citep{Horesh2013}.
+
+Our SMA observations constrain the submillimeter luminosity of AT2019dge to $\nu L_{\nu \rm , 
+230GHz} < 5.3\times 10^{39}\, \rm erg\, s^{-1}$ and $\nu L_{\nu \rm , 345GHz} < 3.0\times 10^{40}\, \rm 
+erg\, s^{-1}$. Wwe place these upper limits in physical context using the synchrotron self-absorption 
+model given by \citet{Chevalier1998}. The expected radio luminosities are computed at 230 and 
+345\,GHz for two types of circumstellar environments --- one with the wind-density with the same 
+parameterization as that adopted in Section \ref{subsec:flash} and the other with a constant-density 
+environment ($\rho = \,{\rm constant}$). 
+
+Adopting the explosion epoch found in Section \ref{subsec:fastrise}, our SMA observations were 
+obtained at 2.75\,day after explosion. Given the early time of these observations, we consider constant 
+shock velocities at 0.1--0.25$c$, as found to be typical in SNe Ibc \citep{Wellons2012}. We assume an 
+electron energy power law index of $p = 3$, a volume filling factor $f=0.5$, and that the electrons 
+and magnetic field in the post-shock region share constant fractions of the post-shock energy 
+density, i.e., $\epsilon_e = \epsilon_B = 0.1$.
+
+We show the contour plots (in the phase space of jet energy and circumstellar density) of the expected 
+radio fluxes at the epochs of the VLA and GMRT observations for different viewing angles, along with 
+our limits on the radio emission of this source in Figure 13. 
+We constrain the wind mass-loss parameter $K$ and the external circumstellar density $n_0$ by 
+obtaining the limiting cases for our 3$\sigma$ detections, as shown in Figure~\ref{fig:radio}.
+xx in the wind-CSM case and xx in the constant-$\rho$ case
 
 \subsection{Radioactivity Powered Main Peak}
 After subtracting the shock cooling emission from the bolometric light curve, the remaining light curve 
@@ -798,6 +975,14 @@ the light curve may have two peaks, the second resembling a SN Ib but occurring 
 $M_{\rm ej}$.
 
 
+\todo{ask Thomas: discussions on the age of the system (e.g. the time to the 2nd SN in a binary 
+system in relation 
+to a star burst in the host galaxy, and a few words on the subsequent delay time until a merger - in 
+case 
+AT2019dge represents an event where it is the 2nd SN producing a double compact object binary that 
+remains 
+bound).}
+
 massive mass-loss episode that takes place just prior to the explosion \citep{Shiode2014}
 
 Progenitor: why so rare???
@@ -805,14 +990,22 @@ Could the progenitor be a helium rich WR star, perhaps recently transitioned fro
 
 Constraints on event rate?
 
+
+
 \section{Conclusion}
 In this paper we have presented observations and modeling of the fast transient AT2019dge. We 
 summarize our primary observational findings below:
-\begin{itemize}
+\begin{enumerate}[label=(\alph*)]
 	\item Peak absolute magnitude of MB = −dd mag and decline parameter of hah mag.
-	\item  Total Nickel and ejecta masses of $M_{\rm Ni} = 0.03 \pm 0.01$ and $Mej = 0.9 \pm 0.3 
+	\item  Total Nickel and ejecta masses of $M_{\rm Ni} = 0.02 \pm 0.01$ and $Mej = 0.3 \pm 0.3 
 	M_\odot$, respectively.
-\end{itemize}
+	\item spectrum is peculiar
+	\item photosperic phase spec emission comes from a photosphere receding (in mass coordinates) 
+	back through freely expanding SN ejecta (smith 2016 rewrite)
+	\item Ca-rich event nebular spectrum
+\end{enumerate}
+
+equatorial CSM deposited by binary interaction (Smith2017)
 
 
 The combination of depth, cadence and sky coverage offered by ongoing time domain surveys enables 
@@ -837,14 +1030,33 @@ in $g$ and $r$ bands will be particularly sensitive to the population of fastest
 universe, of which only a handful are known, while the two-color coverage will also be a powerful 
 diagnostic of the intrinsic color of these events.
 
+wide-field 
+optical surveys. 
+
+disminutive
+
+see helium -- less stripped compared with iPTF14gqr
+
 
 \acknowledgements
 
 %% Y. Yao thanks the instructors and organisers of the GROWTH summer school for teaching 
 %%essential skills in time-domain data analysis.
 %% discussion with Wenbin Lu, Udi Nakar, Nathan Smith, Yan Lin, Christoffer, Fremling, Avishay
-%% Jim, Sterl, Tony, Chuck?
-This study made use of the open supernova catalog \citep{Guillochon2017}
+%% Jim, Sterl, Tony
+This study made use of the open supernova catalog \citep{Guillochon2017}.
+
+This work was supported by the GROWTH project funded by the National Science Foundation under 
+PIRE grant No.\,1545949. 
+
+This work is based on observations obtained with the Samuel Oschin Telescope 48 inch and the 60 
+inch Telescope at the Palomar Observatory as part of the Zwicky Transient Facility project. ZTF is 
+supported by the National Science Foundation under grant No. AST-1440341 and a collaboration 
+including Caltech, IPAC, the Weizmann Institute for Science, the Oskar Klein Center at Stockholm 
+University, the University of Maryland, the University of Washington, Deutsches 
+Elektronen-Synchrotron and Humboldt University, Los Alamos National Laboratories, the TANGO 
+Consortium of Taiwan, the University of Wisconsin at Milwaukee, and Lawrence Berkeley National 
+Laboratories. Operations are conducted by COO, IPAC, and UW. 
 
 \software{
           \texttt{astropy} \citep{Astropy-Collaboration2013},
@@ -871,7 +1083,9 @@ This study made use of the open supernova catalog \citep{Guillochon2017}
 \section{UV and Optical Photometry} \label{sec:appphot}
 \subsection{Data}\label{subsec:appphot_data}
 \input{tables/tab_phot.tex}
-The full set of photometry is listed in Table \ref{tab:phot}. 
+\input{tables/tab_host_phot.tex}
+The full set of photometry of AT2019dge is listed in Table~\ref{tab:phot}. Photometry of the host 
+galaxy SDSS J173646.73+503252.3 is listed in Table~\ref{tab:host_phot}.
 
 In Figure \ref{fig:seds} we show the photometry interpolated onto common epochs, and fit to a 
 blackbody function to derive the photospheric evolution (see Section \ref{subsec:lc_properties}). The 
@@ -880,8 +1094,9 @@ in Table  \ref{tab:bbfit}
 \begin{figure*}
     \centering
     \includegraphics[width = 0.9\textwidth]{figures/seds.pdf}
-    \caption{The maximum MCMC a posteriori model fits to $Swift$/UVOT and optical photometry for 
-    AT2019dge.  \label{fig:seds}}
+    \caption{Black data points are $Swift$/UVOT and optical photometry of AT2019dge. Solid lines show 
+    the maximum MCMC a posteriori model fits. Dashed lines are simple $\chi^2$ fits. 
+    \label{fig:seds}}
 \end{figure*}
 \input{tables/tab_bbfit.tex}
 
@@ -892,22 +1107,48 @@ in Table  \ref{tab:bbfit}
 	\centering
 	\includegraphics[width=\columnwidth]{figures/corner_P15.pdf}
 	\caption{Corner plot showing the posterior constraints on ${\rm lg}R_{\rm ext}$, ${\rm lg}M_{\rm 
-			ext}$, and $t_\mathrm{fl}$. Marginalized one-dimensional distributions are shown along the 
-		diagonal, along with the median estimate and the 68\% credible region (shown with vertical 
+			ext}$, $t_\mathrm{fl}$, and $E_{\rm ext, 49}$. Marginalized one-dimensional distributions are 
+			shown along the diagonal, along with the median estimate and the 68\% credible region (shown 
+			with vertical 
 		dashed 
 		lines).	\label{fig:pirocorner}}
 \end{figure}
-To model the early light curve with the P15 model, we fix $\kappa\sim0.2\,{\rm cm^2\, g^{-1}}$ as 
+We cast the P15 analytical expression for the shape of the early-time light curve in terms of $M_{\rm 
+ext}$, $R_{\rm ext}$, $E_{\rm ext}$, and $E_{51}$:
+\begin{subequations}
+\begin{align}
+ L(t) =& \frac{t_eE_{\rm ext}}{t_p^2} {\rm exp} \left[ -\frac{t (t + 2t_e)}{2t_p^2}\right] \,{\rm erg\, s^{-1}}\\
+ t_e =& 10^{-9} R_{\rm ext} E_{\rm ext,49}^{-1/2} 
+ \left(\frac{M_{\rm ext}}{0.01 M_\odot}\right)^{1/2} \, {\rm s}\\
+ t_p =& 1.1\times 10^{5} \kappa_{34}^{1/2}  E_{51}^{-0.01 / 
+ 	1.4} \notag \\
+ & \times E_{\rm ext, 49}^{-0.17 / 0.7}   \left(\frac{M_{\rm ext}}{0.01 M_\odot}\right)^{0.74} {\rm s} 
+ \label{eq:tp}
+\end{align}
+\end{subequations}
+where $t$ is time since explosion in seconds, $\kappa_{34} = \kappa / (0.34\,{\rm cm^2\, g^{-1}})$, 
+$E_{\rm ext, 49} =  E_{\rm ext} / 
+(10^{49}\,{\rm erg\,s^{-1}})$, $E_{51} =E /  (10^{51}\,{\rm 
+erg\,s^{-1}})$, and $E$ is energy of the explosion.
+Following P15 we assume the emission is a blackbody at radius
+\begin{align*}
+R(t) = R_{\rm ext} + 10^9  \left( \frac{E_{\rm ext}}{10^{49}\,{\rm 
+		erg\,s^{-1}}} \right)^{1/2}  \left(\frac{M_{\rm ext}}{0.01 M_\odot}\right)^{-0.5} t
+\end{align*}
+and temperature
+\begin{align*}
+ T(t) = \left( \frac{L(t)}{4\pi R(t)^2 \sigma_{\rm SB}} \right)^{1/4}
+\end{align*}
+
+We fix $\kappa \approx 0.2\,{\rm cm^2\, g^{-1}}$ as 
 appropriate for a hydrogen-deficient ionized gas, and assign wide flat priors for all model parameters, 
 as summarized in Table~\ref{tab:P15priors}. We only include observations up to $\Delta t = 2$\,d in 
 the fitting. We found that this particular choice of $\Delta t$ --- 2\,d instead of 1\,d or 3\,d --- in 
 general does not affect the final inference for the model parameters. Figure~\ref{fig:pirocorner} shows 
-the corner plot of ${\rm lg}R_{\rm ext}$, ${\rm lg}M_{\rm 	ext}$, and $t_\mathrm{fl}$. For clarity, 
-$E_{51}$ and $M_{\rm core}$ are excluded as they do not exhibit strong covariance with the 
-parameters shown here. These two parameters are highly anti-correlated with each other over a wide 
-range of their priors. We find $E_{51}\propto M_{\rm core}^{0.7}$, as implied by 
-\citet[][Eq~3]{Piro2015}. The amount of energy passed into the extended material is well constrained to 
-be $E_{\rm ext} = (1.15\pm 0.07) \times 10^{50}\,{\rm erg\, s^{-1}}$.
+the corner plot of ${\rm lg}R_{\rm ext}$, ${\rm lg}M_{\rm 	ext}$, $t_\mathrm{fl}$, and $E_{\rm ext, 49}$. 
+For clarity, $E_{51}$ is excluded as it does not exhibit strong covariance with the parameters shown 
+here. This can be understood by Eq.~\ref{eq:tp}, which gives $t_p \propto E_{51}^{-0.01/1.4}$, 
+suggesting that the shock cooling luminosity only weakly depends on $E_{51}$. 
 
 \begin{figure}[htbp!]
 	\centering
@@ -1036,91 +1277,10 @@ We use line centers of nebular lines to derive the spectroscopic redshift of the
 	\end{tabular}
 	\tablecomments{All measurements are corrected for Galactic reddening.}
 \end{table}
-
-\begin{table}
-	\centering
-	\caption{Photometry of the host galaxy}\label{tab:host_phot}
-	\begin{tabular}{ccc}
-		\toprule
-		Instrument/	    & $\lambda_{\rm eff}$   & Brightness		\\
-		Filter          & (\AA)                 & (mag)             \\
-		\midrule
-		SDSS/$u'$ 		& 3594.9  & $ 19.336	 \pm 0.039$	\\
-		SDSS/$g'$ 		& 4640.4  & $ 18.322 \pm 0.009$	\\
-		SDSS/$r'$ 		& 6122.3  & $ 17.913	 \pm 0.009 $	 \\
-		SDSS/$i'$ 		& 7439.5     &$ 17.745  \pm 0.010$\\
-		SDSS/$z'$ 		& 8897.1     &$ 17.580 \pm 0.031$\\
-		WISE/$W1$ 		& 33526.0    &$ 15.938 \pm 0.037$\\
-		WISE/$W2$   & 46028.0    &$ 15.982 \pm  0.082$\\
-		\bottomrule
-	\end{tabular}
-	\tablecomments{SDSS \citep{Alam2015} measurements are reported in the AB system. AllWISE 
-	\citep{Cutri2013} measurements are in the Vega system and the conversion to flux density are 
-	performed using \citet[][Table~1]{Jarrett2011}. Values 
-	are not corrected for reddening. }
-\end{table}
 % no record in URAT1
 % no record in GALEX
-\subsection{Mass Loss Estimate from \ion{He}{II}} \label{subsec:flash}
-Assuming that the CSM around the progenitor has a sperical wind-density profile of the form
-$\rho = K r^{-2}$, where $r$ is distance from the progenitor, $K\equiv \dot M / (4\pi v_{\rm w})$ is the 
-mass loading parameter, $v_{\rm w}$ is the wind/outburst velocity, and $\dot M$ is the mass loss rate. 
-The integrated mass of the emitting material from $r$ to $r_1$ is 
-\begin{align}
- M_{\rm He} = \int_{r}^{r_1}4\pi r^2 \rho(r) {\rm d}r4\pi K(r_1 - r) = 4\pi K \beta r
-\end{align}
-where $\beta \equiv (r_1 - r) /r $ is assumed to be of the order unity.
-
-Following \citet{De2018}, we can relate the mass of the \ion{He}{II} region to the \ion{He}{II} 
-$\lambda4686$ line luminosity using 
-\begin{align}
-	L_{\lambda 4686} \approx \frac{A n_e M_{\rm He}}{m_{\rm He}} \label{eq:L4686}.
-\end{align}
-Here
-\begin{align}
-	A = \frac{4\pi j_{\lambda 4686}}{n_e n_{\rm He^{++}}},
-\end{align}
-$ j_{\lambda4868}$ (in ${\rm erg \, cm^{-3}\, s^{-1}\, sr^{-1}}$) is the emission coefficient for the 
-$\lambda4686$ transition. $m_{\rm He}$ is mass of a He nucleus, $n_{\rm He^{++}}$ is the number 
-density of doubly ionized helium and $n_e$ is the number density of electrons.
-
-Assuming a temperature of $10^4$\,K, electron density of $10^{10}\,{\rm cm^{-3}}$, and Case B 
-recombination, we get $A=1.32\times 10^{-24}\,{\rm erg\, cm^{3}\, s^{-1}}$ \citep{Storey1995}. 
-Assuming $n_e = 2 n_{\rm He^{++}}$ and using the density profile, Eq.~(\ref{eq:L4686}) can be written 
-as
-\begin{align}
-	L_{\lambda 4686} \approx \frac{8\pi A \beta}{m_{\rm He}^2} \frac{K^2}{r}.
-\end{align}
-
-The location of the emitting region can be constrained by requiring that the Thompson optical depth 
-($\tau$) in the region must be small for the lines to escape. We require
-\begin{align}
- \tau &= n_e \sigma_{\rm T} \int_{r}^{r_1} {\rm d}r = 2n_{\rm He^{++}} \sigma_{\rm T} r\beta = 
- \frac{2\sigma_{\rm T}r\beta}{m_{\rm He}} 
- \frac{K}{r^2} \notag \\
- & = \frac{2\sigma_{\rm T}K\beta}{m_{\rm He}r} \lesssim 1
-\end{align}
-Thus
-\begin{align}
- r^2 &\gtrsim  \left (\frac{2\sigma_{\rm T}\beta}{m_{\rm He}} \right)^2 \frac{L_{\lambda 4686} m_{\rm 
- He}^2 r }{8\pi A \beta } \notag \\
- r & \gtrsim L_{\lambda 4686} \frac{\sigma_{\rm T}^2  \beta }{2\pi A }
-\end{align}
-
-The $+0.4$\,d emission line flux is meausred to be $F = (8.37\pm 0.65)\times10^{-16}\,{\rm erg\, 
-cm^{-2}\,s^{-1}}$, correslonding to $L_{\lambda 4686} = 8.6\times 10^{38}\,{\rm erg\, s^{-1}}$. Hence, 
-we get $r \gtrsim 4.8 \times 10^{13} \beta \,{\rm cm}$, $K \gtrsim 1.2\times 10^{14} \, {\rm 
-g\,cm^{-1}}$, and $M_{\rm He} \gtrsim 3.6\times 10^{-5} \beta^2\, M_{\odot}$.
 
 
-Note that the above calculate only assumes that recombination is the primary line-emitting mechanism, 
-and that collisional excitation and de-excitation processes can be ignored. \todo{rewrite this: the 
-inferred radius ot optically thin material is larger than the envelope producing the early shock cooling 
-emission as seen inthe light curve, and suggests that the highly ionized lines likely arise from a lower 
-density extension of the same envelope?}
-
-\todo{Ask Kishalay: what is the light travel time blah blah argument -- Now that the recombination 
-timesclae is very short, }
 
 \bibliography{at2019dge}{}
 \bibliographystyle{aasjournal}
