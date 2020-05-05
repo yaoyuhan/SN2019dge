@@ -29,6 +29,13 @@ Thus for AT2019dge, I choose 3 arcsec aperutre
 def getuvotdt(dirname):
     filesd = glob.glob(dirname+'uvot/image/*.dat')
     filesf = glob.glob(dirname+'uvot/image/*.fits')
+    filesd = np.array(filesd)
+    filesf = np.array(filesf)
+    arg = np.argsort(filesd)
+    filesd = filesd[arg]
+    arg = np.argsort(filesf)
+    filesf = filesf[arg]
+    
     filters = []
     exptime = []
     mags = []
