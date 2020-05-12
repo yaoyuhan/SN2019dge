@@ -1,40 +1,45 @@
-\begin{deluxetable*}{llrccc}
-\tablecaption{Log of AT2019dge spectroscopy. \label{tab:spec}}
+\begin{deluxetable*}{llrccchh}
+\tablecaption{Log of SN2019dge spectroscopy. \label{tab:spec}}
 	\tablehead{
 		\colhead{Start Time}   
 		& \colhead{Instrument}
-		& \colhead{$\Delta t$}  
+		& \colhead{Phase}  
 		& \colhead{Exposure Time} 
 		& \colhead{ Airmass }
-		& \colhead{ Resolution }\\
+		& \colhead{ Resolution (FWHM) }
+		& \nocolhead{Observer}
+		& \nocolhead{Reducer}\\
 		\colhead{(UTC)}   
 		& \colhead{  }
 		& \colhead{ (day) }
 		& \colhead{ (s) }
 		& \colhead{  }
-		& \colhead{  (FWHM $\AA$) }
+		& \colhead{  (\AA) }
+		& \nocolhead{  }
+		& \nocolhead{  }
 	}
 	\startdata
 	% # DATE-OBS= '2019-04-09T03:30:28.157'             % # UTSTART = '03:30:28.157'
 	% # MJD     =         58582.146159
-	2019 Apr 09 03:30:28 & LT+SPART  & $-1.1$&  500   & 1.800 & 18 \\
+	2019 Apr 09 03:30:28 & LT+SPRAT  & $-1.1$&  500   & 1.80 & 18& Perley & Perley\\
 	% # DATE-OBS= '2019-04-10T03:06:09.604'
 	% # UTSTART = '03:06:09.604'
 	% # MJD     =         58583.129278
-	2019 Apr 10 03:06:10 & LT+SPART & $-0.1$ &  500   & 1.800 & 18 \\
+	2019 Apr 10 03:06:10 & LT+SPRAT & $-0.1$ &  500   & 1.80 & 18 & Perley & Perley\\
 	% LRIS
-	2019 Apr 10 14:21:44 & Keck1+LRIS & $+0.4$ & 300 & 1.169 & 6 \\
+	2019 Apr 10 14:21:44 & Keck1+LRIS & $+0.4$ & 300 & 1.17 & 6 &Graham & Ho\\
 	% HST
-	2019 Apr 22 05:08:00 & HST+WFC3+UVIS & $+12.0$& 2$\times$250 & --- & 43\\
+	2019 Apr 22 05:08:00 & HST+WFC3+UVIS & $+12.0$& 2$\times$250 & --- & 43& --- & Rubin\\
 	% DBSP
-	2019 Apr 24 11:06:43 & P200+DBSP & $+14.3$& 1200 & 1.047 & 3--5\\
+	2019 Apr 24 11:06:43 & P200+DBSP & $+14.3$& 1200 & 1.05 & 3--5& Yao & Yao\\
 	% LRIS
-	2019 Jul 04 11:49:18   & Keck1+LRIS & $+85.3$& 1740 & 1.421 & 6\\
+	2019 Jul 04 11:49:18   & Keck1+LRIS & $+85.3$& 1740 & 1.42 &6  & De&De\\
 	% LRIS
-	2019 Aug 31 08:04:58   & Keck1+LRIS &$+143.1$ & 1150 & 1.409 & 6  \\
+	2019 Aug 31 08:04:58   & Keck1+LRIS &$+143.1$ & 1150 & 1.41 & 6 & De&De\\
 	% LRIS
-	2019 Sep 28 08:14:27   & Keck1+LRIS & $+171.1$& 600 & 2.165 & 6\\
+	2019 Sep 28 08:14:27   & Keck1+LRIS & $+171.1$& 600 & 2.17 & 6& De&De\\
 	% LRIS
-	2020 Feb 18 15:23:40   & Keck1+LRIS & $+314.4$& 1450 & 1.384 & 6\\
+	2020 Feb 18 15:23:40   & Keck1+LRIS & $+314.4$& 1450 & 1.38 &6& De&De\\
 \enddata
+\tablecomments{Phase is measured relative to $g$-band maximum (${\rm MJD}=58583.2$).}
 \end{deluxetable*}

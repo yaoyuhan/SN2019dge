@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 MAR 2020 09:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  12 MAY 2020 09:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -832,117 +832,136 @@ Now handling font encoding C62 ...
 LaTeX Info: Redefining \selectfont on input line 755.
 \CJK@indent=\box65
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 17.
-Class revtex4-1 Info: Unrecognized array package. Please update this document c
-lass! (Proceeding with fingers crossed.) on input line 80.
-Class revtex4-1 Info: Patching unrecognized longtable package. (Proceeding with
- fingers crossed) on input line 80.
-Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 80.
+Package hyperref Info: Option `colorlinks' set `true' on input line 16.
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 80.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 80.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 80.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count191
+\output=\toks28
+\linenoprevgraf=\count192
+\linenumbersep=\dimen180
+\linenumberwidth=\dimen181
+\c@linenumber=\count193
+\c@pagewiselinenumber=\count194
+\c@LN@truepage=\count195
+\c@internallinenumber=\count196
+\c@internallinenumbers=\count197
+\quotelinenumbersep=\dimen182
+\bframerule=\dimen183
+\bframesep=\dimen184
+\bframebox=\box66
+LaTeX Info: Redefining \\ on input line 3056.
+)
+Class revtex4-1 Info: Unrecognized array package. Please update this document c
+lass! (Proceeding with fingers crossed.) on input line 81.
+Class revtex4-1 Info: Patching unrecognized longtable package. (Proceeding with
+ fingers crossed) on input line 81.
+Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 81.
+
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 81.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 81.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 81.
 
 (./at2019dge.aux)
 \openout1 = `at2019dge.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 80.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 81.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count191
-\scratchdimen=\dimen180
-\scratchbox=\box66
-\nofMPsegments=\count192
-\nofMParguments=\count193
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count194
-\MPscratchDim=\dimen181
-\MPnumerator=\count195
-\makeMPintoPDFobject=\count196
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count198
+\scratchdimen=\dimen185
+\scratchbox=\box67
+\nofMPsegments=\count199
+\nofMParguments=\count266
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count267
+\MPscratchDim=\dimen186
+\MPnumerator=\count268
+\makeMPintoPDFobject=\count269
+\everyMPtoPDFconversion=\toks30
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -960,8 +979,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box67
-Package hyperref Info: Link coloring ON on input line 80.
+\AtBeginShipoutBox=\box68
+Package hyperref Info: Link coloring ON on input line 81.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -969,11 +988,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count197
+\c@section@level=\count270
 )
-LaTeX Info: Redefining \ref on input line 80.
-LaTeX Info: Redefining \pageref on input line 80.
-LaTeX Info: Redefining \nameref on input line 80.
+LaTeX Info: Redefining \ref on input line 81.
+LaTeX Info: Redefining \pageref on input line 81.
+LaTeX Info: Redefining \nameref on input line 81.
 
 (./at2019dge.out) (./at2019dge.out)
 \@outlinefile=\write4
@@ -981,18 +1000,22 @@ LaTeX Info: Redefining \nameref on input line 80.
 
 \symgns@font=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 80.
-Package gensymb Info: Math companion symbols declared on input line 80.
-LaTeX Info: Redefining \degree on input line 80.
-LaTeX Info: Redefining \celsius on input line 80.
+(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 81.
+Package gensymb Info: Math companion symbols declared on input line 81.
+LaTeX Info: Redefining \degree on input line 81.
+LaTeX Info: Redefining \celsius on input line 81.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 80.
-LaTeX Info: Redefining \ohm on input line 80.
-Package gensymb Info: Using \textohm for \ohm on input line 80.
-Package gensymb Info: Using \textmu for \micro on input line 80.
+erthousand on input line 81.
+LaTeX Info: Redefining \ohm on input line 81.
+Package gensymb Info: Using \textohm for \ohm on input line 81.
+Package gensymb Info: Using \textmu for \micro on input line 81.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
+Class revtex4-1 Info: Overriding lineo.sty, restoring output routine, on input 
+line 81.
+Class revtex4-1 Info: Reinvoke \linenumbers on input line 81.
+Class revtex4-1 Info: Overriding \@LN@LLerror on input line 81.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.bdg
 File: UTF8.bdg 2015/04/18 4.8.4
@@ -1003,26 +1026,136 @@ File: UTF8.enc 2015/04/18 4.8.4
 (/usr/local/texlive/2018/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2015/04/18 4.8.4
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 105.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 87.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 105.
+LaTeX Font Info:    Try loading font information for U+msa on input line 87.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 105.
+LaTeX Font Info:    Try loading font information for U+msb on input line 87.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 105.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 87.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
+<orcid.png, id=183, 2007.5pt x 2007.5pt>
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+File: orcid.png Graphic file (type png)
+<use orcid.png>
+Package pdftex.def Info: orcid.png  used on input line 262.
+(pdftex.def)             Requested size: 7.0pt x 6.98407pt.
+
 Overfull \hbox (111.788pt too wide) has occurred while \output is active
 [] [] 
  []
@@ -1032,420 +1165,581 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<figures/detection.pdf, id=249, 542.025pt x 195.129pt>
-File: figures/detection.pdf Graphic file (type pdf)
-<use figures/detection.pdf>
-Package pdftex.def Info: figures/detection.pdf  used on input line 192.
-(pdftex.def)             Requested size: 242.26653pt x 87.21472pt.
-<figures/offset.pdf, id=250, 289.08pt x 289.08pt>
-File: figures/offset.pdf Graphic file (type pdf)
-<use figures/offset.pdf>
-Package pdftex.def Info: figures/offset.pdf  used on input line 198.
-(pdftex.def)             Requested size: 145.36139pt x 145.36008pt.
-<figures/lightcurve.pdf, id=251, 867.24pt x 542.025pt>
-File: figures/lightcurve.pdf Graphic file (type pdf)
-<use figures/lightcurve.pdf>
-Package pdftex.def Info: figures/lightcurve.pdf  used on input line 206.
-(pdftex.def)             Requested size: 513.11743pt x 320.71pt.
-
-[2 <./figures/detection.pdf> <./figures/offset.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/offset.pdf): PDF i
-nclusion: multiple pdfs with page group included in a single page
->]
-Overfull \hbox (10.88353pt too wide) in paragraph at lines 276--276
+[1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./orc
+id.png>]
+Overfull \hbox (10.88353pt too wide) in paragraph at lines 286--286
 [][]| [] [][][]| 
  []
 
-[3 <./figures/lightcurve.pdf>]
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 319.
+Underfull \hbox (badness 2103) in paragraph at lines 309--326
+[]\OT1/cmr/m/n/10 Here we re-port the dis-cov-ery, ob-ser-va-tions and
+ []
 
-<figures/compare_mag.pdf, id=494, 433.62pt x 794.97pt>
+
+Underfull \hbox (badness 1436) in paragraph at lines 309--326
+\OT1/cmr/m/n/10 mod-el-ing of the rapidly ris-ing ($\OML/cmm/m/it/10 t[] \U/msa
+/m/n/10 . \OT1/cmr/m/n/10 3$d) sub-
+ []
+
+[2]
+<figures/offset.pdf, id=393, 578.16pt x 289.08pt>
+File: figures/offset.pdf Graphic file (type pdf)
+<use figures/offset.pdf>
+Package pdftex.def Info: figures/offset.pdf  used on input line 346.
+(pdftex.def)             Requested size: 242.26653pt x 121.13046pt.
+
+Underfull \hbox (badness 3758) in paragraph at lines 362--368
+[]\OT1/cmr/m/n/10 SN2019dge re-sides in a com-pact galaxy SDSS
+ []
+
+<figures/lightcurve.pdf, id=399, 867.24pt x 542.025pt>
+File: figures/lightcurve.pdf Graphic file (type pdf)
+<use figures/lightcurve.pdf>
+Package pdftex.def Info: figures/lightcurve.pdf  used on input line 371.
+(pdftex.def)             Requested size: 513.11743pt x 320.71pt.
+[3 <./figures/offset.pdf>] (./tables/tab_spec.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 464--464
+[][][]$\OT1/cmr/m/n/8 https : / / heasarc . gsfc . nasa . gov / cgi-[]bin / Too
+ls / w3pimms /
+ []
+
+
+Overfull \hbox (10.88353pt too wide) in paragraph at lines 464--464
+[][]| [] [][][]| 
+ []
+
+[4 <./figures/lightcurve.pdf>]
+<figures/compare_mag.pdf, id=644, 419.166pt x 758.835pt>
 File: figures/compare_mag.pdf Graphic file (type pdf)
 <use figures/compare_mag.pdf>
-Package pdftex.def Info: figures/compare_mag.pdf  used on input line 337.
-(pdftex.def)             Requested size: 242.26653pt x 444.16122pt.
+Package pdftex.def Info: figures/compare_mag.pdf  used on input line 518.
+(pdftex.def)             Requested size: 242.26653pt x 438.58463pt.
 
-Underfull \hbox (badness 1264) in paragraph at lines 353--353
-[]\OT1/cmr/bx/n/9 Figure 4. []\OT1/cmr/m/n/9 Comparison of the pho-to-met-ric e
+Underfull \hbox (badness 1264) in paragraph at lines 522--522
+[]\OT1/cmr/bx/n/9 Figure 3. []\OT1/cmr/m/n/9 Comparison of the pho-to-met-ric e
 vo-lu-tion
  []
 
-[4 <./figures/compare_mag.pdf>]
-Underfull \hbox (badness 3826) in paragraph at lines 382--388
-\OT1/cmr/m/n/10 of AT2019dge is longer than the most rapidly-
+[5]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 529.
+
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 529.
+
+
+Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
+
+
+Underfull \hbox (badness 2644) in paragraph at lines 538--549
+\OT1/cmr/m/n/10 in-clud-ing SN2002bj ([][]Poz-nan-ski et al.[][] [][]2010[][]),
+
  []
 
-<figures/Tbb_Rbb.pdf, id=625, 433.62pt x 650.43pt>
-File: figures/Tbb_Rbb.pdf Graphic file (type pdf)
-<use figures/Tbb_Rbb.pdf>
-Package pdftex.def Info: figures/Tbb_Rbb.pdf  used on input line 392.
-(pdftex.def)             Requested size: 242.26653pt x 363.40463pt.
-<figures/compare_color.pdf, id=630, 867.24pt x 289.08pt>
+
+Underfull \hbox (badness 1303) in paragraph at lines 538--549
+\OT1/cmr/m/n/10 et al.[][] [][]2018b[][]), iPTF16hgs ([][]De et al.[][] [][]201
+8a[][]),
+ []
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 549--557
+\OT1/cmr/m/n/10 et al.[][] [][]2018[][]) or ``fast blue op-ti-cal tran-sients''
+
+ []
+
+
+Underfull \hbox (badness 1331) in paragraph at lines 549--557
+\OT1/cmr/m/n/10 studied rep-re-sen-ta-tive ob-jects of this pop-u-la-
+ []
+
+
+Underfull \hbox (badness 3849) in paragraph at lines 549--557
+\OT1/cmr/m/n/10 ([][]Pren-tice et al.[][] [][]2018[][]; [][]Per-ley et al.[][] 
+[][]2019[][]),
+ []
+
+
+Overfull \hbox (10.88353pt too wide) in paragraph at lines 566--566
+[][]| [] [][][]| 
+ []
+
+
+Underfull \hbox (badness 1533) in paragraph at lines 559--570
+\OT1/cmr/m/n/10 have ob-ser-va-tions in the \OT1/cmr/m/it/10 Ke-pler \OT1/cmr/m
+/n/10 white fil-ter, and
+ []
+
+[6 <./figures/compare_mag.pdf>]
+<figures/Tbb_Rbb_log.pdf, id=814, 433.62pt x 722.7pt>
+File: figures/Tbb_Rbb_log.pdf Graphic file (type pdf)
+<use figures/Tbb_Rbb_log.pdf>
+Package pdftex.def Info: figures/Tbb_Rbb_log.pdf  used on input line 588.
+(pdftex.def)             Requested size: 242.26653pt x 403.78293pt.
+<figures/compare_color.pdf, id=815, 867.24pt x 289.08pt>
 File: figures/compare_color.pdf Graphic file (type pdf)
 <use figures/compare_color.pdf>
-Package pdftex.def Info: figures/compare_color.pdf  used on input line 403.
+Package pdftex.def Info: figures/compare_color.pdf  used on input line 596.
 (pdftex.def)             Requested size: 513.11743pt x 171.04533pt.
 
-Underfull \hbox (badness 1762) in paragraph at lines 420--429
-[]\OT1/cmr/m/n/10 In Fig-ure [][]5[][], we plot the phys-i-cal evo-lu-tion of
+Underfull \hbox (badness 1383) in paragraph at lines 604--614
+\OT1/cmr/m/n/10 where at least de-tec-tions in two fil-ters are avail-
  []
 
-
-Underfull \hbox (badness 1939) in paragraph at lines 420--429
-\OT1/cmr/m/n/10 AT2019dge with a com-par-i-son to iPTF14gqr and
- []
-
-
-Underfull \hbox (badness 3612) in paragraph at lines 420--429
-\OT1/cmr/m/n/10 iPTF16hgs. We adopt the ex-plo-sion epoch of
- []
-
-[5 <./figures/Tbb_Rbb.pdf>]
-Underfull \hbox (badness 1292) in paragraph at lines 453--457
-\OT1/cmr/m/n/10 the high-temperature peak. Among other events,
- []
-
-<figures/spectra_early.pdf, id=728, 722.7pt x 303.534pt>
+[7 <./figures/Tbb_Rbb_log.pdf>]
+<figures/spectra_early.pdf, id=917, 722.7pt x 303.534pt>
 File: figures/spectra_early.pdf Graphic file (type pdf)
 <use figures/spectra_early.pdf>
-Package pdftex.def Info: figures/spectra_early.pdf  used on input line 466.
+Package pdftex.def Info: figures/spectra_early.pdf  used on input line 652.
 (pdftex.def)             Requested size: 513.11743pt x 215.51064pt.
-<figures/spectra_phot.pdf, id=729, 722.7pt x 252.945pt>
+ (./tables/tab_eml_fwhm.tex)
+<figures/spectra_phot.pdf, id=922, 722.7pt x 252.945pt>
 File: figures/spectra_phot.pdf Graphic file (type pdf)
 <use figures/spectra_phot.pdf>
-Package pdftex.def Info: figures/spectra_phot.pdf  used on input line 479.
+Package pdftex.def Info: figures/spectra_phot.pdf  used on input line 688.
 (pdftex.def)             Requested size: 513.11743pt x 179.59221pt.
-[6 <./figures/compare_color.pdf>]
-<figures/hst_opt.pdf, id=821, 433.62pt x 433.62pt>
+<figures/hst_opt.pdf, id=923, 433.62pt x 433.62pt>
 File: figures/hst_opt.pdf Graphic file (type pdf)
 <use figures/hst_opt.pdf>
-Package pdftex.def Info: figures/hst_opt.pdf  used on input line 514.
+Package pdftex.def Info: figures/hst_opt.pdf  used on input line 702.
 (pdftex.def)             Requested size: 242.26653pt x 242.26976pt.
-<figures/hst_all.pdf, id=843, 433.62pt x 433.62pt>
+<figures/hst_all.pdf, id=940, 433.62pt x 433.62pt>
 File: figures/hst_all.pdf Graphic file (type pdf)
 <use figures/hst_all.pdf>
-Package pdftex.def Info: figures/hst_all.pdf  used on input line 537.
+Package pdftex.def Info: figures/hst_all.pdf  used on input line 713.
 (pdftex.def)             Requested size: 242.26653pt x 242.26976pt.
+ [8 <./figures/compare_color.pdf>]
+
+LaTeX Warning: Command \r invalid in math mode on input line 738.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 548.
+LaTeX Warning: Command \r invalid in math mode on input line 742.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 552.
+LaTeX Warning: Command \r invalid in math mode on input line 744.
 
-
-LaTeX Warning: Command \r invalid in math mode on input line 554.
-
-[7 <./figures/spectra_early.pdf> <./figures/spectra_phot.pdf
+[9 <./figures/spectra_early.pdf> <./figures/spectra_phot.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/spectra_phot.pdf):
  PDF inclusion: multiple pdfs with page group included in a single page
 >]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 556.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 748.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 556.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 748.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 563.
+LaTeX Warning: Command \r invalid in math mode on input line 756.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 564.
+LaTeX Warning: Command \r invalid in math mode on input line 757.
 
-<figures/spectra_late.pdf, id=993, 722.7pt x 361.35pt>
+<figures/spectra_late.pdf, id=1180, 722.7pt x 361.35pt>
 File: figures/spectra_late.pdf Graphic file (type pdf)
 <use figures/spectra_late.pdf>
-Package pdftex.def Info: figures/spectra_late.pdf  used on input line 574.
+Package pdftex.def Info: figures/spectra_late.pdf  used on input line 767.
 (pdftex.def)             Requested size: 513.11743pt x 256.56029pt.
-<figures/spec_host_subtracted.pdf, id=996, 722.7pt x 325.215pt>
-File: figures/spec_host_subtracted.pdf Graphic file (type pdf)
-<use figures/spec_host_subtracted.pdf>
-Package pdftex.def Info: figures/spec_host_subtracted.pdf  used on input line 5
-90.
-(pdftex.def)             Requested size: 513.11743pt x 230.90427pt.
-[8 <./figures/hst_opt.pdf> <./figures/hst_all.pdf
+[10 <./figures/hst_opt.pdf> <./figures/hst_all.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/hst_all.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->] [9 <./figures/spectra_late.pdf> <./figures/spec_host_subtracted.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/spec_host_subtract
-ed.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-
 >]
-<figures/SDSSJ17+50_best_model.pdf, id=1288, 462.52798pt x 346.89601pt>
+<figures/spec_host_subtracted.pdf, id=1346, 722.7pt x 325.215pt>
+File: figures/spec_host_subtracted.pdf Graphic file (type pdf)
+<use figures/spec_host_subtracted.pdf>
+Package pdftex.def Info: figures/spec_host_subtracted.pdf  used on input line 8
+09.
+(pdftex.def)             Requested size: 513.11743pt x 230.90427pt.
+
+Overfull \hbox (10.88353pt too wide) in paragraph at lines 846--846
+[][]| [] [][][]| 
+ []
+
+[11 <./figures/spectra_late.pdf>]
+<figures/SDSSJ17+50_best_model.pdf, id=1459, 417.75258pt x 314.68767pt>
 File: figures/SDSSJ17+50_best_model.pdf Graphic file (type pdf)
 <use figures/SDSSJ17+50_best_model.pdf>
 Package pdftex.def Info: figures/SDSSJ17+50_best_model.pdf  used on input line 
-640.
-(pdftex.def)             Requested size: 242.26653pt x 181.69968pt.
+876.
+(pdftex.def)             Requested size: 242.26653pt x 182.49495pt.
+ [12 <./figures/spec_host_subtracted.pdf> <./figures/SDSSJ17+50_best_model.pdf
 
-
-Package natbib Warning: Citation `Chen2019' on page 10 undefined on input line 
-697.
-
-
-Package natbib Warning: Citation `Chen2019' on page 10 undefined on input line 
-697.
-
-[10 <./figures/SDSSJ17+50_best_model.pdf>]
-<figures/Lbb.pdf, id=1416, 433.62pt x 361.35pt>
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/SDSSJ17+50_best_mo
+del.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+>]
+<figures/Lbb.pdf, id=1624, 433.62pt x 375.804pt>
 File: figures/Lbb.pdf Graphic file (type pdf)
 <use figures/Lbb.pdf>
-Package pdftex.def Info: figures/Lbb.pdf  used on input line 738.
-(pdftex.def)             Requested size: 242.26653pt x 201.89146pt.
- [11 <./figures/Lbb.pdf>]
-(./tables/tab_p15fit_comparion.tex
-Overfull \hbox (5.91394pt too wide) in paragraph at lines 4--17
- []$ 
- []
+Package pdftex.def Info: figures/Lbb.pdf  used on input line 934.
+(pdftex.def)             Requested size: 242.26653pt x 209.96712pt.
 
-)
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 784.
+(hyperref)                removing `math shift' on input line 959.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 2.77695pt
-(hyperref)                removed on input line 784.
+(hyperref)                removed on input line 959.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 784.
+(hyperref)                removing `math shift' on input line 959.
 
-<figures/radio_230GHz_s2.pdf, id=1495, 433.62pt x 361.35pt>
+[13 <./figures/Lbb.pdf>]
+<figures/radio_230GHz_s2.pdf, id=1706, 433.62pt x 361.35pt>
 File: figures/radio_230GHz_s2.pdf Graphic file (type pdf)
 <use figures/radio_230GHz_s2.pdf>
-Package pdftex.def Info: figures/radio_230GHz_s2.pdf  used on input line 846.
+Package pdftex.def Info: figures/radio_230GHz_s2.pdf  used on input line 1029.
 (pdftex.def)             Requested size: 242.26653pt x 201.89146pt.
-<figures/radio_230GHz_s0.pdf, id=1496, 433.62pt x 361.35pt>
+<figures/radio_230GHz_s0.pdf, id=1707, 433.62pt x 361.35pt>
 File: figures/radio_230GHz_s0.pdf Graphic file (type pdf)
 <use figures/radio_230GHz_s0.pdf>
-Package pdftex.def Info: figures/radio_230GHz_s0.pdf  used on input line 847.
+Package pdftex.def Info: figures/radio_230GHz_s0.pdf  used on input line 1030.
 (pdftex.def)             Requested size: 242.26653pt x 201.89146pt.
+ [14pdfTeX warning (ext4): destination with the same identifier (name{equation.
+4.1}) has been already used, duplicate ignored
 
-Underfull \hbox (badness 1137) in paragraph at lines 865--872
-[]\OT1/cmr/m/n/10 Our SMA ob-ser-va-tions con-strain the sub-mil-lime-
- []
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1064 
+       pdfTeX warning (ext4): destination with the same identifier (name{equati
+on.4.2}) has been already used, duplicate ignored
 
-[12]
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1064 
+       ]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 873.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1064.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 873.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1064.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-[13 <./figures/radio_230GHz_s2.pdf> <./figures/radio_230GHz_s0.pdf
+
+Underfull \hbox (badness 1521) in paragraph at lines 1065--1071
+[]\OT1/cmr/m/n/10 The ex-pected ra-dio lu-mi-nos-ity pre-dicted by the
+ []
+
+[15 <./figures/radio_230GHz_s2.pdf> <./figures/radio_230GHz_s0.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/radio_230GHz_s0.pd
 f): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 1655) in paragraph at lines 944--949
-\OT1/cmr/m/n/10 by the ra-dioac-tiv-ity pow-ered de-cay in-di-cates that
+Overfull \hbox (10.88353pt too wide) in paragraph at lines 1184--1184
+[][]| [] [][][]| 
  []
 
-LaTeX Font Info:    Try loading font information for C70+gbsn on input line 999
-.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/cjk/texinput/UTF8/c70gbsn.fd
-File: c70gbsn.fd 2015/04/18 4.8.4
-)
-(/usr/local/texlive/2018/texmf-dist/tex/latex/cjk/texinput/UTF8/c70gbsn.fdx
-File: c70gbsn.fdx 2015/04/18 4.8.4
-)
-Missing character: There is no ^^R in font gbsnu22!
-
-Underfull \hbox (badness 2359) in paragraph at lines 1008--1009
-[]\OT1/cmr/m/n/10 equatorial CSM de-posited by bi-nary in-ter-ac-tion
+(./tables/tab_p15fit_comparion.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 1199--1200
+[]\OT1/cmr/m/n/10 Here we dis-cuss pos-si-ble evo-lu-tion paths of
  []
 
-[14]
-Underfull \hbox (badness 1867) in paragraph at lines 1069--1070
-[][]\foo 2007[][]), \OT1/cmtt/m/n/10 pandas \foo ([][]McK-in-ney[][] [][]2010[]
-[]), \OT1/cmtt/m/n/10 emcee \foo ([][]Foreman-
+[16]
+Underfull \hbox (badness 3229) in paragraph at lines 1241--1252
+[]\OT1/cmr/m/n/10 In ad-di-tion to SN2019dge and iPTF14gqr, we
  []
 
-[15] (./tables/tab_phot.tex [16]) (./tables/tab_host_phot.tex
+[17]
+<figures/lc_programids.pdf, id=2011, 433.62pt x 289.08pt>
+File: figures/lc_programids.pdf Graphic file (type pdf)
+<use figures/lc_programids.pdf>
+Package pdftex.def Info: figures/lc_programids.pdf  used on input line 1293.
+(pdftex.def)             Requested size: 242.26653pt x 161.51317pt.
 
-LaTeX Warning: Command \r invalid in math mode on input line 36.
+Underfull \hbox (badness 1584) in paragraph at lines 1300--1308
+[]\OT1/cmr/m/n/10 SN2019dge peaked at an ab-so-lute mag-ni-tude of
+ []
 
+[18 <./figures/lc_programids.pdf>]
+<figures/SN2019dge_rate_pct.pdf, id=2106, 433.62pt x 361.35pt>
+File: figures/SN2019dge_rate_pct.pdf Graphic file (type pdf)
+<use figures/SN2019dge_rate_pct.pdf>
+Package pdftex.def Info: figures/SN2019dge_rate_pct.pdf  used on input line 139
+1.
+(pdftex.def)             Requested size: 242.26653pt x 201.89146pt.
+ [19]
 
-LaTeX Warning: Command \r invalid in math mode on input line 36.
-
-)
-<figures/seds.pdf, id=1704, 939.51pt x 867.24pt>
-File: figures/seds.pdf Graphic file (type pdf)
-<use figures/seds.pdf>
-Package pdftex.def Info: figures/seds.pdf  used on input line 1096.
-(pdftex.def)             Requested size: 461.80255pt x 426.27463pt.
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
-s been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1099     \label{fig:seds}}
-                            pdfTeX warning (ext4): destination with the same id
-entifier (name{figure.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1099     \label{fig:seds}}
-                             (./tables/tab_bbfit.tex)
-(./tables/tab_P15priors.tex)
-<figures/corner_P15.pdf, id=1705, 701.01903pt x 701.01903pt>
-File: figures/corner_P15.pdf Graphic file (type pdf)
-<use figures/corner_P15.pdf>
-Package pdftex.def Info: figures/corner_P15.pdf  used on input line 1108.
-(pdftex.def)             Requested size: 242.26653pt x 242.2583pt.
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
-s been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1114 		lines).	\label{fig:pirocorner}}
-                                        pdfTeX warning (ext4): destination with
- the same identifier (name{figure.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1114 		lines).	\label{fig:pirocorner}}
-                                         [17] [18pdfTeX warning (ext4): destina
-tion with the same identifier (name{equation.A.1}) has been already used, dupli
-cate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1152 
-        <./figures/seds.pdf>]
-
-LaTeX Warning: A float is stuck (cannot be placed) on input line 1152.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1404.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 1152.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1404.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-<figures/P15model.pdf, id=1797, 433.62pt x 397.485pt>
-File: figures/P15model.pdf Graphic file (type pdf)
-<use figures/P15model.pdf>
-Package pdftex.def Info: figures/P15model.pdf  used on input line 1155.
-(pdftex.def)             Requested size: 242.26653pt x 222.08061pt.
+<figures/cooling_trise.pdf, id=2134, 433.62pt x 361.35pt>
+File: figures/cooling_trise.pdf Graphic file (type pdf)
+<use figures/cooling_trise.pdf>
+Package pdftex.def Info: figures/cooling_trise.pdf  used on input line 1435.
+(pdftex.def)             Requested size: 242.26653pt x 201.89146pt.
+<figures/cooling_Mpeak.pdf, id=2135, 433.62pt x 361.35pt>
+File: figures/cooling_Mpeak.pdf Graphic file (type pdf)
+<use figures/cooling_Mpeak.pdf>
+Package pdftex.def Info: figures/cooling_Mpeak.pdf  used on input line 1436.
+(pdftex.def)             Requested size: 242.26653pt x 201.89146pt.
+[20 <./figures/SN2019dge_rate_pct.pdf>]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1472.
+
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1472.
+
+
+Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
+
+
+Underfull \hbox (badness 7273) in paragraph at lines 1477--1480
+[]\OT1/cmr/m/n/10 Peak ab-so-lute mag-ni-tudes are $\OML/cmm/m/it/10 M[] \OMS/c
+msy/m/n/10 ^^Y
+ []
+
+[21 <./figures/cooling_trise.pdf> <./figures/cooling_Mpeak.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/cooling_Mpeak.pdf)
+: PDF inclusion: multiple pdfs with page group included in a single page
+>] (./tables/tab_phot.tex) (./tables/tab_host_phot.tex
+
+LaTeX Warning: Command \r invalid in math mode on input line 36.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 36.
+
+)
+<figures/bbprior.pdf, id=2328, 578.16pt x 433.62pt>
+File: figures/bbprior.pdf Graphic file (type pdf)
+<use figures/bbprior.pdf>
+Package pdftex.def Info: figures/bbprior.pdf  used on input line 1590.
+(pdftex.def)             Requested size: 242.26653pt x 181.6957pt.
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1594 		lines).	\label{fig:bbprior}}
+                                     pdfTeX warning (ext4): destination with th
+e same identifier (name{figure.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1594 		lines).	\label{fig:bbprior}}
+                                     
+<figures/seds_log.pdf, id=2329, 939.51pt x 867.24pt>
+File: figures/seds_log.pdf Graphic file (type pdf)
+<use figures/seds_log.pdf>
+Package pdftex.def Info: figures/seds_log.pdf  used on input line 1599.
+(pdftex.def)             Requested size: 461.80255pt x 426.27463pt.
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1603 		\label{fig:seds}}
+                          pdfTeX warning (ext4): destination with the same iden
+tifier (name{figure.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1603 		\label{fig:seds}}
+                           (./tables/tab_bbfit.tex)
+<figures/corner_P15.pdf, id=2330, 701.01903pt x 701.01903pt>
+File: figures/corner_P15.pdf Graphic file (type pdf)
+<use figures/corner_P15.pdf>
+Package pdftex.def Info: figures/corner_P15.pdf  used on input line 1609.
+(pdftex.def)             Requested size: 242.26653pt x 242.2583pt.
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1161 		\label{fig:piromodel}}
-                               pdfTeX warning (ext4): destination with the same
- identifier (name{figure.3}) has been already used, duplicate ignored
+l.1615 		lines).	\label{fig:pirocorner}}
+                                        pdfTeX warning (ext4): destination with
+ the same identifier (name{figure.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1161 		\label{fig:piromodel}}
-                               pdfTeX warning (ext4): destination with the same
- identifier (name{equation.A.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1180 \end{align}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{equation.A.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1180 \end{align}
-                   [19 <./figures/corner_P15.pdf> <./figures/P15model.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/P15model.pdf): PDF
- inclusion: multiple pdfs with page group included in a single page
->] (./tables/tab_Nidecaypriors.tex)
-<figures/corner_arnett_modified.pdf, id=1922, 549.25201pt x 549.25201pt>
-File: figures/corner_arnett_modified.pdf Graphic file (type pdf)
-<use figures/corner_arnett_modified.pdf>
-Package pdftex.def Info: figures/corner_arnett_modified.pdf  used on input line
- 1222.
-(pdftex.def)             Requested size: 242.26653pt x 242.26668pt.
+l.1615 		lines).	\label{fig:pirocorner}}
+                                         (./tables/tab_P15priors.tex)
+<figures/P15model.pdf, id=2331, 433.62pt x 397.485pt>
+File: figures/P15model.pdf Graphic file (type pdf)
+<use figures/P15model.pdf>
+Package pdftex.def Info: figures/P15model.pdf  used on input line 1622.
+(pdftex.def)             Requested size: 242.26653pt x 222.08061pt.
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1227 		lines).	\label{fig:Nidecaycorner}}
+l.1628 		\label{fig:piromodel}}
+                               pdfTeX warning (ext4): destination with the same
+ identifier (name{figure.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1628 		\label{fig:piromodel}}
+                                (./tables/tab_Nidecaypriors.tex)
+<figures/corner_arnett_modified_all.pdf, id=2332, 549.25201pt x 549.25201pt>
+File: figures/corner_arnett_modified_all.pdf Graphic file (type pdf)
+<use figures/corner_arnett_modified_all.pdf>
+Package pdftex.def Info: figures/corner_arnett_modified_all.pdf  used on input 
+line 1635.
+(pdftex.def)             Requested size: 242.26653pt x 242.26668pt.
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1640 		lines).	\label{fig:Nidecaycorner}}
                                            pdfTeX warning (ext4): destination w
-ith the same identifier (name{figure.4}) has been already used, duplicate ignor
+ith the same identifier (name{figure.5}) has been already used, duplicate ignor
 ed
 <to be read again> 
                    \relax 
-l.1227 		lines).	\label{fig:Nidecaycorner}}
-                                            (./tables/tab_spec.tex
+l.1640 		lines).	\label{fig:Nidecaycorner}}
+                                           
+Underfull \hbox (badness 1142) in paragraph at lines 1643--1651
+\foo Chain (MCMC) sim-u-la-tions with \OT1/cmtt/m/n/10 emcee \foo ([][]Foreman-
 
-LaTeX Warning: Command \r invalid in math mode on input line 39.
+ []
+
+[22]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1651.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 39.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1651.
 
-) (./at2019dge.bbl [20 <./figures/corner_arnett_modified.pdf>] [21] [22])
-[23]
+
+Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
+
+
+Underfull \hbox (badness 1226) in paragraph at lines 1652--1656
+[]\foo Within the en-sem-ble, we use 100 walk-ers, each
+ []
+
+[23 <./figures/bbprior.pdf>] [24pdfTeX warning (ext4): destination with the sam
+e identifier (name{equation.B.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1693 \end{align}
+                   <./figures/seds_log.pdf>]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1693.
+
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1693.
+
+
+Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.3}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1697 \end{align}
+                   [25pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.B.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1713 
+        <./figures/corner_P15.pdf> <./figures/P15model.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/P15model.pdf): PDF
+ inclusion: multiple pdfs with page group included in a single page
+> <./figures/corner_arnett_modified_all.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/corner_arnett_modi
+fied_all.pdf): PDF inclusion: multiple pdfs with page group included in a singl
+e page
+>]
+<figures/template_g.pdf, id=2649, 433.62pt x 289.08pt>
+File: figures/template_g.pdf Graphic file (type pdf)
+<use figures/template_g.pdf>
+Package pdftex.def Info: figures/template_g.pdf  used on input line 1716.
+(pdftex.def)             Requested size: 242.26653pt x 161.51317pt.
+<figures/template_r.pdf, id=2650, 433.62pt x 289.08pt>
+File: figures/template_r.pdf Graphic file (type pdf)
+<use figures/template_r.pdf>
+Package pdftex.def Info: figures/template_r.pdf  used on input line 1717.
+(pdftex.def)             Requested size: 242.26653pt x 161.51317pt.
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1719 	fitting. 	\label{fig:template}}
+                                       pdfTeX warning (ext4): destination with 
+the same identifier (name{figure.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1719 	fitting. 	\label{fig:template}}
+                                        [26 <./figures/template_g.pdf> <./figur
+es/template_r.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/template_r.pdf): P
+DF inclusion: multiple pdfs with page group included in a single page
+>] (./at2019dge.bbl [27] [28] [29]) [30]
 
 Class revtex4-1 Warning: Environment acknowledgements is obsolete;
 Use acknowledgments instead.
 
-
-Package natbib Warning: There were undefined citations.
-
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1291.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1806.
 (./at2019dge.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1291.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1291.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1806.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1806.
 
 Package rerunfilecheck Info: File `at2019dge.out' has not changed.
-(rerunfilecheck)             Checksum: 5B0E97BACE9EBAD8C36321690506AD5A;2350.
+(rerunfilecheck)             Checksum: 0E18BB0217F375D6D41AA0532EA25DB0;3254.
  ) 
 Here is how much of TeX's memory you used:
- 13607 strings out of 492649
- 195460 string characters out of 6129622
- 451684 words of memory out of 5000000
- 16988 multiletter control sequences out of 15000+600000
- 20171 words of font info for 76 fonts, out of 8000000 for 9000
+ 14146 strings out of 492649
+ 204384 string characters out of 6129622
+ 450967 words of memory out of 5000000
+ 17408 multiletter control sequences out of 15000+600000
+ 21250 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,12n,38p,3625b,962s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texli
-ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive
-/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive
-/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/
-2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texli
-ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
-e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/
-2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/20
-18/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2018
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2018/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2018/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2018/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmti12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmti9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmtt10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/h
-elvetic/uhvr8a.pfb>
-Output written on at2019dge.pdf (23 pages, 1901998 bytes).
+ 36i,15n,38p,3625b,1167s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/20
+18/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2018
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2018/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2018/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2018/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmss8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmti12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmti7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmti8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+t10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfr
+m1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.p
+fb>
+Output written on at2019dge.pdf (30 pages, 2751739 bytes).
 PDF statistics:
- 2463 PDF objects out of 2487 (max. 8388607)
- 1427 compressed objects within 15 object streams
- 225 named destinations out of 1000 (max. 500000)
- 365 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3478 PDF objects out of 3580 (max. 8388607)
+ 2208 compressed objects within 23 object streams
+ 331 named destinations out of 1000 (max. 500000)
+ 488 words of extra memory for PDF output out of 10000 (max. 10000000)
 

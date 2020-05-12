@@ -3,53 +3,55 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: at2019dge.aux
 The style file: aasjournal.bst
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated field_info (elt_size=4) to 10249 items from 5000.
 Database file #1: at2019dge.bib
 Reallocated str_pool (elt_size=1) to 130000 items from 65000.
-Warning--I didn't find a database entry for "Chen2019"
+Warning--can't use both author and editor fields in GalYam2017
+Warning--empty publisher in GalYam2017
 Warning--can't use both author and editor fields in Kasen2017
 Warning--empty publisher in Kasen2017
 Warning--empty publisher in Piascik2014
 Warning--can't use both author and editor fields in Smith2017
 Warning--empty publisher in Smith2017
-You've used 119 entries,
+You've used 181 entries,
             4033 wiz_defined-function locations,
-            1898 strings with 66490 characters,
-and the built_in function-call counts, 81736 in all, are:
-= -- 7275
-> -- 7678
-< -- 32
-+ -- 2539
-- -- 2682
-* -- 8107
-:= -- 13936
-add.period$ -- 119
-call.type$ -- 119
-change.case$ -- 612
-chr.to.int$ -- 115
-cite$ -- 124
-duplicate$ -- 2727
-empty$ -- 4021
-format.name$ -- 2831
-if$ -- 17829
-int.to.chr$ -- 5
+            2412 strings with 102540 characters,
+and the built_in function-call counts, 128686 in all, are:
+= -- 11259
+> -- 12348
+< -- 45
++ -- 4091
+- -- 4313
+* -- 12717
+:= -- 21948
+add.period$ -- 181
+call.type$ -- 181
+change.case$ -- 940
+chr.to.int$ -- 172
+cite$ -- 188
+duplicate$ -- 4328
+empty$ -- 6187
+format.name$ -- 4527
+if$ -- 27987
+int.to.chr$ -- 10
 int.to.str$ -- 0
-missing$ -- 113
-newline$ -- 364
-num.names$ -- 478
-pop$ -- 846
+missing$ -- 172
+newline$ -- 550
+num.names$ -- 727
+pop$ -- 1300
 preamble$ -- 1
-purify$ -- 612
+purify$ -- 940
 quote$ -- 0
-skip$ -- 2619
+skip$ -- 4218
 stack$ -- 0
-substring$ -- 2254
-swap$ -- 854
+substring$ -- 3558
+swap$ -- 1485
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1062
-warning$ -- 5
-while$ -- 475
+type$ -- 1617
+warning$ -- 7
+while$ -- 717
 width$ -- 0
-write$ -- 1301
-(There were 6 warnings)
+write$ -- 1971
+(There were 7 warnings)

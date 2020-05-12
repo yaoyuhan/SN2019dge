@@ -1,18 +1,55 @@
-\begin{table}[!htbp] 
-	\centering 
-	\caption{shock P15.} 
-	\begin{tabular}{ccll} 
-		\hline 
-		Name  &Type & $R_{\rm ext}$ ($10^{12}\,{\rm cm}$) & $M_{\rm ext}$ ($10^{-2} M_\odot$)  \\ 
-		\hline
-		iPTF16hgs & Ca-rich & $0.9$ & 8\\
-		\textbf{AT2019dge} & Ib-pec & $2.69_{-0.16}^{+0.34}$ & $9.40_{-0.33}^{+0.69}$  \\
-		iPTF14gqr & Ic-pec &$30^{+3}_{-3}$ &$0.88^{+0.08}_{-0.07}$  \\
-		iPTF15dtg & Ic & 83&5 \\
-		SN2016gkg & IIb &$4.00^{+0.05}_{-0.05}$ &$2.50^{+0.01}_{-0.01}$  \\
-		ZTF18aalrxas & IIb & $73^{+3}_{-2}$  & $4.3_{-0.13}^{+0.14}$ \\
-		\hline 
-	\end{tabular} 
-	\tablecomments{Reference: iPTF14gqr \citep{De2018}, SN2016gkg \citep{Arcavi2017}, 
-		ZTF18aalrxas\citep{Fremling2019}}
-\end{table} 
+\begin{deluxetable*}{chch|ccc|cc|cc}[htpb!]
+	\tablecaption{ Model parameters for hydrogen-poor subluminous fast-evolving SNe where the 
+	bolometric light curve can be fitted with a shock cooling powered component and a radioactivity 
+	powered component.\label{tab:model_compare}}
+	\tablehead{
+		\colhead{Name}
+		& \nocolhead{Type}
+		& \colhead{$v_{\rm ej}$}
+		&\nocolhead{Reference}
+		&\colhead{$\tau_{\rm m, A82}$}
+		&\colhead{$M_{\rm ej, A82}$}
+		& \colhead{$M_{\rm Ni, A82}$}
+		%&\colhead{$E_{\rm kin}$ ($10^{49}\,{\rm erg\,s^{-1}}$)}
+		&\colhead{$M_{\rm ej, KK19}$}
+		& \colhead{$M_{\rm Ni, KK19}$}
+		&\colhead{$R_{\rm ext}$}
+		&\colhead{$M_{\rm ext}$}\\
+		\colhead{}
+		& \colhead{}
+		& \colhead{($\rm km\,s^{-1}$)}
+		& \colhead{}
+		& \colhead{(d)}
+		& \colhead{($M_\odot$)}
+		& \colhead{($10^{-2} M_\odot$)}
+		& \colhead{($M_\odot$)}
+		&\colhead{($10^{-2} M_\odot$)}
+		& \colhead{($10^{12}\,{\rm 	cm}$)}
+		& \colhead{($10^{-2} M_\odot$)}
+	}
+	\startdata
+	iPTF14gqr & Ic-pec & 10000 & \citet{De2018}
+	& $4.38^{+0.14}_{-0.15}$ & $0.21_{-0.01}^{+0.01}$ & $8.01^{+0.14}_{-0.15}$
+	&0.22 & 8.35
+	&$55.33^{+9.73}_{-9.68}$ &$1.46^{+0.37}_{-0.27}$  \\
+	iPTF16hgs & Ca-Ib & 10000 & \citet{DeKC2018}
+	& $11.09^{+1.08}_{-1.09}$  &$1.36^{+0.28}_{-0.25}$ & $2.33^{+0.23}_{-0.23}$ 
+	& 0.78 &2.29
+	&$1.67^{+2.24}_{-0.95}$ & $8.94^{+3.77}_{-2.61}$\\
+	SN2018lqo & Ca-Ib & 8250 & \citet{De2020b}
+	& $9.71_{-0.37}^{+0.52}$ & $0.86_{-0.06}^{+0.09}$& $2.75^{+0.09}_{-0.07}$
+	& 0.63 & 3.08
+	&$26.80^{+108.58}_{-23.55}$  & $4.82^{+3.23}_{-1.15}$ \\
+	% SN2019ehk & Ca-IIb & 6000 &&&	&& &&\\
+	SN2019dge & Ib-pec & 8000 & This work
+	&$6.35_{-0.18}^{+0.18}$ &$0.36_{-0.02}^{+0.02}$ &$1.61^{+0.04}_{-0.03}$ 
+	&0.30 &1.70
+	&  $2.71_{-0.17}^{+0.19}$ & $9.34^{+0.36}_{-0.36}$  \\
+	\enddata
+	\tablecomments{Model parameters with the subscripts of ``A82'' and ``KK19'' refers to 
+	radioactivity-powered ligth curve models of \citet{Arnett1982} (see Appendix \ref{subsec:arnettfit}) 
+	and \citet{Khatami2019}, respectively. Reference: 
+	iPTF14gqr \citep{De2018}, iPTF16hgs \citep{DeKC2018}, SN2018lqo 
+	\citep{De2020b}, SN2019dge this work.}
+\end{deluxetable*}
+
