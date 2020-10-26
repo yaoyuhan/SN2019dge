@@ -150,7 +150,7 @@ def gaplinelist(z=0.0213):
               #3750.151, 3770.633, 3797.909, 3835.397, 3889.064, 
               3970.075, 4101.734, 4340.472, 4861.35, 6562.79]) * (1+z)
     
-    OIII_list = np.array([ 4363.21,  #this is not detected
+    OIII_list = np.array([4363.21,  #this is not detected
                           4958.91, 5006.84]) * (1+z)
     
     OII_list = np.array([3726.04, 3728.80 # oii line in the 2p3 configuration
@@ -284,8 +284,10 @@ def get_keck(z=0.0213, date = "20190412_Keck1_v2",
     xx = tb['col1'].data/(1+z)
     yy = tb['col2'].data
     ind = ~np.isnan(yy)
+    dt["wave"] = xx[ind]*(1+z)
     dt['wave_rest'] = xx[ind]
     dt['spec_obs'] = yy[ind]
+    dt['spec_obs_sky'] = tb['col3'].data[ind]
     Aextmag =  extinction.ccm89(dt['wave_rest'], 3.1*ebv, 3.1) # extinction in magnitudes
     tau =  Aextmag / 1.086
     dt['spec_obs0'] = dt['spec_obs'] * np.exp(tau)

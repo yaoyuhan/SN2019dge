@@ -44,7 +44,7 @@ def app2abs_df(tb, z, t_max=None):
 
 def add_physcol(tb, magcol = 'mag0_abs'):
     """
-    tb is pandas dataframe
+    tb is pandas dataframe35*
     
     columns that must exist: 
         wave: in angstrom

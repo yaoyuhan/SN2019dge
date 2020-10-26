@@ -72,4 +72,9 @@ t_det = Time(jd_det, format = "jd")
 print (t_det.datetime64)
 
 
+print ("")
+print ("alert in 2018:")
+result[2]["candidate"]
+
+
 

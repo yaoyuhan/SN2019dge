@@ -70,7 +70,7 @@ def model_arnett_Ltph(ts_, taum_ = 3, Mni_ = 0.05):
     return Ls
 
 
-def model_arnett_modified(ts_, taum_ = 3, Mni_ = 0.05, t0_ = 30):
+def model_arnett_modified(ts_, taum_ = 3, Mni_ = 0.05, t0_ = 30, texp = 0):
     '''
     Calculate the flux of a radioactivity powered SN at photospheric phase
     
@@ -80,6 +80,7 @@ def model_arnett_modified(ts_, taum_ = 3, Mni_ = 0.05, t0_ = 30):
     The euqation is from
     Valenti 2008 MNRAS 383 1485V, Appendix A
     '''
+    ts_ = ts_ - texp
     ts = ts_ * 24*3600 #  in seconds
     Mni = Mni_ * phys.sm
     tau_m = taum_ * 24 * 3600.
@@ -93,17 +94,22 @@ def model_arnett_modified(ts_, taum_ = 3, Mni_ = 0.05, t0_ = 30):
     Ls = np.zeros(len(ts))
     for i in range(len(ts)):
         t = ts[i]
-        x = t / tau_m
-        y = tau_m / (2 * tau_ni)
-        s = tau_m * (tau_co - tau_ni) / (2 * tau_co * tau_ni)
-    
-        int_A = get_int_A(x, y, s)
-        int_B = get_int_B(x, y, s)
-    
-        L = Mni * np.exp(-x**2) * ( (epsilon_ni - epsilon_co) * int_A + epsilon_co * int_B )
-        Ls[i] = L
+        if t<=0:
+            Ls[i] = 0
+        else:
+            x = t / tau_m
+            y = tau_m / (2 * tau_ni)
+            s = tau_m * (tau_co - tau_ni) / (2 * tau_co * tau_ni)
+            
+            int_A = get_int_A(x, y, s)
+            int_B = get_int_B(x, y, s)
+            
+            L = Mni * np.exp(-x**2) * ( (epsilon_ni - epsilon_co) * int_A + epsilon_co * int_B )
+            Ls[i] = L
     # plt.loglog(ts/24/3600, Ls)
-    Ls_modified = Ls * (1. - np.exp(-1*(t0/ts)**2) )
+    Ls_modified = np.zeros(len(Ls))
+    ix = ts > 0
+    Ls_modified[ix] = Ls[ix]* (1. - np.exp(-1*(t0/ts[ix])**2) )
     return Ls_modified
 
 
@@ -111,10 +117,13 @@ def arnett_lnlike(theta, t, Ldata, Ldata_unc):
     """
     taum_, Mni_, texp_ are in the unit of day, Msun, day
     """
-    taum_, lgMni_, t0_ = theta
+    taum_, lgMni_, t0_, texp_ = theta
     Mni_ = 10**lgMni_
-    model = model_arnett_modified(t, taum_, Mni_, t0_)
+    model = model_arnett_modified(t, taum_, Mni_, t0_, texp_)
     lgmodel = np.log10(model)
+    
+    # not sure what is the reason why 
+    # ValueError: Probability function returned NaN
     
     chi2_term = -1/2*np.sum((Ldata - lgmodel)**2/Ldata_unc**2)
     error_term = np.sum(np.log(1/np.sqrt(2*np.pi*Ldata_unc**2)))
@@ -125,9 +134,9 @@ def arnett_lnlike(theta, t, Ldata, Ldata_unc):
 arnett_nll = lambda *args: -arnett_lnlike(*args)
 
 def arnett_lnprior(theta):
-    taum_, lgMni_, t0_ = theta
-    if ((1 < taum_ < 20) and (-4 < lgMni_ < 0) and (1 < t0_ < 100)):
-        return 0.0
+    taum_, lgMni_, t0_, texp_ = theta
+    if ((1 < taum_ < 20) and (-4 < lgMni_ < 0) and (20 < t0_ < 100) and (-2.931 < texp_ < -2.891)):
+        return 0.
     return -np.inf
 
 def arnett_lnprob(theta, x, y, yerr):
@@ -166,40 +175,41 @@ def plotChains(sampler, nburn, paramsNames, nplot):
 def makeCornerArnett(sampler, nburn, paramsNames, quantiles=[0.16, 0.5, 0.84]):
     samples = sampler.get_chain(discard=nburn, flat=True)
     corner.corner(samples, labels = paramsNames, quantiles = quantiles, 
-                  range = [0.999, 0.999, 0.999],
+                  range = [0.999, 0.999, 0.999, 0.999],
                   show_titles=True, plot_datapoints=False, 
                   title_kwargs = {"fontsize": fs})
 
 
-def main_arnettrun():
-    xyey = np.loadtxt('./Lbb_p15subtracted.txt')
+
+if __name__ == "__main__":
+    xyey = np.loadtxt('./Lbb_p20subtracted.txt')
     tt = xyey[0]
     lgL = xyey[1]
     lgL_unc = xyey[2]
     
     tgrid = np.linspace(1, 65)
-    taum_ = 7.1
-    Mni_ = 0.0168
-    t0_ = 22
-    Lmodel1 = model_arnett_Ltph(tgrid, taum_ = taum_, Mni_ = Mni_)
-    Lmodel2 = model_arnett_modified(tgrid, taum_ = taum_, Mni_ = Mni_, t0_ = t0_)
-    lgLmodel1 = np.log10(Lmodel1)
+    taum_ = 6.35
+    Mni_ = 0.0162
+    t0_ = 24
+    texp = -2.9112151494264173
+    Lmodel2 = model_arnett_modified(tgrid, taum_ = taum_, Mni_ = Mni_, t0_ = t0_, texp = texp)
     lgLmodel2 = np.log10(Lmodel2)
     # 
+    """
     plt.figure()
-    plt.errorbar(x, y, ey, fmt=".k")
-    plt.plot(tgrid, lgLmodel1)
+    plt.errorbar(tt, lgL, lgL_unc, fmt=".k")
     plt.plot(tgrid, lgLmodel2)
+    """
     
     nwalkers = 100
     lgMni_ = np.log10(Mni_)
-    ml_guess = np.array([taum_, lgMni_, t0_])
+    ml_guess = np.array([taum_, lgMni_, t0_, texp])
     #initial position of walkers
     ndim = len(ml_guess)
     nfac = [1e-3]*ndim
     pos = [ml_guess + nfac * np.random.randn(ndim) for i in range(nwalkers)]
     
-    max_samples = 20000
+    max_samples = 10000
     check_tau = 200
     
     dirpath = "./arnettmodel/"
@@ -209,7 +219,7 @@ def main_arnettrun():
     backend = emcee.backends.HDFBackend(filename)
     backend.reset(nwalkers, ndim)
     
-    with Pool(8) as pool:
+    with Pool(20) as pool:
         sampler = emcee.EnsembleSampler(nwalkers, ndim, arnett_lnprob, 
                                         args=(tt, lgL, lgL_unc),
                                         pool=pool, backend=backend)
@@ -221,21 +231,9 @@ def main_arnettrun():
             if sampler.iteration % check_tau:
                 continue
             
-            tstart = time.time()
             tau = sampler.get_autocorr_time(tol=0)
-            tend = time.time()
             autocorr[index] = np.mean(tau[:3]) # only expect the first three parameters to converge
             index += 1
-            steps_so_far = index*check_tau
-            """
-            print('''After {:d} steps, 
-                  autocorrelation takes {:.3f} s ({} total FFTs)                
-                  acceptance fraction = {:.4f}, and
-                  tau = {}'''.format(steps_so_far, 
-                                     tend-tstart, nwalkers*ndim,
-                                     np.mean(sampler.acceptance_fraction), 
-                                     tau))
-            """
             # Check convergence
             converged = np.all(tau * 100 < sampler.iteration)
             converged &= np.all(np.abs(old_tau - tau) / tau < 0.01)
@@ -249,7 +247,8 @@ def main_arnettrun():
     
     paramsNames=[r"$\tau_{\rm m}$", 
                  'lg' +r'$M_{\rm Ni}$', 
-                 r"$t_0$"]
+                 r"$t_0$",
+                 r"$t_{\rm fl}$"]
 
     plotChains(sampler, 250, paramsNames, nplot=35)
     plt.tight_layout()
@@ -257,4 +256,4 @@ def main_arnettrun():
     
     makeCornerArnett(sampler, 20, paramsNames)
     plt.savefig(dirpath+"corner.pdf")
-    
+  

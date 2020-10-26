@@ -154,8 +154,11 @@ def get_P60_eff_wave(myfilter = "i'", return_type = 'R'):
     tb = pd.read_csv('../data/filters/P60/AstrodonSloanGen2Transmission.csv')
     if myfilter == "i'":
         wavecol = "Wavelength (nm).3"
-    if myfilter == "r'":
+    elif myfilter == "r'":
         wavecol = "Wavelength (nm).2"
+    elif myfilter == "g'":
+        wavecol = "Wavelength (nm).1"
+    
     wv = tb[wavecol].values * 10
     fg = tb[myfilter].values
     ix = (~np.isnan(wv))&(~np.isnan(fg))
@@ -183,6 +186,7 @@ def see_filters():
     wvr, xr, yr = get_ZTF_eff_wave("P48_R.dat", return_type = 'more')
     wvi, xi, yi = get_ZTF_eff_wave("P48_i.dat", return_type = 'more')
     
+    wvu_lt, xu_lt, yu_lt = get_LT_eff_wave('IOO_SDSS-U.txt', return_type = 'more')
     wvg_lt, xg_lt, yg_lt = get_LT_eff_wave('IOO_SDSS-G.txt', return_type = 'more')
     wvr_lt, xr_lt, yr_lt = get_LT_eff_wave('IOO_SDSS-R.txt', return_type = 'more')
     wvi_lt, xi_lt, yi_lt = get_LT_eff_wave('IOO_SDSS-I.txt', return_type = 'more')
@@ -198,6 +202,7 @@ def see_filters():
     
     plt.figure(figsize=(7,7))
     ax = plt.subplot(111)
+    ax.plot(xu_lt, yu_lt, color='m', linestyle='--', label=r'$u_{\rm LT}$')
     ax.plot(xg_lt, yg_lt, color='g', linestyle='--', label=r'$g_{\rm LT}$')
     ax.plot(xr_lt, yr_lt, color='red', linestyle='--', label=r'$r_{\rm LT}$')
     ax.plot(xi_lt, yi_lt, color='y', linestyle='--', label=r'$i_{\rm LT}$')

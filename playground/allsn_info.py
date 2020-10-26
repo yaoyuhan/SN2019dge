@@ -15,7 +15,7 @@ from astropy.table import Table, vstack
 from astropy.cosmology import FlatLambdaCDM
 cosmo = FlatLambdaCDM(H0=70., Om0=0.275)
 from collections import OrderedDict as odict
-from helper.app2abs import get_date_span, add_datecol
+from helper.app2abs import get_date_span, add_datecol, add_physcol
 
 def get_at2019dge(colorplt=False):
     t_max = 58583.2
@@ -141,16 +141,18 @@ def get_iPTF14gqr(colorplt=False):
     D = cosmo.luminosity_distance([z])[0].value * 1e+6 # in pc
     dis_mod = 5*np.log10(D / 10)
     t_exp = 56943.74 # 
-    t_max = 56950.26 # g band max light
+    t_max = 56950.26 # g band max light + 3
     
     tb = Table(fits.open('../data/otherSN/De2018/tables1.fit')[1].data)
-    tb = tb[~np.isnan(tb['e_mag'])]
-    tb.rename_column('Filt' , 'filter')
     tb.rename_column('MJD' , 'mjd')
-    tb.rename_column('mag' , 'mag0')
-    
     tb['texp_rf'] = (tb['mjd'] - t_exp) / (1+z)
     tb['tmax_rf'] = (tb['mjd'] - t_max) / (1+z)
+    # tb = tb[tb["Filt"]=="g   "]
+    tb = tb[~np.isnan(tb['e_mag'])]
+    tb.rename_column('Filt' , 'filter')
+    tb.rename_column('e_mag' , 'emag')
+    tb.rename_column('mag' , 'mag0')
+    
     ixg = tb['filter']=="g   "
     ixB = tb['filter']=="B   "
     ixV = tb['filter']=="V   "
@@ -173,10 +175,65 @@ def get_iPTF14gqr(colorplt=False):
     tb = tb.to_pandas()
     tb["texp_rf"] = tb["Phase"]
     tb = tb.drop(columns=["recno", "Phase", "l_mag"])
-    
+    """
     ix = np.any([tb['Tel'].values=="P60 ",
                  tb["filter"].values=='g   '], axis=0)
     tb = tb[ix]
+    """
+    tb = add_datecol(tb)
+    tb = add_physcol(tb)
+    tt = tb["tmax_rf"].values
+    epochs = ["        " for x in range(len(tt))]
+    epochs = np.array(epochs)
+    """
+    ix = (tt>-5.6)&(tt<-5.55)
+    epochs[ix] = "epoch 01"
+    """
+    ix = (tt>-5.55)&(tt<-5.50)
+    epochs[ix] = "epoch 02"
+    
+    ix = (tt>-5.50)&(tt<-5.45)
+    epochs[ix] = "epoch 03"
+    
+    ix = (tt>-5.2)&(tt<-5.0)
+    epochs[ix] = "epoch 04"
+    ix = (tt>-5.0)&(tt<-4.7)
+    epochs[ix] = "epoch 05"
+    
+    ix = (tt>-4.7)&(tt<-4.5)
+    epochs[ix] = "epoch 06"
+    ix = (tt>-4.5)&(tt<-3.5)
+    epochs[ix] = "epoch 07"
+    ix = (tt>-3.5)&(tt<-2.5)
+    epochs[ix] = "epoch 08"
+    ix = (tt>-1.5)&(tt<-1)
+    epochs[ix] = "epoch 09"
+    ix = (tt>-1)&(tt<-0.82)
+    epochs[ix] = "epoch 10"
+    ix = (tt>-0.82)&(tt<-0.6)
+    epochs[ix] = "epoch 11"
+    ix = (tt>-0.5)&(tt<0.5)
+    epochs[ix] = "epoch 12"
+    ix = (tt>0.5)&(tt<1.5)
+    epochs[ix] = "epoch 13"
+    ix = (tt>1.5)&(tt<2.5)
+    epochs[ix] = "epoch 14"
+    ix = (tt>3.5)&(tt<4.5)
+    epochs[ix] = "epoch 15"
+    ix = (tt>4.5)&(tt<5)
+    epochs[ix] = "epoch 16"
+    ix = (tt>5)&(tt<5.6)
+    epochs[ix] = "epoch 17"
+    ix = (tt>5.6)&(tt<5.8)
+    epochs[ix] = "epoch 18"
+    ix = (tt>6)&(tt<7)
+    epochs[ix] = "epoch 19"
+    ix = (tt>7)&(tt<8)
+    epochs[ix] = "epoch 20"
+    ix = (tt>8)&(tt<9)
+    epochs[ix] = "epoch 21"
+    tb["epoch"] = epochs
+
     if colorplt==False:
         return tb
     else:
@@ -210,7 +267,7 @@ def get_iPTF14gqr(colorplt=False):
             if len(gtb)!=0:
                 gmjds = gtb["mjd"].values
                 gmags = gtb["mag0"].values
-                gemags = gtb["e_mag"].values
+                gemags = gtb["emag"].values
                 gwtgs = 1/gemags**2
                 gmag = np.sum(gmags * gwtgs) / np.sum(gwtgs)
                 gmjd = np.sum(gmjds * gwtgs) / np.sum(gwtgs)
@@ -218,7 +275,7 @@ def get_iPTF14gqr(colorplt=False):
             if len(rtb)!=0:
                 rmjds = rtb["mjd"].values
                 rmags = rtb["mag0"].values
-                remags = rtb["e_mag"].values
+                remags = rtb["emag"].values
                 rwtgs = 1/remags**2
                 rmag = np.sum(rmags * rwtgs) / np.sum(rwtgs)
                 rmjd = np.sum(rmjds * rwtgs) / np.sum(rwtgs)
@@ -226,7 +283,7 @@ def get_iPTF14gqr(colorplt=False):
             if len(itb)!=0:
                 imjds = itb["mjd"].values
                 imags = itb["mag0"].values
-                iemags = itb["e_mag"].values
+                iemags = itb["emag"].values
                 iwtgs = 1/iemags**2
                 imag = np.sum(imags * iwtgs) / np.sum(iwtgs)
                 imjd = np.sum(imjds * iwtgs) / np.sum(iwtgs)
@@ -400,6 +457,72 @@ def get_sn2005ek(colorplt=False):
         return ctb
     
     
+def get_sn2018gep():
+    z = 0.03154
+    ebv = 0.01
+    D = cosmo.luminosity_distance([z])[0].value * 1e+6 # in pc
+    dis_mod = 5*np.log10(D / 10)
+    
+    tb = asci.read('../data/otherSN/SN2018gep/table5.txt')
+    tb = tb.to_pandas()
+    tb = tb.rename(columns={'col1' : 'jd',
+                            'col2': 'phase',
+                            'col3': 'instrument',
+                            'col4': 'filter',
+                            'col5': 'mag',
+                            'col6': 'emag'})
+    tb = tb[tb.instrument == "P48+ZTF"]
+    ixg = tb['filter'].values == "g"
+    ixr = tb['filter'].values == "r"
+    ixi = tb['filter'].values == "i"
+    tb['wave'] = np.zeros(len(tb))
+    tb['wave'].values[ixg] = 4814
+    tb['wave'].values[ixr] = 6422
+    tb['wave'].values[ixi] = 7883
+    tb['mag0'] = tb['mag'] - extinction.ccm89(tb['wave'].values, 3.1*ebv, 3.1)
+    tb['mag0_abs'] = tb['mag0'] - dis_mod
+    tb = tb[tb.wave!=0]
+    tb["mjd"] = tb["jd"] - 2400000.5
+    t_max = 2458374.6845 - 2400000.5 # from my eye-inspection
+    tb['tmax_rf'] = (tb['mjd'] - t_max) / (1+z)
+    return tb
+
+
+def get_iPTF16asu():
+    """
+    table already corrected for galactic extinction
+    """
+    z = 0.187
+    ebv = 0.0
+    D = cosmo.luminosity_distance([z])[0].value * 1e+6 # in pc
+    dis_mod = 5*np.log10(D / 10)
+    
+    tb = asci.read('../data/otherSN/Whitesides2017/table1.txt')
+    tb = tb.to_pandas()
+    tb = tb[tb["col4"].values!=">"]
+    
+    tb = tb.rename(columns={'col1' : 'mjd',
+                            'col2': 'tmax_rf',
+                            'col3': 'filter',
+                            "col4": 'mag',
+                            'col5': 'emag',
+                            'col6': 'instrument'})
+    
+    ixg = tb['filter'].values == "g"
+    ixr = tb['filter'].values == "r"
+    ixi = tb['filter'].values == "i"
+    tb['wave'] = np.zeros(len(tb))
+    tb['wave'].values[ixg] = 4814
+    tb['wave'].values[ixr] = 6422
+    tb['wave'].values[ixi] = 7883
+    tb["mag"] = np.array(tb["mag"].values, dtype = np.float)
+    #tb["emag"] = np.array(tb["emag"].values, dtype = np.float)
+    tb['mag0'] = tb['mag'] - extinction.ccm89(tb['wave'].values, 3.1*ebv, 3.1)
+    tb['mag0_abs'] = tb['mag0'] - dis_mod
+    tb = tb[tb.wave!=0]
+    return tb
+    
+    
 def get_iPTF16hgs(colorplt = False):
     """
     De+18, Table 1, already corrected for extinction
@@ -428,16 +551,19 @@ def get_iPTF16hgs(colorplt = False):
     tb['mag0'] = tb['mag'] - extinction.ccm89(tb['wave'].values, 3.1*ebv, 3.1)
     tb['mag0_abs'] = tb['mag0'] - dis_mod
     t_max = 57691.59 # from the paper
+    tb['tmax_of'] = tb['mjd'] - t_max
     tb['tmax_rf'] = (tb['mjd'] - t_max) / (1+z)
     """
     plt.errorbar(tb["tmax_rf"].values[ixg], tb["mag"].values[ixg], tb["emag"].values[ixg], fmt=".g")
     plt.errorbar(tb["tmax_rf"].values[ixr], tb["mag"].values[ixr], tb["emag"].values[ixr], fmt=".r")
     plt.errorbar(tb["tmax_rf"].values[ixi], tb["mag"].values[ixi], tb["emag"].values[ixi], fmt=".y")
     """
+    tb = add_datecol(tb)
+    tb = add_physcol(tb)
+    #tb = tb.drop(columns=["datetime64"])
     if colorplt==False:
         return tb
     else:
-        tb = add_datecol(tb)
         #tb = tb[tb.mjd > 55352.5]
         #tb = tb[tb.mjd < 55593.5]
         

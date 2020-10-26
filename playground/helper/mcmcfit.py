@@ -5,6 +5,7 @@ Created on Wed Jun 26 09:07:17 2019
 
 @author: yuhanyao
 """
+import os
 import numpy as np
 import pandas as pd
 import emcee
@@ -52,7 +53,7 @@ bb_nll = lambda *args: -bb_lnlike(*args)
 
 def bb_lnprior(theta):
     Tbb, Rbb = theta
-    if (0 < Tbb < 1e6 and 0 < Rbb < 1e+6):
+    if (1e+3 < Tbb < 1e7 and 10 < Rbb < 1e+6):
         return 0.0
     return -np.inf
 
@@ -66,14 +67,11 @@ def bb_lnprob(theta, x, y, yerr):
 
 def pool_bb_process(df, mydate):
     s = "_"
-    filename = '../data/analysis/mcmcresult/' + s.join(mydate.split(' '))+'.txt'
-    '''
+    filename = './19dge_mcmcresult/sampler_' + s.join(mydate.split(' '))+'.h5'
+    
     if os.path.isfile(filename)==True:
         print ("already exist")
-        return ""
-    '''
-    if 1+1==3:
-        return ""
+    
     else:
         subdf = df.iloc[np.where(df['date']==mydate)]
         x = subdf['wave'].values
@@ -85,70 +83,42 @@ def pool_bb_process(df, mydate):
         ml_guess = result["x"]
         ndim = len(ml_guess)
         max_samples = 100000
-        nwalkers = 250
+        nwalkers = 100
         pos = [ml_guess + 1e-3*np.random.randn(ndim) for i in range(nwalkers)]
-        sampler = emcee.EnsembleSampler(nwalkers, ndim, bb_lnprob, 
-                                    args=(x, y, yerr))
+        
+        backend = emcee.backends.HDFBackend(filename)
+        backend.reset(nwalkers, ndim)
+        with Pool(5) as pool:
+            sampler = emcee.EnsembleSampler(nwalkers, ndim, bb_lnprob, 
+                                        args=(x, y, yerr), pool=pool, backend=backend)
+        
 
-        index = 0
-        autocorr = np.empty(max_samples)
-        old_tau = np.inf
-        for sample in sampler.sample(pos, iterations=max_samples):
-            if ((sampler.iteration % 250) and 
-                (sampler.iteration < 5000)):
-                continue
-            elif ((sampler.iteration % 1000) and 
-                  (5000 <= sampler.iteration < 15000)):
-                continue
-            elif ((sampler.iteration % 2500) and 
-                  (15000 <= sampler.iteration)):
-                continue
-            tau = sampler.get_autocorr_time(tol=0)
-            autocorr[sampler.iteration-1] = np.mean(tau)
-            index += 1
+            index = 0
+            autocorr = np.empty(max_samples)
+            old_tau = np.inf
+            for sample in sampler.sample(pos, iterations=max_samples, progress=True):
+                if (sampler.iteration % 200):
+                    #print (sampler.iteration)
+                    continue
+                tau = sampler.get_autocorr_time(tol=0)
+                autocorr[sampler.iteration-1] = np.mean(tau)
+                index += 1
 
-            # Check convergence
-            
-            # Compute the autocorrelation time so far
-            # Using tol=0 means that we'll always get an estimate even
-            # if it isn't trustworthy
-            converged = np.all(tau * 100 < sampler.iteration)
-            converged &= np.all(np.abs(old_tau - tau) / tau < 0.01)
-            if converged:
-                break
-            old_tau = tau
+                # Check convergence
+                
+                # Compute the autocorrelation time so far
+                # Using tol=0 means that we'll always get an estimate even
+                # if it isn't trustworthy
+                converged = np.all(tau * 100 < sampler.iteration)
+                converged &= np.all(np.abs(old_tau - tau) / tau < 0.01)
+                if converged:
+                    break
+                old_tau = tau
         
         if np.isnan(tau[0])==True or np.isinf(tau[0])==True:
             print ('mydate = %s, not enough epochs to converge'%(mydate))
-            samples = sampler.get_chain(discard=1000, flat=True)
-            print (tau)
         else:
-            samples = sampler.get_chain(discard=int(10*tau[0]), flat=True)
-        
-        Lbbs = const.sigma_sb.cgs.value * samples[:,0] **4 * 4 * np.pi * (samples[:,1] * const.R_sun.cgs.value)**2
-        
-        Lbb_sigmas = np.percentile(Lbbs, (0.13, 2.27, 15.87, 50, 84.13, 97.73, 99.87))
-        Tbb_sigmas = np.percentile(samples[:,0], (0.13, 2.27, 15.87, 50, 84.13, 97.73, 99.87))
-        Rbb_sigmas = np.percentile(samples[:,1], (0.13, 2.27, 15.87, 50, 84.13, 97.73, 99.87))
-    
-        print ('mydate = %s, lgLbb_med = %.2f, Tbb_med = %.2f, Rbb_med = %.2f'%(mydate, np.log10(Lbb_sigmas[3]),Tbb_sigmas[3], Rbb_sigmas[3]))
-        result = np.vstack([Lbb_sigmas, Tbb_sigmas, Rbb_sigmas])
-        np.savetxt(filename, result)
-        return result
-
-
-def main_bbrun():
-    dates1 = np.load('./helper/dates1.npy')
-    lcdet = pd.read_csv('./helper/lcdet.csv')
-    
-    pool = Pool(10)
-    tstart = time.time()
-    results = [pool.apply_async(pool_bb_process, args=(lcdet, mydate,)) 
-                for mydate in dates1]
-    output = [p.get() for p in results]
-    tend = time.time()
-    print("Pool map took {:.4f} sec".format(tend-tstart))
-
+            print ('mydate = %s, done'%(mydate))
 
 
 ################ other helper functions
@@ -183,4 +153,14 @@ def mylinear_fit(x, y, yerr, npar = 2):
     # y_mean = np.mean(y)
     # pearson_r = np.sum( (x - x_mean) * (y - y_mean) ) / np.sqrt(np.sum( (x - x_mean)**2 )) / np.sqrt(np.sum( (y - y_mean)**2 ))
     return Fpsf, e_Fpsf, a
+
+
+if __name__ == "__main__": 
+    dates1 = np.load('./19dge_dates.npy', allow_pickle=True)
+    lcdet = pd.read_csv('./19dge_lcdet.csv')
+    
+    for i in [2,3]:
+        mydate = dates1[i]
+        pool_bb_process(lcdet, mydate)
+
 

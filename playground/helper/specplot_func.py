@@ -417,3 +417,83 @@ def host_subtraction(x1, y1, x2, y2,
     return x1, y1-y1_host
         
     
+def measure_FWHM(dt0, wv, init_lim_left = -500, init_lim_right = 500, lim_cont = 300):
+    vv0_, yy0 = get_vvyy(dt0, wv)
+    ix = (vv0_<init_lim_right)&(vv0_>init_lim_left)
+    vv0_ = vv0_[ix]
+    yy0 = yy0[ix] * 1e+16
+    
+    # 0.0 redefine line center
+    ix_max = np.where(yy0 == max(yy0))[0]
+    vv_center = np.mean(vv0_[ix_max])
+    vv0 = vv0_ - vv_center
+    
+    plt.figure(figsize= (9,4))
+    ax1 = plt.subplot(121)
+    ax1.plot(vv0_, yy0, color = "grey", linestyle = ":")
+    ax1.plot(vv0, yy0, color = "k")
+    
+    # 1.0 fit a continuum
+    ixc = abs(vv0)> lim_cont
+    v_cont = vv0[ixc]
+    f_cont = yy0[ixc]
+    k, ek, intercept = mylinear_fit(v_cont, f_cont, np.ones(len(f_cont))*0.05, npar = 2)
+    yy_cont = k * vv0 + intercept
+    ax1.plot(vv0, yy_cont, color = "c")
+    
+    # ===============================
+    # 2.0 method: direct measurement
+    maxy= max(yy0)
+    plt.plot([0,0], [intercept, maxy], color = 'salmon', linestyle = "--")
+    ix_right = vv0 > 0
+    vvright = vv0[ix_right]
+    yyright = yy0[ix_right]
+    vvleft = vv0[~ix_right]
+    yyleft = yy0[~ix_right]
+    
+    yhm = 0.5*(maxy+intercept)
+    
+    # 2.1 right part find
+    ix_right_below = yyright<(yhm)
+    ax1.plot(vvright[ix_right_below], yyright[ix_right_below], 'r')
+    
+    # 2.2 left part find
+    ix_left_below = yyleft<(yhm)
+    ax1.plot(vvleft[ix_left_below], yyleft[ix_left_below], 'r')
+    
+    # 2.3 mark half maximum
+    right_hm = vvright[ix_right_below][0]
+    left_hm = vvleft[ix_left_below][-1]
+    ax1.plot([left_hm, right_hm], [yhm, yhm], 'r:')
+    
+    fwhm = right_hm - left_hm
+    ax1.set_title("FWHM = %d"%fwhm, fontsize  = 10)
+    
+    # ===============================
+    # 3.0 fit a gaussian
+    ax2 = plt.subplot(122)
+    ax2.plot(vv0, yy0, color = "k")
+    
+    a_fixed = intercept
+    a_width = max(yy_cont) - min(yy_cont)
+    A_guess = maxy - intercept
+    line_center = 0
+    line_bound_width = 50
+    sigma_guess = fwhm / np.sqrt(2 * np.log(2))
+    bounds = ((a_fixed-a_width, 0.2*A_guess, line_center-line_bound_width*2, sigma_guess/5),
+              (a_fixed+a_width, 5*A_guess, line_center+line_bound_width*2, sigma_guess*5))
+    popt1, pcov1 = curve_fit(gaus, vv0, yy0, 
+                             p0=[a_fixed, A_guess, line_center, sigma_guess],
+                             bounds=bounds)
+    fwhm_gaus = popt1[-1] * 2 * np.sqrt(2 * np.log(2))
+    fwhm_gaus_unc = np.sqrt(pcov1[-1,-1]) * 2 * np.sqrt(2 * np.log(2))
+    print ("line width = %.2f +- %.2f km/s"%(popt1[-1], np.sqrt(pcov1[-1,-1])))
+    print ("line center = %.2f +- %.2f km/s"%(popt1[2], np.sqrt(pcov1[2,2])))
+    print ("FWHM = %d +- %d km/s"%(fwhm_gaus, fwhm_gaus_unc))
+    
+    vvnew = np.linspace(min(vv0), max(vv0), 200)
+    yy_fitted = gaus(vvnew, *popt1)
+    ax2.plot(vvnew, yy_fitted)
+    ax2.set_title(r"$\lambda%d$"%wv, fontsize = 10)
+    
+    #return fwhm

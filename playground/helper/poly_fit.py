@@ -46,6 +46,11 @@ def poly_fit_timescales(x, y, ey, name=None):
     assert a1 > 0
     """
     thre = 1.5
+    a1 = 2
+    a2 = -3
+    order1=2
+    order2=2
+    b = min(y)
     if name == "AT2019dge":
         a1 = 4
         a2 = 0
@@ -58,15 +63,16 @@ def poly_fit_timescales(x, y, ey, name=None):
         order2=3
         thre = 2
     elif name == "SN2005ek":
+        a1 = 2
         a2 = -2
         order2=2
         thre = 2.
-    elif name == "SN2016hnk":
+    elif name == "iPTF16hgs":
         a1 = 2
-        a2 = -2
+        a2 = -5
         order2=3
-        order1 = 2
-        ey[0] = 0.01
+        thre = 2.
+        b = min(y)-0.05
     elif name =="SN2010X":
         a1 = 2
         a2 = -3
@@ -78,21 +84,23 @@ def poly_fit_timescales(x, y, ey, name=None):
         a2 = -3
         order2=2
         thre = 3.5
-    elif name == "OGLE13-079":
-        a1 = 2
-        a2 = -2
-        order2=2
-        thre = 2.5
+    elif name == "SN2018gep":
+        a1 = 0.5
+        a2 = -1
+        order1 = 3
+        order2=4
+        thre = 1.5
     elif name == "SN2018kzr":
         a2 = -2
         order2=2
         thre = 3
     elif name == "PTF09dav":
-        a1 = 3
-        a2 = -3
-        order2=2
+        a1 = 5
+        a2 = -5
+        order1 = 3
+        order2=4
         thre = 2
-        ix = x<25
+        ix = x<20
         x = x[ix]
         y = y[ix]
         ey = ey[ix]
@@ -100,21 +108,22 @@ def poly_fit_timescales(x, y, ey, name=None):
         a1 = 2
         a2 = -3
         order1=1
-        order2=2
+        order2=3
         thre = 2.5
     elif name == "PTF10iuv":
-        a1 = 2
+        a1 = 4
         a2 = -3
         order1=2
-        order2=2
+        order2=3
         thre = 1.8
-    else:
-        a1 = 2
-        a2 = -3
-        order1=1
-        order2=2
+    elif name == "iPTF16asu":
+        a1 = 1
+        a2 = -2
+        order1=2
+        order2=3
+        thre = 1.8
+        #b = b = min(y)-0.15
     
-    b = min(y)
     y = y - b
     NSAMPLES = 100
     
@@ -125,8 +134,10 @@ def poly_fit_timescales(x, y, ey, name=None):
     y = y[ix]
     ey = ey[ix]
     
+    
     if name not in ["SN2005ek", "SN2010X", "SN2019bkc", "OGLE13-079", 
-                    "SN2018kzr", "PTF09dav", "SN2002bj"]:
+                    "SN2018kzr", "PTF09dav", "SN2002bj", "iPTF16hgs", 
+                    "SN2018gep", "iPTF16asu", "iPTF14gqr"]:
         # adjust peak epoch
         ix1 = x<=a1
         x1 = x[ix1]
@@ -143,7 +154,7 @@ def poly_fit_timescales(x, y, ey, name=None):
     plt.errorbar(x, y, ey, fmt=".k")
     
     if name not in ["SN2005ek", "SN2010X", "SN2019bkc", "OGLE13-079", 
-                    "SN2018kzr", "PTF09dav", "SN2002bj"]:
+                    "SN2018kzr", "PTF09dav", "SN2002bj", "iPTF16hgs"]:
         # peak timescale
         ix1 = x<=a1
         x1 = x[ix1]
@@ -164,7 +175,7 @@ def poly_fit_timescales(x, y, ey, name=None):
                 p1_ = p1 + np.dot(L1, zprep[i])
                 ynew1 = np.polyval(p1_, xnew1)
                 plt.plot(xnew1, ynew1, color = "r", linewidth=0.5)
-                ydiff1 = abs(ynew1 - (ymax+1))
+                ydiff1 = abs(ynew1 - (ymax+0.75))
                 id_rise = np.argsort(ydiff1)[0]
                 if limflag1==0:
                     if ydiff1[id_rise]>0.01:
@@ -177,7 +188,7 @@ def poly_fit_timescales(x, y, ey, name=None):
                 print (i)
         tau_rise = np.median(t1s)
         tau_rise_unc = np.std(t1s)
-        plt.plot(tau_rise*(-1), 1, 'ro')
+        plt.plot(tau_rise*(-1), 0.75, 'ro')
     elif name in ["SN2019bkc", "OGLE13-079", "PTF09dav"]:
         ymax = 0
         ix1 = x<=a1
@@ -187,12 +198,12 @@ def poly_fit_timescales(x, y, ey, name=None):
         xnew1 = np.linspace(x1[0]+0.01, x1[-1]-0.01,1000)
         ynew1 = func1(xnew1)
         plt.plot(xnew1, ynew1, color = "r", linewidth=0.5)
-        ydiff1 = abs(ynew1 - (ymax+1))
+        ydiff1 = abs(ynew1 - (ymax+0.75))
         id_rise = np.argsort(ydiff1)[0]
         tau_rise = xnew1[id_rise] * (-1)   
         tau_rise_unc = -99        
         riselim = False
-        plt.plot(tau_rise*(-1), 1, 'ro')
+        plt.plot(tau_rise*(-1), 0.75, 'ro')
     else:
         tau_rise = -99
         tau_rise_unc = -99
@@ -218,7 +229,7 @@ def poly_fit_timescales(x, y, ey, name=None):
             p2_ = p2 + np.dot(L2, zprep[i])
             ynew2 = np.polyval(p2_, xnew2)
             plt.plot(xnew2, ynew2, color = "b", linewidth=0.5)
-            ydiff2 = abs(ynew2 - (ymax+1))
+            ydiff2 = abs(ynew2 - (ymax+0.75))
             id_decay = np.argsort(ydiff2)[0]
             if limflag2==0:
                 if ydiff2[id_decay]>0.01:
@@ -233,7 +244,7 @@ def poly_fit_timescales(x, y, ey, name=None):
     tau_decay = np.median(t2s)
     tau_decay_unc = np.std(t2s)
     
-    plt.plot(tau_decay, 1, 'bo')
+    plt.plot(tau_decay, 0.75, 'bo')
     
     result = {"name": name,
               "Mpeak": ymax + b,

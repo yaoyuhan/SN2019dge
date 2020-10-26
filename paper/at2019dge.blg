@@ -15,43 +15,43 @@ Warning--can't use both author and editor fields in Smith2017
 Warning--empty publisher in Smith2017
 You've used 181 entries,
             4033 wiz_defined-function locations,
-            2412 strings with 102540 characters,
-and the built_in function-call counts, 128686 in all, are:
-= -- 11259
-> -- 12348
-< -- 45
-+ -- 4091
-- -- 4313
-* -- 12717
-:= -- 21948
+            2406 strings with 102942 characters,
+and the built_in function-call counts, 129263 in all, are:
+= -- 11285
+> -- 12397
+< -- 46
++ -- 4106
+- -- 4325
+* -- 12726
+:= -- 22012
 add.period$ -- 181
 call.type$ -- 181
-change.case$ -- 940
-chr.to.int$ -- 172
+change.case$ -- 931
+chr.to.int$ -- 171
 cite$ -- 188
-duplicate$ -- 4328
-empty$ -- 6187
-format.name$ -- 4527
-if$ -- 27987
-int.to.chr$ -- 10
+duplicate$ -- 4394
+empty$ -- 6210
+format.name$ -- 4541
+if$ -- 28128
+int.to.chr$ -- 11
 int.to.str$ -- 0
 missing$ -- 172
 newline$ -- 550
 num.names$ -- 727
-pop$ -- 1300
+pop$ -- 1290
 preamble$ -- 1
-purify$ -- 940
+purify$ -- 931
 quote$ -- 0
-skip$ -- 4218
+skip$ -- 4304
 stack$ -- 0
-substring$ -- 3558
-swap$ -- 1485
+substring$ -- 3593
+swap$ -- 1555
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 1617
 warning$ -- 7
-while$ -- 717
+while$ -- 712
 width$ -- 0
-write$ -- 1971
+write$ -- 1970
 (There were 7 warnings)
