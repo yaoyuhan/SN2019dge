@@ -6,4 +6,6 @@ See publication [Yao et al. 2020, ApJ, 900, 46](https://iopscience.iop.org/artic
 - Figure 1: playground/discovery_image.ipynb
 - Figure 2: playground/make_lightcurve.ipynb
 - Figure 3: playground/compare_timescale.ipynb
-- Figure 4: playground/blackbody_plot.ipynb    
+- Figure 4: playground/blackbody_plot.ipynb   
+- Figure 5: playground/compare_color.ipynb 
+- Figure 6, 7, and 10: playground/spectral_part1.ipynb 
