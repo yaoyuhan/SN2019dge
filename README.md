@@ -9,4 +9,5 @@ See publication [Yao et al. 2020, ApJ, 900, 46](https://iopscience.iop.org/artic
 - Figure 4: playground/blackbody_plot.ipynb   
 - Figure 5: playground/compare_color.ipynb 
 - Figure 6, 7, and 10: playground/spectral_part1.ipynb
-- Figure 8 and 9: plaground/compare_spec.ipynb 
+- Figure 8 and 9: plaground/compare_spec.ipynb
+- Figure 11: playground/subtract_spec.ipynb 
