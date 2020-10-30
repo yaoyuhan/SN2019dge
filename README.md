@@ -25,4 +25,4 @@ In the main function, replace `tt` (day), `wv` (angstrom), `lgL` (log 10 of erg/
 - Arnett model of radioactive decay. Code at playgorund/helper/arnett.py. <br>
 Again, need to double-check prior definition `arnett_lnprior` before running the model.
 
-Both models call the blackbody function defined at playground/mcmcfit.py 
+Both models call the blackbody function defined at playground/helper/mcmcfit.py 
